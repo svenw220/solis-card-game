@@ -20,7 +20,7 @@ import '@/assets/scss/main.scss';
 // import "./plugins/vuex";
 // import "./plugins/axios";
 // import { i18n } from "./plugins/vue-i18n";
-// import { router } from "./plugins/vue-router";
+import { router } from '@/plugins/vue-router';
 // import "./plugins/vuex-router-sync";
 // import "./plugins/bootstrap";
 // import "./plugins/font-awesome";
@@ -73,7 +73,7 @@ new Vue({
   /**
    * The router.
    */
-  // router,
+  router,
 
   /**
    * The Vuex store.
