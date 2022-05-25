@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <!-- <router-view /> -->
-    <b-field label="Name">
-      <b-input v-model="name" />
-    </b-field>
-    <p>hello world</p>
+    <router-view />
   </div>
 </template>
 <script>
@@ -33,3 +29,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+#app {
+  padding: 24px 80px;
+}
+</style>
