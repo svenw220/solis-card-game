@@ -2,6 +2,7 @@
   <div class="container landing">
     <Navbar />
     <Hero />
+    <Lure />
   </div>
 </template>
 
@@ -15,6 +16,7 @@
 
 import Navbar from '@/layouts/Navbar/Index.vue';
 import Hero from '@/components/Hero/Index.vue';
+import Lure from '@/components/Lure/Index.vue';
 // import Footer from '@/layouts/Footer/Index.vue';
 
 export default {
@@ -29,6 +31,7 @@ export default {
   components: {
     Navbar,
     Hero,
+    Lure,
   },
 };
 </script>

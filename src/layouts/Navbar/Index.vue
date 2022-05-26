@@ -2,14 +2,8 @@
   <div class="navbar-container">
     <b-navbar>
       <template #brand>
-        <b-navbar-item
-          tag="router-link"
-          :to="{ path: '/' }"
-        >
-          <img
-            src="@/assets/images/logo.png"
-            alt="This is Logo"
-          >
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          <img src="@/assets/images/logo.png" alt="This is Logo" />
         </b-navbar-item>
       </template>
       <template #start>
@@ -48,6 +42,8 @@
 </template>
 
 <script>
+// TODO: Need to add connect wallet button with web3.js library.
+
 /* ============
  * Home Index Page
  * ============

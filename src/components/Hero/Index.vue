@@ -81,7 +81,7 @@ export default {
 
   .illustration {
     position: relative;
-    top: -2rem;
+    // top: -2rem;
   }
 }
 </style>
