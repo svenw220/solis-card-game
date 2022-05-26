@@ -63,7 +63,7 @@ export default {
     }
 
     .highlight-text {
-      font-weight: 700;
+      font-weight: 900;
     }
 
     #{$root}-description {

@@ -65,6 +65,27 @@ $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
+@font-face {
+  font-family: Duplet Rounded;
+  src: url(../font/Duplet_Rounded/DupletRounded-Regular.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Duplet Rounded;
+  src: url(../font/Duplet_Rounded/DupletRounded-Bold.otf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Duplet Rounded;
+  src: url(../font/Duplet_Rounded/DupletRounded-Extrabold.otf);
+  font-weight: 700;
+}
+
+* {
+  font-family: 'Duplet Rounded';
+}
 // Import Bulma and Buefy styles
 @import '~bulma';
 @import '~buefy/src/scss/buefy';
