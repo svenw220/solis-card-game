@@ -3,6 +3,7 @@
     <Navbar />
     <Hero />
     <Lure />
+    <How />
   </div>
 </template>
 
@@ -17,6 +18,7 @@
 import Navbar from '@/layouts/Navbar/Index.vue';
 import Hero from '@/components/Hero/Index.vue';
 import Lure from '@/components/Lure/Index.vue';
+import How from '../../components/How/Index.vue';
 // import Footer from '@/layouts/Footer/Index.vue';
 
 export default {
@@ -32,6 +34,7 @@ export default {
     Navbar,
     Hero,
     Lure,
+    How,
   },
 };
 </script>
