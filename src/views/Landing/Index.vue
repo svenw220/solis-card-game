@@ -1,5 +1,5 @@
 <template>
-  <div class="container landing">
+  <div class="container is-fullhd landing">
     <Navbar />
     <Hero />
     <Lure />
@@ -7,6 +7,7 @@
     <BuildingBlocks />
     <NftLaunching />
     <FAQ />
+    <Community />
     <Footer />
   </div>
 </template>
@@ -26,6 +27,7 @@ import How from '@/components/How/Index.vue';
 import BuildingBlocks from '@/components/BuildingBlocks/Index.vue';
 import NftLaunching from '@/components/NftLaunch/Index.vue';
 import FAQ from '@/components/FAQ/Index.vue';
+import Community from '@/components/Community/Index.vue';
 import Footer from '@/layouts/Footer/Index.vue';
 
 export default {
@@ -45,6 +47,7 @@ export default {
     BuildingBlocks,
     NftLaunching,
     FAQ,
+    Community,
     Footer,
   },
 };

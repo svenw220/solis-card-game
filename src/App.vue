@@ -33,6 +33,5 @@ export default {
 <style lang="scss">
 #app {
   padding: 24px 80px;
-  //width: 1440px;
 }
 </style>
