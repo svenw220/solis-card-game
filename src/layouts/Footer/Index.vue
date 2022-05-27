@@ -67,8 +67,4 @@ export default {
     }
   }
 }
-
-.navbar-container {
-  padding: 0 24px;
-}
 </style>
