@@ -75,6 +75,10 @@ export default {
 .community {
   padding: 2.5rem 0;
   background-color: #f6f5ff;
+  margin-left: -5rem;
+  margin-right: -5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 
   &-title {
     font-size: 2rem;
