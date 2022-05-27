@@ -9,19 +9,15 @@
       <template #end>
         <b-navbar-item>
           Home
-          <div class="yellow-square" />
         </b-navbar-item>
         <b-navbar-item>
           The Lure
-          <div class="yellow-square" />
         </b-navbar-item>
         <b-navbar-item>
           Game Guide
-          <div class="yellow-square" />
         </b-navbar-item>
         <b-navbar-item>
           FAQs
-          <div class="yellow-square" />
         </b-navbar-item>
         <b-navbar-item>
           NFTs Sale
@@ -74,19 +70,5 @@ export default {
 
 .navbar-container {
   padding: 0 24px;
-  // box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.12);
-  // border-radius: 16px;
-}
-
-.yellow-square {
-  border: 4px solid #f9da75;
-  transform: rotateZ(45deg);
-  margin: 0 1.5rem;
-}
-
-.navbar-end {
-  .navbar-item {
-    padding-right: 0;
-  }
 }
 </style>

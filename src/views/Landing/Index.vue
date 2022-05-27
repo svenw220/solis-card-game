@@ -6,6 +6,7 @@
     <How />
     <BuildingBlocks />
     <NftLaunching />
+    <FAQ />
     <Footer />
   </div>
 </template>
@@ -24,6 +25,7 @@ import Lure from '@/components/Lure/Index.vue';
 import How from '@/components/How/Index.vue';
 import BuildingBlocks from '@/components/BuildingBlocks/Index.vue';
 import NftLaunching from '@/components/NftLaunch/Index.vue';
+import FAQ from '@/components/FAQ/Index.vue';
 import Footer from '@/layouts/Footer/Index.vue';
 
 export default {
@@ -42,6 +44,7 @@ export default {
     How,
     BuildingBlocks,
     NftLaunching,
+    FAQ,
     Footer,
   },
 };
