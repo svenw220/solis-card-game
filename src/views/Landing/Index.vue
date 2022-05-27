@@ -5,6 +5,7 @@
     <Lure />
     <How />
     <BuildingBlocks />
+    <Footer />
   </div>
 </template>
 
@@ -22,7 +23,7 @@ import Lure from '@/components/Lure/Index.vue';
 import How from '@/components/How/Index.vue';
 import BuildingBlocks from '@/components/BuildingBlocks/Index.vue';
 
-// import Footer from '@/layouts/Footer/Index.vue';
+import Footer from '@/layouts/Footer/Index.vue';
 
 export default {
   /**
@@ -39,6 +40,7 @@ export default {
     Lure,
     How,
     BuildingBlocks,
+    Footer,
   },
 };
 </script>

@@ -2,45 +2,29 @@
   <div class="navbar-container">
     <b-navbar>
       <template #brand>
-        <b-navbar-item
-          tag="router-link"
-          :to="{ path: '/' }"
-        >
-          <img
-            src="@/assets/images/logo.png"
-            alt="This is Logo"
-          >
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          <img src="@/assets/images/logo.png" alt="This is Logo" />
         </b-navbar-item>
       </template>
-      <template #start>
-        <b-navbar-item href="#">
+      <template #end>
+        <b-navbar-item>
           Home
           <div class="yellow-square" />
         </b-navbar-item>
-        <b-navbar-item href="#">
+        <b-navbar-item>
           The Lure
           <div class="yellow-square" />
         </b-navbar-item>
-        <b-navbar-item href="#">
+        <b-navbar-item>
           Game Guide
           <div class="yellow-square" />
         </b-navbar-item>
-        <b-navbar-item href="#">
+        <b-navbar-item>
           FAQs
           <div class="yellow-square" />
         </b-navbar-item>
-        <b-navbar-item href="#">
+        <b-navbar-item>
           NFTs Sale
-        </b-navbar-item>
-      </template>
-
-      <template #end>
-        <b-navbar-item tag="div">
-          <div class="buttons">
-            <a class="button">
-              <strong>Connect Wallet</strong>
-            </a>
-          </div>
         </b-navbar-item>
       </template>
     </b-navbar>
@@ -90,8 +74,8 @@ export default {
 
 .navbar-container {
   padding: 0 24px;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.12);
-  border-radius: 16px;
+  // box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.12);
+  // border-radius: 16px;
 }
 
 .yellow-square {
