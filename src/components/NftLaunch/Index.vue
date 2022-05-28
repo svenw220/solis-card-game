@@ -17,8 +17,14 @@
           <NftCard />
           <NftCard />
         </div>
-        <div class="column group-2">2</div>
-        <div class="column group-3">3</div>
+        <div class="column group-2">
+          <NftCard />
+          <NftCard />
+        </div>
+        <div class="column group-3">
+          <NftCard />
+          <NftCard />
+        </div>
       </div>
     </div>
   </section>
@@ -65,9 +71,20 @@ export default {
 
 .launch-content {
   margin-right: 134px;
+  padding: 0;
 }
 .coming-soon {
   margin-top: 22px;
   font-weight: 560;
+}
+
+.nft-assets {
+  .group-1 {
+    margin-top: 2rem;
+  }
+
+  .group-3 {
+    margin-top: 4rem;
+  }
 }
 </style>
