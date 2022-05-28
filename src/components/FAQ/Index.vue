@@ -115,6 +115,9 @@ export default {
   margin-bottom: 5rem;
 
   &-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
@@ -131,7 +134,6 @@ export default {
     .faq-item-content {
       border: 1px solid #e6e5e8;
       border-radius: 1rem;
-      // margin-right: 1rem;
 
       &-title {
         line-height: 30px;
