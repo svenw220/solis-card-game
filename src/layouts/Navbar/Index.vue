@@ -92,6 +92,15 @@ export default {
       }
     }
   }
+
+  &-start {
+    > #{$root}-item {
+      &:hover,
+      &:focus {
+        background-color: #fff;
+      }
+    }
+  }
 }
 
 .navbar-container {
