@@ -32,6 +32,11 @@
         <b-navbar-item tag="div">
           <div class="buttons">
             <a class="button">
+              <img
+                src="@/assets/images/metamask.png"
+                alt="Metamask Icon"
+                class="mr-2"
+              />
               <strong>Connect Wallet</strong>
             </a>
           </div>

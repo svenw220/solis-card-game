@@ -14,7 +14,13 @@
         market.
       </div>
       <div class="hero-buttons-group">
-        <b-button type="is-primary" icon-right="delete">Get Access</b-button>
+        <b-button type="is-primary"
+          >Get Access
+          <img
+            src="@/assets/images/right-arrow.png"
+            alt="Right arrow icon"
+            class="ml-2"
+        /></b-button>
         <b-button>Learn More</b-button>
       </div>
     </div>
