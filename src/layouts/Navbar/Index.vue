@@ -1,6 +1,6 @@
 <template>
   <div class="navbar-container">
-    <b-navbar>
+    <b-navbar class="is-fixed-top">
       <template #brand>
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <img src="@/assets/images/logo.png" alt="This is Logo" />
@@ -67,11 +67,21 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   $root: &;
+  padding: 0 24px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+
   &-brand {
     .navbar-item {
       padding-left: 0;
       padding-right: 378.5px;
     }
+  }
+
+  &.is-fixed-top {
+    top: 1.5rem;
+    left: 5rem;
+    right: 5rem;
   }
 
   &-menu {
