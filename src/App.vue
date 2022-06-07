@@ -30,8 +30,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-#app {
-  padding: 24px 80px;
-}
-</style>
+<style lang="scss"></style>

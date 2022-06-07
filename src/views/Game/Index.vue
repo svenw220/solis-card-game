@@ -1,6 +1,6 @@
 <template>
-  <section class="container is-fullhd landing">
-    <Avatar playerWalletAddr="0x5478...26A031" />
+  <section class="container is-fullhd main-game">
+    <GamePage />
   </section>
 </template>
 
@@ -12,7 +12,7 @@
  * The home index page.
  */
 
-import Avatar from '@/components/Avatar/Index.vue';
+import GamePage from '@/components/GamePage/Index.vue';
 
 export default {
   /**
@@ -24,7 +24,7 @@ export default {
    * The components that the page can use.
    */
   components: {
-    Avatar,
+    GamePage,
   },
 };
 </script>

@@ -52,3 +52,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.landing {
+  padding: 24px 80px;
+}
+</style>

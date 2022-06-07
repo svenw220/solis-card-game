@@ -1,6 +1,6 @@
 <template>
-  <section
-    class="avatar-container is-flex is-flex-direction-column is-align-items-center"
+  <div
+    class="avatar-container is-flex is-flex-direction-column is-align-items-center w-100"
   >
     <b-image
       class="player-avatar"
@@ -20,7 +20,7 @@
       :src="require('@/assets/images/action.svg')"
       alt="Turn State"
     />
-  </section>
+  </div>
 </template>
 
 <script>
@@ -60,6 +60,8 @@ export default {
 
 <style lang="scss" scoped>
 .avatar-container {
+  width: 100%;
+  padding: 82px 162px;
   .player-avatar {
     height: 78px;
     width: 80px;
