@@ -8,7 +8,12 @@
       alt="Player Avatar"
       rounded
     />
-    <p class="player-name has-text-weight-semibold">{{ playerTitle }}</p>
+    <p
+      :class="['player-name', { 'is-opponent': isOpponent }]"
+      class="has-text-weight-semibold"
+    >
+      {{ playerTitle }}
+    </p>
     <p class="wallet-address mb-2">{{ playerWalletAddr }}</p>
     <b-image
       class="turn-state"
@@ -34,6 +39,7 @@ export default {
   /**
    * The components that the page can use.
    */
+
   components: {},
   props: {
     playerTitle: {
@@ -43,6 +49,10 @@ export default {
     playerWalletAddr: {
       type: String,
       default: '',
+    },
+    isOpponent: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -59,14 +69,13 @@ export default {
   .player-name {
     color: #34a267;
     line-height: 1.5rem;
+    &.is-opponent {
+      color: #ba2929;
+    }
   }
 
   .wallet-address {
     color: #74737d;
-  }
-
-  .opponent-name {
-    color: #ba2929;
   }
 
   .turn-state {
