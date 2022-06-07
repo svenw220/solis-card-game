@@ -18,8 +18,9 @@ export default [
     },
   },
   {
-    path: '/',
-    redirect: '/home',
+    path: '/main',
+    name: 'game.index',
+    component: () => import('@/views/Game/Index.vue'),
   },
 
   {
