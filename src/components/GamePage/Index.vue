@@ -36,4 +36,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.game-page {
+  &.columns {
+    margin: 0;
+  }
+  .column {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="container is-fullhd main-game">
+  <section class="container is-fluhd main-game">
     <GamePage />
   </section>
 </template>
@@ -28,3 +28,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.container {
+  padding: 0;
+}
+</style>

@@ -16,6 +16,7 @@
     </p>
     <p class="wallet-address mb-2">{{ playerWalletAddr }}</p>
     <b-image
+      v-if="!isOpponent"
       class="turn-state"
       :src="require('@/assets/images/action.svg')"
       alt="Turn State"
