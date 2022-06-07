@@ -22,9 +22,4 @@ export default [
     name: 'game.index',
     component: () => import('@/views/Game/Index.vue'),
   },
-
-  {
-    path: '/*',
-    redirect: '/home',
-  },
 ];

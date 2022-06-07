@@ -1,6 +1,6 @@
 <template>
   <section class="container is-fullhd landing">
-    <Avatar />
+    <Avatar playerWalletAddr="0x5478...26A031" />
   </section>
 </template>
 

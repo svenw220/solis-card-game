@@ -1,12 +1,20 @@
 <template>
-  <section class="avatar">
+  <section
+    class="avatar-container is-flex is-flex-direction-column is-align-items-center"
+  >
     <b-image
-      :src="require('@assets/images/avatar.svg')"
+      class="player-avatar"
+      :src="require('@/assets/images/avatar.svg')"
       alt="Player Avatar"
-    ></b-image>
-    <p class="player-name">You</p>
-    <p class="wallet-address">0x5478...26A031</p>
-    <b-image :src="require('@assets/images/action.svg')"></b-image>
+      rounded
+    />
+    <p class="player-name has-text-weight-semibold">{{ playerTitle }}</p>
+    <p class="wallet-address mb-2">{{ playerWalletAddr }}</p>
+    <b-image
+      class="turn-state"
+      :src="require('@/assets/images/action.svg')"
+      alt="Turn State"
+    />
   </section>
 </template>
 
@@ -27,8 +35,43 @@ export default {
    * The components that the page can use.
    */
   components: {},
-  props: {},
+  props: {
+    playerTitle: {
+      type: String,
+      default: 'You',
+    },
+    playerWalletAddr: {
+      type: String,
+      default: '',
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.avatar-container {
+  .player-avatar {
+    height: 78px;
+    width: 80px;
+    margin-bottom: 5px;
+  }
+
+  .player-name {
+    color: #34a267;
+    line-height: 1.5rem;
+  }
+
+  .wallet-address {
+    color: #74737d;
+  }
+
+  .opponent-name {
+    color: #ba2929;
+  }
+
+  .turn-state {
+    height: 22px;
+    width: 38px;
+  }
+}
+</style>
