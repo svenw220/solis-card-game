@@ -4,7 +4,7 @@
       <PlayerPanel />
     </div>
     <div class="column is-6"><Deck /></div>
-    <div class="column is-3">3</div>
+    <div class="column is-3"><RightPanel /></div>
   </section>
 </template>
 
@@ -18,6 +18,7 @@
 
 import PlayerPanel from '@/components/PlayerPanel/Index.vue';
 import Deck from '@/components/Deck/Index.vue';
+import RightPanel from '@/components/RightPanel/Index.vue';
 
 export default {
   /**
@@ -30,6 +31,7 @@ export default {
   components: {
     PlayerPanel,
     Deck,
+    RightPanel,
   },
   props: {},
   data() {
