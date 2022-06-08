@@ -1,7 +1,5 @@
 <template>
-  <section class="container is-fluhd main-game">
-    <GamePage />
-  </section>
+  <GamePage />
 </template>
 
 <script>

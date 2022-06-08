@@ -1,5 +1,5 @@
 <template>
-  <section class="game-page columns">
+  <section class="game-page columns is-desktop">
     <div class="column is-3">
       <PlayerPanel />
     </div>
@@ -42,12 +42,20 @@ export default {
 
 <style lang="scss" scoped>
 .game-page {
+  height: 100%;
   &.columns {
     margin: 0;
   }
   .column {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  div {
+    &:first-child,
+    &:last-child {
+      box-shadow: inset 2px 0px 0px #e6e5e8;
+    }
   }
 }
 </style>

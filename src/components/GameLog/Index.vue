@@ -38,7 +38,6 @@ export default {
 
 <style lang="scss" scoped>
 .game-log {
-  margin-top: 100px;
   &-title {
     font-size: 20px;
     font-weight: 600;
@@ -56,6 +55,8 @@ export default {
     border-radius: 9.78261px;
 
     .logs {
+      display: flex;
+      flex-direction: column;
       p {
         display: inline-block;
         padding: 6px;
@@ -65,13 +66,14 @@ export default {
           color: #fff;
           border-radius: 8px;
           background: #74737d;
+          align-self: flex-start;
         }
 
         &.to {
-          float: right;
           color: #74737d;
           border: 1px solid #e6e5e8;
           border-radius: 9.78261px;
+          align-self: flex-end;
         }
       }
     }

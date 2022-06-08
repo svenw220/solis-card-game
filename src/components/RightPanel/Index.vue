@@ -7,8 +7,12 @@
         below
       </p>
       <b-button class="guide-button has-text-weight-semibold mt-2">
-        <img src="@/assets/images/guide_icon.svg" alt="Game Guide" />
-        Game Guide
+        <img
+          class="mt-1 mr-2"
+          src="@/assets/images/guide_icon.svg"
+          alt="Game Guide"
+        />
+        <span>Game Guide</span>
       </b-button>
     </div>
     <CardOverview />
@@ -43,11 +47,13 @@ export default {
 
 <style lang="scss" scoped>
 .right-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   padding: 1.5rem;
-  box-shadow: inset 2px 0px 0px #e6e5e8;
 
   .game-guide {
-    margin-bottom: 50px;
     p {
       color: #74737d;
       text-align: center;
