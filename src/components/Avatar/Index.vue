@@ -52,7 +52,7 @@ export default {
       default: '',
     },
     isOpponent: {
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
   },

@@ -29,8 +29,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.container {
-  margin: 0;
-}
-</style>
+<style lang="scss" scoped></style>
