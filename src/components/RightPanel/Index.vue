@@ -11,6 +11,8 @@
         Game Guide
       </b-button>
     </div>
+    <CardOverview />
+    <GameLog />
   </div>
 </template>
 
@@ -22,6 +24,9 @@
  * The right panel page.
  */
 
+import CardOverview from '@/components/Card/Index.vue';
+import GameLog from '@/components/GameLog/Index.vue';
+
 export default {
   /**
    * The name of the page.
@@ -31,7 +36,7 @@ export default {
    * The components that the page can use.
    */
 
-  components: {},
+  components: { CardOverview, GameLog },
   props: {},
 };
 </script>
@@ -42,9 +47,9 @@ export default {
   box-shadow: inset 2px 0px 0px #e6e5e8;
 
   .game-guide {
-    color: #74737d;
-
+    margin-bottom: 50px;
     p {
+      color: #74737d;
       text-align: center;
     }
 
