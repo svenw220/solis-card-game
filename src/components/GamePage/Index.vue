@@ -3,7 +3,7 @@
     <div class="column is-3">
       <PlayerPanel />
     </div>
-    <div class="column is-6"><Arena /></div>
+    <div class="column"><Arena /></div>
     <div class="column is-3"><RightPanel /></div>
   </section>
 </template>
@@ -42,7 +42,8 @@ export default {
 
 <style lang="scss" scoped>
 .game-page {
-  height: 100%;
+  height: 100vh;
+  overflow-y: hidden;
   &.columns {
     margin: 0;
   }

@@ -6,14 +6,15 @@
         <span class="guide-text has-text-weight-semibold">game guide</span>
         below
       </p>
-      <b-button class="guide-button has-text-weight-semibold mt-2">
+
+      <div class="guide-button has-text-weight-semibold mt-2">
         <img
-          class="mt-1 mr-2"
+          class="mr-2"
           src="@/assets/images/guide_icon.svg"
           alt="Game Guide"
         />
-        <span>Game Guide</span>
-      </b-button>
+        <p>Game Guide</p>
+      </div>
     </div>
     <CardOverview />
     <GameLog />
@@ -61,6 +62,13 @@ export default {
 
     .guide-button {
       width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border: 1px solid rgba(116, 115, 125, 0.24);
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      padding: 10px 50px;
     }
   }
 }

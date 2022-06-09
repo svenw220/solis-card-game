@@ -42,6 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .player-panel {
+  //box-shadow: inset -2px 0px 0px #e6e5e8;
   display: flex;
   flex-direction: column;
   justify-content: center;
