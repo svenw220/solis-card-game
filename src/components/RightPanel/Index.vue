@@ -53,7 +53,9 @@ export default {
   justify-content: space-between;
   height: 100%;
   padding: 1.5rem;
-
+  > div {
+    flex: 1;
+  }
   .game-guide {
     p {
       color: #74737d;

@@ -46,11 +46,11 @@ export default {
   }
 
   .log-list {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 14px 8px 8px 8px;
-    height: 300px;
     border: 1px solid #e6e5e8;
     border-radius: 9.78261px;
 
