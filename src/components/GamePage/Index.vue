@@ -1,10 +1,10 @@
 <template>
   <section class="game-page columns is-desktop">
-    <div class="column is-3">
+    <div class="first-panel column">
       <PlayerPanel />
     </div>
     <div class="column"><Arena /></div>
-    <div class="column is-3"><RightPanel /></div>
+    <div class="last-panel column"><RightPanel /></div>
   </section>
 </template>
 

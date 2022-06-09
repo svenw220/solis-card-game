@@ -87,8 +87,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-
+    margin-top: 40px;
     .card-item {
       height: 246px;
       width: 184px;
@@ -102,7 +101,8 @@ export default {
 
       &:first-child,
       &:last-child {
-        margin-bottom: -5rem;
+        position: relative;
+        bottom: 5rem;
       }
     }
   }
