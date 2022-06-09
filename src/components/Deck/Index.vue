@@ -32,7 +32,12 @@ export default {
    */
 
   components: {},
-  props: {},
+  props: {
+    name: {
+      type: String,
+      default: '',
+    },
+  },
 };
 </script>
 
