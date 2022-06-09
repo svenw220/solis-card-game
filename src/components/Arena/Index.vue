@@ -1,6 +1,17 @@
 <template>
   <div class="arena">
-    <p>It’s your turn, please place a card 😬</p>
+    <draggable class="opponent-arena" v-model="opponentCards">
+      <div v-for="item in myCards" class="card-item" :key="item">
+        {{ item }}
+      </div>
+    </draggable>
+    <p class="comment">It’s your turn, please place a card 😬</p>
+    <draggable class="my-arena" v-model="myCards">
+      <div v-for="item in myCards" class="card-item" :key="item">
+        {{ item }}
+      </div>
+    </draggable>
+    <DragDrop />
   </div>
 </template>
 
@@ -12,6 +23,9 @@
  * The home index page.
  */
 
+import DragDrop from '@/components/DragDrop/Index.vue';
+import draggable from 'vuedraggable';
+
 export default {
   /**
    * The name of the page.
@@ -21,8 +35,18 @@ export default {
    * The components that the page can use.
    */
 
-  components: {},
+  components: { DragDrop, draggable },
   props: {},
+  data() {
+    return {
+      myCards: ['Card Slot 1', 'Card Slot 2', 'Card Slot 3'],
+      opponentCards: [
+        'Oppo Card Slot 1',
+        'Oppo Card Slot 2',
+        'Oppo Card Slot 3',
+      ],
+    };
+  },
 };
 </script>
 
@@ -31,8 +55,56 @@ export default {
   height: 100%;
   padding: 40px 131px;
 
-  p {
+  .comment {
     text-align: center;
+    margin-top: 72px;
+    margin-bottom: 72px;
+  }
+
+  .my-arena {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .card-item {
+      height: 246px;
+      width: 184px;
+      background: #f5f5fa;
+      border: 1px dashed #bcbbc9;
+      border-radius: 8px;
+      margin-right: 40px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:first-child,
+      &:last-child {
+        margin-top: 5rem;
+      }
+    }
+  }
+
+  .opponent-arena {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    .card-item {
+      height: 246px;
+      width: 184px;
+      background: #fffcfa;
+      border: 1px dashed #bcbbc9;
+      border-radius: 8px;
+      margin-right: 40px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:first-child,
+      &:last-child {
+        margin-bottom: -5rem;
+      }
+    }
   }
 }
 </style>

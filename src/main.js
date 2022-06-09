@@ -6,7 +6,6 @@
  */
 
 import Vue from 'vue';
-
 import Buefy from 'buefy';
 import '@/assets/scss/main.scss';
 
@@ -55,7 +54,6 @@ import App from './App.vue';
 Vue.config.productionTip = false;
 
 Vue.use(Buefy);
-
 // store.dispatch("auth/check");
 
 /* eslint-disable no-new */
