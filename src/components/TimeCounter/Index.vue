@@ -43,8 +43,6 @@ export default {
   text-align: center;
   line-height: 54px;
   color: #fff;
-  margin-top: 166px;
-  margin-bottom: 161px;
   p {
     position: relative;
     top: -0.25rem;
