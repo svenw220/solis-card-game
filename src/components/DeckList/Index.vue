@@ -1,7 +1,10 @@
 <template>
-  <div class="deck-list">
+  <div class="deck-container">
     <div class="deck-header"></div>
-    <Deck name="deck1" />
+
+    <div class="deck-list">
+      <Deck v-for="deck in decks" :imgUrl="deck" :key="deck" />
+    </div>
   </div>
 </template>
 
@@ -25,10 +28,21 @@ export default {
 
   components: { Deck },
   props: {},
+  data() {
+    return {
+      decks: ['deck1', 'deck2', 'deck3'],
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.deck-list {
+.deck-container {
+  margin-top: 40px;
+  .deck-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 </style>

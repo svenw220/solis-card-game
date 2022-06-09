@@ -11,7 +11,7 @@
         {{ item }}
       </div>
     </draggable>
-    <DragDrop />
+    <DeckList />
   </div>
 </template>
 
@@ -23,7 +23,8 @@
  * The home index page.
  */
 
-import DragDrop from '@/components/DragDrop/Index.vue';
+import DeckList from '@/components/DeckList/Index.vue';
+
 import draggable from 'vuedraggable';
 
 export default {
@@ -35,7 +36,7 @@ export default {
    * The components that the page can use.
    */
 
-  components: { DragDrop, draggable },
+  components: { draggable, DeckList },
   props: {},
   data() {
     return {

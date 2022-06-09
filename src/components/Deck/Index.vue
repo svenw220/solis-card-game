@@ -1,11 +1,6 @@
 <template>
   <div class="deck is-flex is-flex-direction-column is-align-items-center">
-    <b-image
-      class="turn-state"
-      :src="require('@/assets/images/deck1.svg')"
-      alt="Turn State"
-      rounded
-    />
+    <b-image class="turn-state" :src="dynamicUrl" alt="Turn State" rounded />
     <b-image
       class="deck-rating"
       :src="require('@/assets/images/star_rating.svg')"
@@ -33,16 +28,31 @@ export default {
 
   components: {},
   props: {
-    name: {
+    imgUrl: {
       type: String,
       default: '',
     },
+  },
+  data() {
+    return {
+      dynamicUrl: '',
+    };
+  },
+  methods: {},
+  beforeMount() {
+    this.dynamicUrl = `@/assets/images/${this.imgUrl}.svg`;
+    console.log(this.dynamicUrl);
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .deck {
+  margin-right: 1rem;
+  &:last-child {
+    margin-right: 0;
+  }
+
   .turn-state {
     height: 56px;
     width: 56px;
