@@ -2,9 +2,9 @@
   <div class="deck-container">
     <div class="deck-header"></div>
 
-    <div class="deck-list">
+    <draggable class="deck-list" v-model="decks">
       <Deck v-for="deck in decks" :imgUrl="deck" :key="deck" />
-    </div>
+    </draggable>
   </div>
 </template>
 
@@ -15,6 +15,7 @@
  *
  * The home index page.
  */
+import draggable from 'vuedraggable';
 import Deck from '@/components/Deck/Index.vue';
 
 export default {
@@ -26,7 +27,7 @@ export default {
    * The components that the page can use.
    */
 
-  components: { Deck },
+  components: { Deck, draggable },
   props: {},
   data() {
     return {
