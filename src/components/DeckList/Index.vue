@@ -1,9 +1,13 @@
 <template>
   <div class="deck-container">
-    <div class="deck-header"></div>
+    <div class="deck-header">
+      <img src="@/assets/images/line_left.svg" alt="Left Line" />
+      <p class="deck-couter">Deck ({{ deckCounter }})</p>
+      <img src="@/assets/images/line_right.svg" alt="Right Line" />
+    </div>
 
     <draggable class="deck-list" v-model="decks">
-      <Deck v-for="deck in decks" :imgUrl="deck" :key="deck" />
+      <Deck v-for="(deck, index) in decks" :imgUrl="deck" :key="index" />
     </draggable>
   </div>
 </template>
@@ -31,7 +35,8 @@ export default {
   props: {},
   data() {
     return {
-      decks: ['deck1', 'deck2', 'deck3'],
+      decks: ['deck1', 'deck2', 'deck3', 'deck2', 'deck3', 'deck1'],
+      deckCounter: 3,
     };
   },
 };
@@ -44,6 +49,19 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+
+  .deck-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    .deck-couter {
+      color: #8c8b91;
+      margin: 0 1rem;
+      font-size: 12px;
+      font-weight: 700;
+    }
   }
 }
 </style>

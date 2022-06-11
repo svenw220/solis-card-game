@@ -38,11 +38,11 @@ export default {
       dynamicUrl: '',
     };
   },
-  methods: {},
-  beforeMount() {
+  mounted() {
     this.dynamicUrl = `@/assets/images/${this.imgUrl}.svg`;
     console.log(this.dynamicUrl);
   },
+  methods: {},
 };
 </script>
 
