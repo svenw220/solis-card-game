@@ -1,6 +1,11 @@
 <template>
   <div class="deck is-flex is-flex-direction-column is-align-items-center">
-    <b-image class="turn-state" :src="dynamicUrl" alt="Turn State" rounded />
+    <b-image
+      class="turn-state"
+      :src="require('@/assets/images/' + this.imgUrl + '.svg')"
+      alt="Turn State"
+      rounded
+    />
     <b-image
       class="deck-rating"
       :src="require('@/assets/images/star_rating.svg')"
@@ -34,14 +39,9 @@ export default {
     },
   },
   data() {
-    return {
-      dynamicUrl: '',
-    };
+    return {};
   },
-  mounted() {
-    this.dynamicUrl = `@/assets/images/${this.imgUrl}.svg`;
-    console.log(this.dynamicUrl);
-  },
+  mounted() {},
   methods: {},
 };
 </script>
