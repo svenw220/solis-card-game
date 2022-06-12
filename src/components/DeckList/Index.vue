@@ -6,7 +6,7 @@
       <img src="@/assets/images/line_right.svg" alt="Right Line" />
     </div>
 
-    <draggable class="deck-list" v-model="decks">
+    <draggable class="deck-list" v-model="decks" group="arenas" :move="onMove">
       <Deck v-for="(deck, index) in decks" :imgUrl="deck" :key="index" />
     </draggable>
   </div>
@@ -38,6 +38,11 @@ export default {
       decks: ['deck1', 'deck2', 'deck3', 'deck2', 'deck3', 'deck1'],
       deckCounter: 3,
     };
+  },
+  methods: {
+    onMove(e) {
+      console.log(e);
+    },
   },
 };
 </script>

@@ -1,12 +1,16 @@
 <template>
   <div class="arena">
     <draggable class="opponent-arena" v-model="opponentCards">
-      <div v-for="item in myCards" class="card-item" :key="item">
+      <div v-for="item in opponentCards" class="card-item" :key="item">
         {{ item }}
       </div>
     </draggable>
     <p class="comment">It’s your turn, please place a card 😬</p>
-    <draggable class="my-arena" v-model="myCards">
+    <draggable
+      class="my-arena"
+      v-model="myCards"
+      :group="{ name: 'arenas', pull: 'null' }"
+    >
       <div v-for="item in myCards" class="card-item" :key="item">
         {{ item }}
       </div>
