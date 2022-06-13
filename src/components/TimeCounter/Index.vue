@@ -1,9 +1,6 @@
 <template>
   <div class="time-counter">
-    <p>
-      You have
-      <span class="has-text-weight-semibold">{{ remaning }} secs left</span>
-    </p>
+    <p class="has-text-weight-semibold">{{ timeRemaining }}</p>
   </div>
 </template>
 
@@ -24,11 +21,23 @@ export default {
    * The components that the page can use.
    */
   components: {},
-  props: {},
+  props: {
+    turn: {
+      type: String,
+      default: 'me',
+    },
+  },
   data() {
     return {
       remaning: 10,
     };
+  },
+  computed: {
+    timeRemaining() {
+      return this.turn === 'me'
+        ? `You have ${this.remaning} secs left`
+        : `${this.remaning} secs for opponent`;
+    },
   },
 };
 </script>
