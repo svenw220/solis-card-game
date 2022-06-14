@@ -5,7 +5,13 @@
         {{ item }}
       </div>
     </draggable>
-    <p class="comment">It’s your turn, please place a card 😬</p>
+    <div class="announcments">
+      <div v-if="fullState">
+        <h3>Endowment Phase ✨</h3>
+        <p>Please pick and distribute your 5 points wisely among your cards</p>
+      </div>
+      <p v-else class="comment">It’s your turn, please place a card 😬</p>
+    </div>
     <draggable
       class="my-arena"
       v-model="myCards"
@@ -41,7 +47,12 @@ export default {
    */
 
   components: { draggable, DeckList },
-  props: {},
+  props: {
+    fullState: {
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {
       myCards: ['Card Slot 1', 'Card Slot 2', 'Card Slot 3'],
@@ -60,10 +71,14 @@ export default {
   height: 100%;
   padding: 40px 131px;
 
-  .comment {
+  .announcments {
     text-align: center;
-    margin-top: 72px;
-    margin-bottom: 72px;
+    margin: 72px 0;
+
+    h3 {
+      font-weight: 700;
+      font-size: 18px;
+    }
   }
 
   .my-arena {
