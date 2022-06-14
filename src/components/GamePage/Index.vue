@@ -4,7 +4,7 @@
       <PlayerPanel />
     </div>
     <div class="column"><Arena /></div>
-    <EndowmentModal modalActive="true" />
+    <EndowmentModal :modalActive="endowment" />
     <div class="last-panel column"><RightPanel /></div>
   </section>
 </template>
@@ -38,7 +38,9 @@ export default {
   },
   props: {},
   data() {
-    return {};
+    return {
+      endowment: false,
+    };
   },
 };
 </script>
