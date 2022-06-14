@@ -7,4 +7,6 @@
 
 export default {
   authenticated: false,
+  turn: false,
+  timeRemaining: 0,
 };
