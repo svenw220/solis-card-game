@@ -1,6 +1,8 @@
 <template>
-  <div class="time-counter">
-    <p class="has-text-weight-semibold">{{ timeRemaining }}</p>
+  <div :class="['time-counter', { 'is-opponent': oppoTurn }]">
+    <p class="has-text-weight-semibold">
+      {{ timeRemaining }}
+    </p>
   </div>
 </template>
 
@@ -38,6 +40,9 @@ export default {
         ? `You have ${this.remaning} secs left`
         : `${this.remaning} secs for opponent`;
     },
+    oppoTurn() {
+      return this.turn === 'opponent';
+    },
   },
 };
 </script>
@@ -55,6 +60,10 @@ export default {
   p {
     position: relative;
     top: -0.25rem;
+  }
+
+  &.is-opponent {
+    background-image: url('../../assets/images/red_remaning.svg');
   }
 }
 </style>
