@@ -4,6 +4,7 @@
       <PlayerPanel />
     </div>
     <div class="column"><Arena /></div>
+    <EndowmentModal modalActive="true" />
     <div class="last-panel column"><RightPanel /></div>
   </section>
 </template>
@@ -19,6 +20,7 @@
 import PlayerPanel from '@/components/PlayerPanel/Index.vue';
 import Arena from '@/components/Arena/Index.vue';
 import RightPanel from '@/components/RightPanel/Index.vue';
+import EndowmentModal from '@/components/EndowmentModal/Index.vue';
 
 export default {
   /**
@@ -32,6 +34,7 @@ export default {
     PlayerPanel,
     Arena,
     RightPanel,
+    EndowmentModal,
   },
   props: {},
   data() {
