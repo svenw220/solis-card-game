@@ -11,6 +11,7 @@
         <input
           type="text"
           v-model="logMsg"
+          @keyup.enter="addLog"
           placeholder="Type your message here..."
         />
         <b-button type="is-primary" @click="addLog">Send</b-button>
