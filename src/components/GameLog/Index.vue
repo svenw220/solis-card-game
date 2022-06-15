@@ -3,8 +3,9 @@
     <p class="game-log-title">Game Log</p>
     <div class="log-list">
       <div class="logs">
-        <p class="from">great game, man!</p>
-        <p class="to">Wohoo, thank you! you too 🔥</p>
+        <p v-for="(log, index) in logs" :key="index" :class="log.type">
+          {{ log.msg }}
+        </p>
       </div>
       <div class="log-form">
         <input type="text" placeholder="Type your message here..." />
@@ -33,6 +34,20 @@ export default {
 
   components: {},
   props: {},
+  data() {
+    return {
+      logs: [
+        {
+          type: 'oppo',
+          msg: 'great game, man!',
+        },
+        {
+          type: 'me',
+          msg: 'Wohoo, thank you! you too 🔥',
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -62,14 +77,14 @@ export default {
         padding: 6px;
         font-size: 12px;
         margin-bottom: 6px;
-        &.from {
+        &.oppo {
           color: #fff;
           border-radius: 8px;
           background: #74737d;
           align-self: flex-start;
         }
 
-        &.to {
+        &.me {
           color: #74737d;
           border: 1px solid #e6e5e8;
           border-radius: 9.78261px;
