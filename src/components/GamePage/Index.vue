@@ -1,11 +1,13 @@
 <template>
   <section class="game-page columns is-desktop">
-    <div class="first-panel column">
+    <div class="first-panel column is-2">
       <PlayerPanel />
     </div>
-    <div class="column"><Arena /></div>
+    <div class="column is-8"><Arena /></div>
     <EndowmentModal :modalActive="endowment" />
-    <div class="last-panel column"><RightPanel /></div>
+    <div class="last-panel column is-2">
+      <RightPanel />
+    </div>
   </section>
 </template>
 
