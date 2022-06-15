@@ -8,8 +8,12 @@
         </p>
       </div>
       <div class="log-form">
-        <input type="text" placeholder="Type your message here..." />
-        <b-button type="is-primary">Send</b-button>
+        <input
+          type="text"
+          v-model="logMsg"
+          placeholder="Type your message here..."
+        />
+        <b-button type="is-primary" @click="addLog">Send</b-button>
       </div>
     </div>
   </div>
@@ -46,7 +50,19 @@ export default {
           msg: 'Wohoo, thank you! you too 🔥',
         },
       ],
+      logMsg: '',
     };
+  },
+  methods: {
+    addLog() {
+      const newLog = {
+        type: 'me',
+        msg: this.logMsg,
+      };
+
+      this.logs = [...this.logs, newLog];
+      this.logMsg = '';
+    },
   },
 };
 </script>
