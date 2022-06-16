@@ -56,13 +56,15 @@ export default {
   },
   methods: {
     addLog() {
-      const newLog = {
-        type: 'me',
-        msg: this.logMsg,
-      };
+      if (this.logMsg.length) {
+        const newLog = {
+          type: 'me',
+          msg: this.logMsg,
+        };
 
-      this.logs = [...this.logs, newLog];
-      this.logMsg = '';
+        this.logs = [...this.logs, newLog];
+        this.logMsg = '';
+      }
     },
   },
 };
