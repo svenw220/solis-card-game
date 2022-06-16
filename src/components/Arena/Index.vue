@@ -50,7 +50,7 @@ export default {
   props: {
     fullState: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   data() {
