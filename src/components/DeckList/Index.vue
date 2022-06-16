@@ -6,9 +6,9 @@
       <img src="@/assets/images/line_right.svg" alt="Right Line" />
     </div>
 
-    <draggable class="deck-list" v-model="decks" group="arenas" :move="onMove">
-      <Deck v-for="(deck, index) in decks" :imgUrl="deck" :key="index" />
-    </draggable>
+    <div class="deck-list">
+      <Deck v-for="(deck, index) in decks" :deckData="deck" :key="index" />
+    </div>
   </div>
 </template>
 
@@ -19,7 +19,7 @@
  *
  * The home index page.
  */
-import draggable from 'vuedraggable';
+// import draggable from 'vuedraggable';
 import Deck from '@/components/Deck/Index.vue';
 
 export default {
@@ -31,11 +31,36 @@ export default {
    * The components that the page can use.
    */
 
-  components: { Deck, draggable },
+  components: { Deck },
   props: {},
   data() {
     return {
-      decks: ['deck1', 'deck2', 'deck3', 'deck2', 'deck3', 'deck1'],
+      decks: [
+        {
+          img: 'deck1',
+          attr: 'purple',
+        },
+        {
+          img: 'deck2',
+          attr: 'blue',
+        },
+        {
+          img: 'deck3',
+          attr: 'yellow',
+        },
+        {
+          img: 'deck2',
+          attr: 'blue',
+        },
+        {
+          img: 'deck3',
+          attr: 'yellow',
+        },
+        {
+          img: 'deck1',
+          attr: 'purple',
+        },
+      ],
       deckCounter: 3,
     };
   },

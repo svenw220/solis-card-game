@@ -1,10 +1,10 @@
 <template>
   <div class="arena">
-    <draggable class="opponent-arena" v-model="opponentCards">
+    <!-- <draggable class="opponent-arena" v-model="opponentCards">
       <div v-for="item in opponentCards" class="card-item" :key="item">
         {{ item }}
       </div>
-    </draggable>
+    </draggable> -->
     <div class="announcments">
       <div v-if="fullState">
         <h3>Endowment Phase ✨</h3>
@@ -12,15 +12,21 @@
       </div>
       <p v-else class="comment">It’s your turn, please place a card 😬</p>
     </div>
-    <draggable
-      class="my-arena"
-      v-model="myCards"
-      :group="{ name: 'arenas', pull: 'null' }"
-    >
-      <div v-for="item in myCards" class="card-item" :key="item">
-        {{ item }}
-      </div>
-    </draggable>
+    <div class="my-arena">
+      <drop
+        v-for="item in myCards"
+        class="card-item"
+        :key="item"
+        @drop="handleDrop"
+      >
+        <!-- <b-image
+          class="turn-state"
+          :src="require('@/assets/images/' + this.imgUrl + '.svg')"
+          alt="Turn State"
+          rounded
+        /> -->
+      </drop>
+    </div>
     <DeckList />
   </div>
 </template>
@@ -34,8 +40,8 @@
  */
 
 import DeckList from '@/components/DeckList/Index.vue';
-
-import draggable from 'vuedraggable';
+import { Drop } from 'vue-drag-drop';
+// import draggable from 'vuedraggable';
 
 export default {
   /**
@@ -46,7 +52,7 @@ export default {
    * The components that the page can use.
    */
 
-  components: { draggable, DeckList },
+  components: { Drop, DeckList },
   props: {
     fullState: {
       type: Boolean,
@@ -62,6 +68,11 @@ export default {
         'Oppo Card Slot 3',
       ],
     };
+  },
+  methods: {
+    handleDrop(data) {
+      console.log(data);
+    },
   },
 };
 </script>

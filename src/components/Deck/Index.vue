@@ -1,17 +1,19 @@
 <template>
-  <div class="deck is-flex is-flex-direction-column is-align-items-center">
-    <b-image
-      class="turn-state"
-      :src="require('@/assets/images/' + this.imgUrl + '.svg')"
-      alt="Turn State"
-      rounded
-    />
-    <b-image
-      class="deck-rating"
-      :src="require('@/assets/images/star_rating.svg')"
-      alt="Deck Rating"
-    />
-  </div>
+  <drag :transfer-data="deckData.attr" @dragstart="test">
+    <div class="deck is-flex is-flex-direction-column is-align-items-center">
+      <b-image
+        class="turn-state"
+        :src="require('@/assets/images/' + this.deckData.img + '.svg')"
+        alt="Turn State"
+        rounded
+      />
+      <b-image
+        class="deck-rating"
+        :src="require('@/assets/images/star_rating.svg')"
+        alt="Deck Rating"
+      />
+    </div>
+  </drag>
 </template>
 
 <script>
@@ -22,6 +24,8 @@
  * The home index page.
  */
 
+import { Drag } from 'vue-drag-drop';
+
 export default {
   /**
    * The name of the page.
@@ -31,18 +35,22 @@ export default {
    * The components that the page can use.
    */
 
-  components: {},
+  components: { Drag },
   props: {
-    imgUrl: {
-      type: String,
-      default: '',
+    deckData: {
+      type: Object,
+      default: null,
     },
   },
   data() {
     return {};
   },
   mounted() {},
-  methods: {},
+  methods: {
+    test(e) {
+      console.log(e);
+    },
+  },
 };
 </script>
 
