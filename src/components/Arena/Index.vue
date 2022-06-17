@@ -1,10 +1,10 @@
 <template>
   <div class="arena">
-    <!-- <draggable class="opponent-arena" v-model="opponentCards">
+    <draggable class="opponent-arena" v-model="opponentCards">
       <div v-for="item in opponentCards" class="card-item" :key="item">
         {{ item }}
       </div>
-    </draggable> -->
+    </draggable>
     <div class="announcments">
       <div v-if="fullState">
         <h3>Endowment Phase ✨</h3>
@@ -19,12 +19,11 @@
         :key="item"
         @drop="handleDrop"
       >
-        <!-- <b-image
+        <b-image
           class="turn-state"
-          :src="require('@/assets/images/' + this.imgUrl + '.svg')"
+          :src="require('@/assets/images/' + 'yello' + '.svg')"
           alt="Turn State"
-          rounded
-        /> -->
+        />
       </drop>
     </div>
     <DeckList />
@@ -71,7 +70,7 @@ export default {
   },
   methods: {
     handleDrop(data) {
-      console.log(data);
+      console.log(data, this);
     },
   },
 };
