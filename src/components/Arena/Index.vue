@@ -1,10 +1,10 @@
 <template>
   <div class="arena">
-    <draggable class="opponent-arena" v-model="opponentCards">
+    <!-- <draggable class="opponent-arena" v-model="opponentCards">
       <div v-for="item in opponentCards" class="card-item" :key="item">
         {{ item }}
       </div>
-    </draggable>
+    </draggable> -->
     <div class="announcments">
       <div v-if="fullState">
         <h3>Endowment Phase ✨</h3>
@@ -15,15 +15,17 @@
     <div class="my-arena">
       <drop
         v-for="item in myCards"
-        class="card-item"
         :key="item"
+        class="card-item"
         @drop="handleDrop"
       >
+        <!-- <drag @dragstart="handleDrag" :data-transfer="item"> -->
         <b-image
           class="turn-state"
-          :src="require('@/assets/images/' + 'yello' + '.svg')"
+          :src="require('@/assets/images/' + item + '.svg')"
           alt="Turn State"
         />
+        <!-- </drag> -->
       </drop>
     </div>
     <DeckList />
@@ -40,7 +42,6 @@
 
 import DeckList from '@/components/DeckList/Index.vue';
 import { Drop } from 'vue-drag-drop';
-// import draggable from 'vuedraggable';
 
 export default {
   /**
@@ -60,7 +61,7 @@ export default {
   },
   data() {
     return {
-      myCards: ['Card Slot 1', 'Card Slot 2', 'Card Slot 3'],
+      myCards: ['yellow', 'blue', 'purple'],
       opponentCards: [
         'Oppo Card Slot 1',
         'Oppo Card Slot 2',
@@ -70,7 +71,10 @@ export default {
   },
   methods: {
     handleDrop(data) {
-      console.log(data, this);
+      console.log(data);
+    },
+    handleDrag(data) {
+      console.log(data);
     },
   },
 };
