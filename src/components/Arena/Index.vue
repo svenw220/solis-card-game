@@ -14,18 +14,19 @@
     </div>
     <div class="my-arena">
       <drop
-        v-for="item in myCards"
-        :key="item"
+        v-for="(item, i) in myCards"
+        :key="i"
         class="card-item"
-        @drop="handleDrop"
+        @drop="handleDrop(item, i)"
       >
-        <!-- <drag @dragstart="handleDrag" :data-transfer="item"> -->
-        <b-image
-          class="turn-state"
-          :src="require('@/assets/images/' + item + '.svg')"
-          alt="Turn State"
-        />
-        <!-- </drag> -->
+        <drag :transfer-data="i" @drag="handleDrag">
+          <b-image
+            :id="item"
+            class="turn-state"
+            :src="require('@/assets/images/' + item + '.svg')"
+            alt="Turn State"
+          />
+        </drag>
       </drop>
     </div>
     <DeckList />
@@ -41,7 +42,7 @@
  */
 
 import DeckList from '@/components/DeckList/Index.vue';
-import { Drop } from 'vue-drag-drop';
+import { Drag, Drop } from 'vue-drag-drop';
 
 export default {
   /**
@@ -52,7 +53,7 @@ export default {
    * The components that the page can use.
    */
 
-  components: { Drop, DeckList },
+  components: { Drag, Drop, DeckList },
   props: {
     fullState: {
       type: Boolean,
@@ -71,10 +72,14 @@ export default {
   },
   methods: {
     handleDrop(data) {
-      console.log(data);
+      console.log(`Drop ${data}`);
     },
     handleDrag(data) {
-      console.log(data);
+      console.log(`Drag ${data}`);
+      this.myCards = ['blue', 'blue', 'purple'];
+    },
+    handleOver(e) {
+      e.preventDefault();
     },
   },
 };

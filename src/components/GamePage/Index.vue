@@ -3,7 +3,7 @@
     <div class="first-panel column is-2">
       <PlayerPanel />
     </div>
-    <div class="column is-8"><Arena /></div>
+    <div class="main-panel column is-8"><Arena /></div>
     <EndowmentModal :modalActive="endowment" />
     <div class="last-panel column is-2">
       <RightPanel />
@@ -64,6 +64,10 @@ export default {
     &:last-child {
       box-shadow: inset 2px 0px 0px #e6e5e8;
     }
+  }
+
+  .main-panel {
+    background-color: #f0ebeb;
   }
 }
 </style>

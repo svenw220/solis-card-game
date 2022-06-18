@@ -1,5 +1,5 @@
 <template>
-  <drag :transfer-data="deckData.attr" @dragstart="test">
+  <drag :transfer-data="deckData.attr">
     <div class="deck is-flex is-flex-direction-column is-align-items-center">
       <b-image
         class="turn-state"
