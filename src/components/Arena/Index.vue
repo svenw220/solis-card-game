@@ -19,7 +19,7 @@
         class="card-item"
         @drop="handleDrop(item, i)"
       >
-        <drag :transfer-data="i" @drag="handleDrag">
+        <drag :transfer-data="i" @dragend="handleDrag">
           <b-image
             :id="item"
             class="turn-state"
@@ -71,8 +71,8 @@ export default {
     };
   },
   methods: {
-    handleDrop(data) {
-      console.log(`Drop ${data}`);
+    handleDrop(data, index) {
+      console.log(`Drop ${data}`, index);
     },
     handleDrag(data) {
       console.log(`Drag ${data}`);
