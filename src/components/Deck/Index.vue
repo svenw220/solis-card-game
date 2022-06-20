@@ -46,11 +46,7 @@ export default {
     return {};
   },
   mounted() {},
-  methods: {
-    test(e) {
-      console.log(e);
-    },
-  },
+  methods: {},
 };
 </script>
 

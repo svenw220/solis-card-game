@@ -62,7 +62,7 @@ export default {
   },
   data() {
     return {
-      myCards: ['yellow', 'blue', 'purple'],
+      myCards: ['dashed_board', 'dashed_board', 'dashed_board'],
       opponentCards: [
         'Oppo Card Slot 1',
         'Oppo Card Slot 2',
@@ -73,9 +73,11 @@ export default {
   },
   methods: {
     handleDrop(to) {
-      const tmp = this.myCards;
-      [tmp[to], tmp[this.from]] = [tmp[this.from], tmp[to]];
-      this.myCards = tmp.splice(0, 3);
+      // console.log(this.from, to);
+      console.log(to);
+      // const tmp = this.myCards;
+      // [tmp[to], tmp[this.from]] = [tmp[this.from], tmp[to]];
+      // this.myCards = tmp.splice(0, 3);
     },
     handleOver(e) {
       e.preventDefault();
