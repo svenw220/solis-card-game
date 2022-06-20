@@ -17,9 +17,9 @@
         v-for="(item, i) in myCards"
         :key="i"
         class="card-item"
-        @drop="handleDrop(item, i)"
+        @drop="handleDrop(i)"
       >
-        <drag :transfer-data="i" @dragend="handleDrag">
+        <drag :transfer-data="i" @dragstart="setFrom">
           <b-image
             :id="item"
             class="turn-state"
@@ -68,18 +68,20 @@ export default {
         'Oppo Card Slot 2',
         'Oppo Card Slot 3',
       ],
+      from: '',
     };
   },
   methods: {
-    handleDrop(data, index) {
-      console.log(`Drop ${data}`, index);
-    },
-    handleDrag(data) {
-      console.log(`Drag ${data}`);
-      this.myCards = ['blue', 'blue', 'purple'];
+    handleDrop(to) {
+      const tmp = this.myCards;
+      [tmp[to], tmp[this.from]] = [tmp[this.from], tmp[to]];
+      this.myCards = tmp.splice(0, 3);
     },
     handleOver(e) {
       e.preventDefault();
+    },
+    setFrom(from) {
+      this.from = from;
     },
   },
 };
