@@ -1,8 +1,6 @@
 <template>
   <div :class="['time-counter', { 'is-opponent': oppoTurn }]">
-    <p class="has-text-weight-semibold">
-      {{ timeRemaining }}
-    </p>
+    <p class="has-text-weight-semibold">{{ timeRemaining }} {{ getTurn }}</p>
   </div>
 </template>
 
@@ -13,6 +11,7 @@
  *
  * The game index page.
  */
+import { mapGetters } from 'vuex';
 
 export default {
   /**
@@ -26,7 +25,7 @@ export default {
   props: {
     turn: {
       type: String,
-      default: 'me',
+      default: 'mine',
     },
   },
   data() {
@@ -35,14 +34,18 @@ export default {
     };
   },
   computed: {
+    ...mapGetters('game', ['getTurn']),
     timeRemaining() {
-      return this.turn === 'me'
+      return this.turn === 'mine'
         ? `You have ${this.remaning} secs left`
         : `${this.remaning} secs for opponent`;
     },
     oppoTurn() {
       return this.turn === 'opponent';
     },
+  },
+  created() {
+    this.turn = this.$store.getters['game/getTurn'];
   },
 };
 </script>

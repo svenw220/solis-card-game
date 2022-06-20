@@ -6,4 +6,8 @@
  * auth module.
  */
 
-export default {};
+export default {
+  getTurn(state) {
+    return state.turn;
+  },
+};

@@ -11,7 +11,7 @@
 import * as types from './mutation-types';
 
 export const check = ({ commit }) => {
-  commit(types.CHECK);
+  commit('types.CHECK');
 };
 
 export const setTurn = ({ commit }) => {
@@ -28,7 +28,4 @@ export const setTurn = ({ commit }) => {
    *  });
    */
   commit(types.SET_TURN, 'Oppo');
-  // Vue.router.push({
-  //   name: 'home.index',
-  // });
 };

@@ -18,7 +18,7 @@ import '@/assets/scss/main.scss';
  * Import and bootstrap the plugins.
  */
 
-// import "./plugins/vuex";
+import './plugins/vuex';
 // import "./plugins/axios";
 // import { i18n } from "./plugins/vue-i18n";
 import { router } from '@/plugins/vue-router';
@@ -51,7 +51,7 @@ import './plugins/register-service-worker';
  */
 
 import App from './App.vue';
-// import store from "./store";
+import store from './store';
 
 Vue.config.productionTip = false;
 
@@ -79,7 +79,7 @@ new Vue({
   /**
    * The Vuex store.
    */
-  // store,
+  store,
 
   /**
    * Will render the application.
