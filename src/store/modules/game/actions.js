@@ -31,5 +31,6 @@ export const setTurn = ({ commit }) => {
 };
 
 export const setMovingCard = ({ commit }) => {
+  console.log(commit);
   commit(types.SET_MOVING_CARD);
 };

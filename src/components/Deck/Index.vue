@@ -1,5 +1,8 @@
 <template>
-  <drag :transfer-data="deckData.attr">
+  <drag
+    :transfer-data="deckData.attr"
+    @dragstart="setMovingCard(deckData.attr)"
+  >
     <div class="deck is-flex is-flex-direction-column is-align-items-center">
       <b-image
         class="turn-state"
@@ -23,7 +26,7 @@
  *
  * The home index page.
  */
-
+// import { mapActions } from 'vuex';
 import { Drag } from 'vue-drag-drop';
 
 export default {
@@ -46,7 +49,11 @@ export default {
     return {};
   },
   mounted() {},
-  methods: {},
+  methods: {
+    setMovingCard(data) {
+      return this.$store.commit('game/SET_MOVING_CARD', data);
+    },
+  },
 };
 </script>
 

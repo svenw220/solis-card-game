@@ -24,7 +24,7 @@ export default {
   [FROM_DECKLIST](state) {
     console.log(state);
   },
-  [SET_MOVING_CARD](state) {
-    console.log(state);
+  [SET_MOVING_CARD](state, data) {
+    state.movingCard = data;
   },
 };
