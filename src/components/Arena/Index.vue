@@ -72,9 +72,8 @@ export default {
     };
   },
   methods: {
-    handleDrop(to) {
-      // console.log(this.from, to);
-      console.log(to);
+    handleDrop(data, to) {
+      console.log(data, to);
       // const tmp = this.myCards;
       // [tmp[to], tmp[this.from]] = [tmp[this.from], tmp[to]];
       // this.myCards = tmp.splice(0, 3);

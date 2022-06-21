@@ -6,7 +6,12 @@
  * account module.
  */
 
-import { SWAP_CARD, FROM_DECKLIST, FROM_ARENA } from './mutation-types';
+import {
+  SWAP_CARD,
+  FROM_DECKLIST,
+  FROM_ARENA,
+  SET_MOVING_CARD,
+} from './mutation-types';
 
 /* eslint-disable no-param-reassign */
 export default {
@@ -17,6 +22,9 @@ export default {
     console.log(state);
   },
   [FROM_DECKLIST](state) {
+    console.log(state);
+  },
+  [SET_MOVING_CARD](state) {
     console.log(state);
   },
 };

@@ -29,3 +29,7 @@ export const setTurn = ({ commit }) => {
    */
   commit(types.SET_TURN, 'Oppo');
 };
+
+export const setMovingCard = ({ commit }) => {
+  commit(types.SET_MOVING_CARD);
+};
