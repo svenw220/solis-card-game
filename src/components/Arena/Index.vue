@@ -74,12 +74,18 @@ export default {
   methods: {
     handleDrop(to) {
       const tmp = this.myCards;
+
       try {
         const curMovingCard = this.$store.getters['game/getMovingCard'];
         if (!curMovingCard.length) throw new Error();
         tmp[to] = curMovingCard;
         this.myCards = [...tmp];
+
         this.$store.commit('game/CLEAR_MOVING_CARD');
+
+        if (!tmp.includes('dashed_board')) {
+          this.$store.commit('game/SWITCH_TURN');
+        }
       } catch (error) {
         console.log(error);
       }
