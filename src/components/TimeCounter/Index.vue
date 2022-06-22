@@ -1,6 +1,6 @@
 <template>
   <div :class="['time-counter', { 'is-opponent': oppoTurn }]">
-    <p class="has-text-weight-semibold">{{ timeRemaining }} {{ getTurn }}</p>
+    <p class="has-text-weight-semibold">{{ timeRemaining }}</p>
   </div>
 </template>
 
@@ -22,15 +22,12 @@ export default {
    * The components that the page can use.
    */
   components: {},
-  props: {
-    turn: {
-      type: String,
-      default: 'mine',
-    },
-  },
+  props: {},
   data() {
     return {
+      turn: 'mine',
       remaning: 10,
+      timeCaption: '',
     };
   },
   computed: {
@@ -41,12 +38,13 @@ export default {
         : `${this.remaning} secs for opponent`;
     },
     oppoTurn() {
-      return this.turn === 'opponent';
+      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+      this.turn = this.$store.getters['game/getTurn'];
+
+      return this.turn === 'oppo';
     },
   },
-  created() {
-    this.turn = this.$store.getters['game/getTurn'];
-  },
+  created() {},
 };
 </script>
 
@@ -67,6 +65,9 @@ export default {
 
   &.is-opponent {
     background-image: url('../../assets/images/red_remaning.svg');
+    p {
+      top: 0.25rem;
+    }
   }
 }
 </style>
