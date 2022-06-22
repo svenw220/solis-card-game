@@ -73,13 +73,20 @@ export default {
   },
   methods: {
     handleDrop(to) {
-      console.log(to);
-      // const tmp = this.myCards;
+      const tmp = this.myCards;
+      try {
+        const curMovingCard = this.$store.getters['game/getMovingCard'];
+        if (!curMovingCard.length) throw new Error();
+        tmp[to] = curMovingCard;
+        this.myCards = [...tmp];
+        this.$store.commit('game/CLEAR_MOVING_CARD');
+      } catch (error) {
+        console.log(error);
+      }
+      // this.myCards = tmp;
+      // console.log(this.myCards);
       // [tmp[to], tmp[this.from]] = [tmp[this.from], tmp[to]];
       // this.myCards = tmp.splice(0, 3);
-    },
-    handleOver(e) {
-      e.preventDefault();
     },
     setFrom(from) {
       this.from = from;
