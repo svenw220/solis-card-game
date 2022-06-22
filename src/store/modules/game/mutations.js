@@ -12,6 +12,7 @@ import {
   FROM_ARENA,
   SET_MOVING_CARD,
   CLEAR_MOVING_CARD,
+  SWITCH_TURN,
 } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
@@ -30,5 +31,8 @@ export default {
   },
   [CLEAR_MOVING_CARD](state) {
     state.movingCard = '';
+  },
+  [SWITCH_TURN](state) {
+    state.turn = 'oppo';
   },
 };
