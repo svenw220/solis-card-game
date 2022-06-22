@@ -1,10 +1,5 @@
 <template>
   <div class="arena">
-    <!-- <draggable class="opponent-arena" v-model="opponentCards">
-      <div v-for="item in opponentCards" class="card-item" :key="item">
-        {{ item }}
-      </div>
-    </draggable> -->
     <div class="announcments">
       <div v-if="fullState">
         <h3>Endowment Phase ✨</h3>
