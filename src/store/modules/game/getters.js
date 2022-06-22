@@ -10,4 +10,7 @@ export default {
   getTurn(state) {
     return state.turn;
   },
+  getMovingCard(state) {
+    return state.movingCard;
+  },
 };

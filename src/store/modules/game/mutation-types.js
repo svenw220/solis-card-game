@@ -12,6 +12,7 @@ export const FROM_ARENA = 'FROM_ARENA';
 export const SET_TURN = 'SET_TURN';
 export const SET_ENDOWMENT = 'SET_ENDOWMENT';
 export const SET_MOVING_CARD = 'SET_MOVING_CARD';
+export const CLEAR_MOVING_CARD = 'CLEAR_MOVING_CARD';
 
 export default {
   SWAP_CARD,
@@ -20,4 +21,5 @@ export default {
   SET_TURN,
   SET_ENDOWMENT,
   SET_MOVING_CARD,
+  CLEAR_MOVING_CARD,
 };

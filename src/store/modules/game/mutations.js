@@ -11,6 +11,7 @@ import {
   FROM_DECKLIST,
   FROM_ARENA,
   SET_MOVING_CARD,
+  CLEAR_MOVING_CARD,
 } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
@@ -26,5 +27,8 @@ export default {
   },
   [SET_MOVING_CARD](state, data) {
     state.movingCard = data;
+  },
+  [CLEAR_MOVING_CARD](state) {
+    state.movingCard = '';
   },
 };
