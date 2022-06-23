@@ -11,7 +11,6 @@
  *
  * The game index page.
  */
-import { mapGetters } from 'vuex';
 
 export default {
   /**
@@ -31,7 +30,6 @@ export default {
     };
   },
   computed: {
-    ...mapGetters('game', ['getTurn']),
     timeRemaining() {
       return this.turn === 'mine'
         ? `You have ${this.remaning} secs left`

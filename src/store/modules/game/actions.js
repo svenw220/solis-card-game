@@ -29,3 +29,7 @@ export const clearMovingCard = ({ commit }) => {
 export const switchTurn = ({ commit }) => {
   commit(types.SWITCH_TURN);
 };
+
+export const putCardByTurn = ({ commit }, payload) => {
+  commit(types.PUT_CARD_BY_TURN, payload);
+};
