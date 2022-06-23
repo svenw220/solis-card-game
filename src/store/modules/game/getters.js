@@ -7,10 +7,9 @@
  */
 
 export default {
-  getTurn(state) {
-    return state.turn;
-  },
-  getMovingCard(state) {
-    return state.movingCard;
-  },
+  getTurn: (state) => state.turn,
+
+  getMovingCard: (state) => state.movingCard,
+
+  getCardsByTurn: (state) => (turn) => state.battleCards[turn],
 };

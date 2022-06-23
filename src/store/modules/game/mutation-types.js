@@ -13,6 +13,7 @@ export const SWITCH_TURN = 'SWITCH_TURN';
 export const SET_ENDOWMENT = 'SET_ENDOWMENT';
 export const SET_MOVING_CARD = 'SET_MOVING_CARD';
 export const CLEAR_MOVING_CARD = 'CLEAR_MOVING_CARD';
+export const GET_CARDS_BY_TURN = 'GET_CARDS_BY_TURN';
 
 export default {
   SWAP_CARD,
@@ -22,4 +23,5 @@ export default {
   SET_ENDOWMENT,
   SET_MOVING_CARD,
   CLEAR_MOVING_CARD,
+  GET_CARDS_BY_TURN,
 };

@@ -15,18 +15,6 @@ export const check = ({ commit }) => {
 };
 
 export const setTurn = ({ commit }) => {
-  /*
-   * Normally you would use a proxy to register the user:
-   *
-   * new Proxy()
-   *  .register(payload)
-   *  .then((response) => {
-   *    commit(types.REGISTER, response);
-   *  })
-   *  .catch(() => {
-   *    console.log('Request failed...');
-   *  });
-   */
   commit(types.SET_TURN, 'Oppo');
 };
 

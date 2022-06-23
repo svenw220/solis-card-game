@@ -1,5 +1,6 @@
 <template>
   <div class="arena">
+    <PlayerArena turn="oppo" />
     <div class="announcments">
       <div v-if="fullState">
         <h3>Endowment Phase ✨</h3>
@@ -36,6 +37,7 @@
  * The home index page.
  */
 
+import PlayerArena from '@/components/PlayerArena/Index.vue';
 import DeckList from '@/components/DeckList/Index.vue';
 import { Drag, Drop } from 'vue-drag-drop';
 
@@ -48,7 +50,12 @@ export default {
    * The components that the page can use.
    */
 
-  components: { Drag, Drop, DeckList },
+  components: {
+    PlayerArena,
+    Drag,
+    Drop,
+    DeckList,
+  },
   props: {
     fullState: {
       type: Boolean,
