@@ -139,29 +139,5 @@ export default {
       }
     }
   }
-
-  .opponent-arena {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 40px;
-    .card-item {
-      height: 246px;
-      width: 184px;
-      background: #fffcfa;
-      border: 1px dashed #bcbbc9;
-      border-radius: 8px;
-      margin-right: 40px;
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &:first-child,
-      &:last-child {
-        position: relative;
-        bottom: 5rem;
-      }
-    }
-  }
 }
 </style>

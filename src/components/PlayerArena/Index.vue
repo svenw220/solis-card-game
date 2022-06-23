@@ -99,11 +99,19 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  &.oppo {
+    .card-item {
+      //border: 1px solid #ba2929;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+    }
+  }
+
   .card-item {
     height: 246px;
     width: 184px;
     background: #f5f5fa;
-    border: 1px dashed #bcbbc9;
     border-radius: 8px;
     margin-right: 40px;
     &:last-child {
