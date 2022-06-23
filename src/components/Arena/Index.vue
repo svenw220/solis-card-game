@@ -2,7 +2,7 @@
   <div class="arena">
     <PlayerArena turn="oppo" />
     <div class="announcments">
-      <div v-if="fullState">
+      <div v-if="this.endowmentTime">
         <h3>Endowment Phase ✨</h3>
         <p>Please pick and distribute your 5 points wisely among your cards</p>
       </div>
@@ -40,6 +40,7 @@
 import PlayerArena from '@/components/PlayerArena/Index.vue';
 import DeckList from '@/components/DeckList/Index.vue';
 import { Drag, Drop } from 'vue-drag-drop';
+import { mapState } from 'vuex';
 
 export default {
   /**
@@ -56,12 +57,6 @@ export default {
     Drop,
     DeckList,
   },
-  props: {
-    fullState: {
-      type: Boolean,
-      default: false,
-    },
-  },
   data() {
     return {
       myCards: ['dashed_board', 'dashed_board', 'dashed_board'],
@@ -72,6 +67,9 @@ export default {
       ],
       from: '',
     };
+  },
+  computed: {
+    ...mapState('game', ['endowmentTime']),
   },
   methods: {
     handleDrop(to) {

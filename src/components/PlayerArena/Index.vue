@@ -76,9 +76,7 @@ export default {
         this.$store.commit('game/CLEAR_MOVING_CARD');
 
         if (!tmp.includes('dashed_board') && this.turn === 'oppo') {
-          console.log('THis is Endowment time');
-          this.$store.dispatch('game/setEndowmentTime');
-          // setEndowmentTime();
+          this.setEndowmentTime();
         }
       } catch (error) {
         console.log(error);
