@@ -1,5 +1,5 @@
 <template>
-  <div :class="['arena-container', { oppo: this.turn }]">
+  <div :key="newKey" :class="['arena-container', { oppo: this.turn }]">
     <drop
       v-for="(item, i) in cards"
       :key="i"
@@ -46,20 +46,27 @@ export default {
   data() {
     return {
       ...mapGetters('game', ['getCardsByTurn']),
+      newKey: '',
     };
   },
   computed: {
     cards() {
+      console.log(this.$store.getters['game/getTurn']);
       const myCards = this.$store.getters['game/getCardsByTurn'](this.turn);
       console.log(myCards);
       // const myCards = [...this.$store.state.game.battleCards[this.turn]];
-      console.log(myCards);
       return myCards;
+    },
+  },
+  watch: {
+    cards(newVal, oldVal) {
+      console.log(newVal, oldVal);
     },
   },
   methods: {
     handleDrop(to) {
       const tmp = this.cards;
+      this.newKey = Math.random();
       try {
         const curMovingCard = this.$store.getters['game/getMovingCard'];
         if (!curMovingCard.length) throw new Error();
@@ -69,7 +76,6 @@ export default {
 
         if (!tmp.includes('dashed_board')) {
           console.log('THis is Endowment time');
-          // this.$store.commit('game/SWITCH_TURN');
         }
       } catch (error) {
         console.log(error);
