@@ -14,4 +14,5 @@ export default {
     mine: ['dashed_board', 'dashed_board', 'dashed_board'],
     oppo: ['dashed_board', 'dashed_board', 'dashed_board'],
   },
+  endowmentTime: false,
 };

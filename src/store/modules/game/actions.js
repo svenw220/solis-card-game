@@ -10,26 +10,23 @@
 // import store from '@/store';
 import * as types from './mutation-types';
 
-export const check = ({ commit }) => {
-  commit('types.CHECK');
-};
-
-export const setTurn = ({ commit }) => {
-  commit(types.SET_TURN, 'Oppo');
-};
-
-export const setMovingCard = ({ commit }) => {
-  commit(types.SET_MOVING_CARD);
-};
-
-export const clearMovingCard = ({ commit }) => {
-  commit(types.CLEAR_MOVING_CARD);
-};
-
-export const switchTurn = ({ commit }) => {
-  commit(types.SWITCH_TURN);
-};
-
-export const putCardByTurn = ({ commit }, payload) => {
-  commit(types.PUT_CARD_BY_TURN, payload);
+export default {
+  setTurn: ({ commit }) => {
+    commit(types.SET_TURN, 'Oppo');
+  },
+  setMovingCard: ({ commit }) => {
+    commit(types.SET_MOVING_CARD);
+  },
+  clearMovingCard: ({ commit }) => {
+    commit(types.CLEAR_MOVING_CARD);
+  },
+  switchTurn: ({ commit }) => {
+    commit(types.SWITCH_TURN);
+  },
+  putCardByTurn: ({ commit }, payload) => {
+    commit(types.PUT_CARD_BY_TURN, payload);
+  },
+  setEndowmentTime: ({ commit }) => {
+    commit(types.SET_ENDOWMENT_TIME);
+  },
 };

@@ -14,6 +14,7 @@ import {
   CLEAR_MOVING_CARD,
   SWITCH_TURN,
   PUT_CARD_BY_TURN,
+  SET_ENDOWMENT_TIME,
 } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
@@ -39,5 +40,8 @@ export default {
   [PUT_CARD_BY_TURN](state, payload) {
     const { turn } = state;
     state.battleCards[turn][payload] = state.movingCard;
+  },
+  [SET_ENDOWMENT_TIME](state) {
+    state.endowmentTime = !state.endowmentTime;
   },
 };

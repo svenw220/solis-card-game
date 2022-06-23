@@ -25,7 +25,7 @@
  *
  * The home index page.
  */
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   /**
@@ -64,6 +64,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions('game', ['setEndowmentTime']),
     handleDrop(to) {
       const tmp = this.cards;
       this.newKey = Math.random();
@@ -74,8 +75,10 @@ export default {
 
         this.$store.commit('game/CLEAR_MOVING_CARD');
 
-        if (!tmp.includes('dashed_board')) {
+        if (!tmp.includes('dashed_board') && this.turn === 'oppo') {
           console.log('THis is Endowment time');
+          this.$store.dispatch('game/setEndowmentTime');
+          // setEndowmentTime();
         }
       } catch (error) {
         console.log(error);
