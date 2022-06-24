@@ -71,6 +71,9 @@ export default {
       box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
       border-radius: 8px;
       padding: 10px 50px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

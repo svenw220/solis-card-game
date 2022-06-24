@@ -59,6 +59,10 @@ export default {
 
 <style lang="scss" scoped>
 .deck {
+  &:hover {
+    cursor: pointer;
+  }
+
   margin-right: 1rem;
   &:last-child {
     margin-right: 0;

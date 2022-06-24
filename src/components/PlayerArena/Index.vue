@@ -51,10 +51,7 @@ export default {
   },
   computed: {
     cards() {
-      console.log(this.$store.getters['game/getTurn']);
       const myCards = this.$store.getters['game/getCardsByTurn'](this.turn);
-      console.log(myCards);
-      // const myCards = [...this.$store.state.game.battleCards[this.turn]];
       return myCards;
     },
   },
