@@ -51,13 +51,7 @@ export default {
   },
   computed: {
     cards() {
-      const myCards = this.$store.getters['game/getCardsByTurn'](this.turn);
-      return myCards;
-    },
-  },
-  watch: {
-    cards(newVal, oldVal) {
-      console.log(newVal, oldVal);
+      return this.$store.getters['game/getCardsByTurn'](this.turn);
     },
   },
   methods: {

@@ -1,8 +1,8 @@
 /* ============
- * State of the auth module
+ * State of the game module
  * ============
  *
- * The initial state of the auth module.
+ * The initial state of the game module.
  */
 
 export default {

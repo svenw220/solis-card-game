@@ -1,9 +1,9 @@
 /* ============
- * Mutation types for the account module
+ * Mutation types for the game module
  * ============
  *
  * The mutation types that are available
- * on the auth module.
+ * on the game module.
  */
 
 export const SWAP_CARD = 'SWAP_CARD';

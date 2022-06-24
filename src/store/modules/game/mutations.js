@@ -1,9 +1,9 @@
 /* ============
- * Mutations for the auth module
+ * Mutations for the game module
  * ============
  *
  * The mutations that are available on the
- * account module.
+ * game module.
  */
 
 import {

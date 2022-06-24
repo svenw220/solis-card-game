@@ -60,11 +60,6 @@ export default {
   data() {
     return {
       myCards: ['dashed_board', 'dashed_board', 'dashed_board'],
-      opponentCards: [
-        'Oppo Card Slot 1',
-        'Oppo Card Slot 2',
-        'Oppo Card Slot 3',
-      ],
       from: '',
     };
   },
