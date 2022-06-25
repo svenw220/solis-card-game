@@ -3,7 +3,11 @@
     <div class="game-guide">
       <p>
         If you are new to the game please check the
-        <span class="guide-text has-text-weight-semibold">game guide</span>
+        <span
+          class="guide-text has-text-weight-semibold"
+          @click="endowmentPopup"
+          >game guide</span
+        >
         below
       </p>
 
@@ -43,6 +47,18 @@ export default {
 
   components: { CardOverview, GameLog },
   props: {},
+  methods: {
+    endowmentPopup() {
+      console.log('first');
+      this.$buefy.modal.open({
+        parent: this,
+        component: <p>popup</p>,
+        hasModalCard: true,
+        customClass: 'custom-class custom-class-2',
+        trapFocus: true,
+      });
+    },
+  },
 };
 </script>
 
