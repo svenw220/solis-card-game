@@ -5,7 +5,7 @@
         If you are new to the game please check the
         <span
           class="guide-text has-text-weight-semibold"
-          @click="endowmentPopup"
+          @click="this.endowmentPopup"
           >game guide</span
         >
         below
@@ -49,7 +49,6 @@ export default {
   props: {},
   methods: {
     endowmentPopup() {
-      console.log('first');
       this.$buefy.modal.open({
         parent: this,
         component: <p>popup</p>,

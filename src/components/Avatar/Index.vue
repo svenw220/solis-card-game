@@ -64,8 +64,6 @@ export default {
   width: 100%;
   flex: 1;
   justify-content: center;
-  //padding-top: 189px;
-  //padding: 82px 162px;
   .player-avatar {
     height: 78px;
     width: 80px;

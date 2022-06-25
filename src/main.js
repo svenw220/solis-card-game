@@ -57,7 +57,6 @@ Vue.config.productionTip = false;
 
 Vue.use(Buefy);
 Vue.use(VueDragDrop);
-// store.dispatch("auth/check");
 
 /* eslint-disable no-new */
 new Vue({

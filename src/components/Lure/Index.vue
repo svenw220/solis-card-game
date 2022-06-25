@@ -58,7 +58,6 @@ export default {
   }
 
   &-content {
-    // align-self: center;
     margin-left: 0.5rem;
     padding: 1rem 0;
     .lure-title {
