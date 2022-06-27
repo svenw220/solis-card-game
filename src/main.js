@@ -27,6 +27,9 @@ import { router } from '@/plugins/vue-router';
 // import "./plugins/font-awesome";
 import './plugins/register-service-worker';
 
+// import firebase from 'firebase';
+import { initializeApp } from 'firebase/app';
+import firebaseConfig from './firebase';
 /* ============
  * Styling
  * ============
@@ -52,6 +55,8 @@ import './plugins/register-service-worker';
 
 import App from './App.vue';
 import store from './store';
+
+initializeApp(firebaseConfig);
 
 Vue.config.productionTip = false;
 
