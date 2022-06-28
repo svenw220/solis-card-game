@@ -94,9 +94,18 @@ export default {
 
   &.oppo {
     .card-item {
-      //border: 1px solid #ba2929;
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
       border-radius: 8px;
+
+      &:first-child,
+      &:last-child {
+        position: relative;
+        bottom: 5rem;
+      }
+
+      &:nth-child(2) {
+        place-self: end;
+      }
     }
   }
 
