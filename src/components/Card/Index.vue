@@ -1,7 +1,11 @@
 <template>
   <div class="game-card">
     <div class="card-title">Card overview</div>
-    <img src="@/assets/images/card_overview.svg" alt="Card overview" />
+    <img
+      src="@/assets/images/card_overview.svg"
+      alt="Card overview"
+      @click="endowmentPopup"
+    />
   </div>
 </template>
 
@@ -12,6 +16,8 @@
  *
  * The home index page.
  */
+
+import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 
 export default {
   /**
@@ -24,6 +30,17 @@ export default {
 
   components: {},
   props: {},
+  methods: {
+    endowmentPopup() {
+      this.$buefy.modal.open({
+        parent: this,
+        component: EndowmentPopup,
+        hasModalCard: true,
+        customClass: 'custom-class custom-class-2',
+        trapFocus: true,
+      });
+    },
+  },
 };
 </script>
 

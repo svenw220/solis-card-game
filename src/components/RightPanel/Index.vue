@@ -7,10 +7,7 @@
         below
       </p>
 
-      <div
-        class="guide-button has-text-weight-semibold mt-2"
-        @click="endowmentPopup"
-      >
+      <div class="guide-button has-text-weight-semibold mt-2">
         <img
           class="mr-2"
           src="@/assets/images/guide_icon.svg"
@@ -34,7 +31,6 @@
 
 import CardOverview from '@/components/Card/Index.vue';
 import GameLog from '@/components/GameLog/Index.vue';
-import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 
 export default {
   /**
@@ -47,17 +43,7 @@ export default {
 
   components: { CardOverview, GameLog },
   props: {},
-  methods: {
-    endowmentPopup() {
-      this.$buefy.modal.open({
-        parent: this,
-        component: EndowmentPopup,
-        hasModalCard: true,
-        customClass: 'custom-class custom-class-2',
-        trapFocus: true,
-      });
-    },
-  },
+  methods: {},
 };
 </script>
 
