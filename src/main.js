@@ -56,7 +56,8 @@ import firebaseConfig from './firebase';
 import App from './App.vue';
 import store from './store';
 
-initializeApp(firebaseConfig);
+const db = initializeApp(firebaseConfig);
+console.log(db);
 
 Vue.config.productionTip = false;
 

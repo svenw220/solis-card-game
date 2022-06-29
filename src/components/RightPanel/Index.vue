@@ -3,15 +3,14 @@
     <div class="game-guide">
       <p>
         If you are new to the game please check the
-        <span
-          class="guide-text has-text-weight-semibold"
-          @click="this.endowmentPopup"
-          >game guide</span
-        >
+        <span class="guide-text has-text-weight-semibold">game guide</span>
         below
       </p>
 
-      <div class="guide-button has-text-weight-semibold mt-2">
+      <div
+        class="guide-button has-text-weight-semibold mt-2"
+        @click="this.endowmentPopup"
+      >
         <img
           class="mr-2"
           src="@/assets/images/guide_icon.svg"
