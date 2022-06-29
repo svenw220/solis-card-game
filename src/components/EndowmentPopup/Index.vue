@@ -3,8 +3,11 @@
     <form action="">
       <div class="modal-card" style="width: auto">
         <header class="modal-card-head">
-          <p class="modal-card-title">Login</p>
-          <button type="button" class="delete" />
+          <div class="modal-card-title">
+            <p>Endowment</p>
+            <p>#octopus99999</p>
+          </div>
+          <p class="endowment-points">{{ this.points }} points</p>
         </header>
         <section class="modal-card-body">
           <b-field label="Email">
@@ -20,8 +23,6 @@
             >
             </b-input>
           </b-field>
-
-          <b-checkbox>Remember me</b-checkbox>
         </section>
         <footer class="modal-card-foot">
           <b-button label="Close" />
@@ -49,9 +50,46 @@ export default {
    * The components that the page can use.
    */
   components: {},
-  props: {},
+  props: {
+    points: {
+      type: Number,
+      default: 5,
+    },
+  },
   computed: {},
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.endowment-popup {
+  width: 600px;
+  height: 400px;
+}
+.modal-card {
+  $root: &;
+  &-head {
+    #{$root}-title {
+      p:first-child {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        color: #74737d;
+      }
+
+      p:last-child {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        color: #000000;
+      }
+    }
+
+    .endowment-points {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+      color: #34a267;
+    }
+  }
+}
+</style>
