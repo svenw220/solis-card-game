@@ -9,7 +9,7 @@
 
       <div
         class="guide-button has-text-weight-semibold mt-2"
-        @click="this.endowmentPopup"
+        @click="endowmentPopup"
       >
         <img
           class="mr-2"
@@ -34,6 +34,7 @@
 
 import CardOverview from '@/components/Card/Index.vue';
 import GameLog from '@/components/GameLog/Index.vue';
+import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 
 export default {
   /**
@@ -50,7 +51,7 @@ export default {
     endowmentPopup() {
       this.$buefy.modal.open({
         parent: this,
-        component: <p>popup</p>,
+        component: EndowmentPopup,
         hasModalCard: true,
         customClass: 'custom-class custom-class-2',
         trapFocus: true,
