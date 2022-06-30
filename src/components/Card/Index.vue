@@ -30,15 +30,21 @@ export default {
 
   components: {},
   props: {},
+  data() {
+    return {};
+  },
   methods: {
     endowmentPopup() {
-      this.$buefy.modal.open({
-        parent: this,
-        component: EndowmentPopup,
-        hasModalCard: true,
-        customClass: 'custom-class custom-class-2',
-        trapFocus: true,
-      });
+      const endowmentState = this.$store.getters['game/getEndowmentState'];
+      if (endowmentState) {
+        this.$buefy.modal.open({
+          parent: this,
+          component: EndowmentPopup,
+          hasModalCard: true,
+          customClass: 'custom-class custom-class-2',
+          trapFocus: true,
+        });
+      }
     },
   },
 };

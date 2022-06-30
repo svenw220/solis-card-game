@@ -11,5 +11,7 @@ export default {
 
   getMovingCard: (state) => state.movingCard,
 
+  getEndowmentState: (state) => state.endowmentTime,
+
   getCardsByTurn: (state) => (turn) => state.battleCards[turn],
 };
