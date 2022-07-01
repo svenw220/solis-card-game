@@ -50,6 +50,19 @@ export default {
   .item-content {
     display: flex;
     flex-direction: row;
+    font-size: 1rem;
+    .value {
+      margin: 0 12px;
+    }
+
+    .minus-button,
+    .plus-button {
+      font-weight: 700;
+      color: #6c67d9;
+      border: 1px solid rgba(116, 115, 125, 0.24);
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+      border-radius: 32px;
+    }
   }
 }
 </style>
