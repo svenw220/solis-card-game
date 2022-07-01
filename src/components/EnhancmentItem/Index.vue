@@ -2,9 +2,9 @@
   <div class="enhancment-item">
     <div class="item-label">HP</div>
     <div class="item-content">
-      <div class="minus-button">-</div>
-      <div class="value">0</div>
-      <div class="plus-button">+</div>
+      <div class="minus-button" @click="decreaseItem">-</div>
+      <div class="value">{{ this.itemValue }}</div>
+      <div class="plus-button" @click="increaseItem">+</div>
     </div>
   </div>
 </template>
@@ -29,9 +29,22 @@ export default {
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      itemValue: 0,
+    };
   },
-  methods: {},
+  methods: {
+    increaseItem() {
+      if (this.itemValue <= 99) {
+        this.itemValue += 1;
+      }
+    },
+    decreaseItem() {
+      if (this.itemValue > 0) {
+        this.itemValue -= 1;
+      }
+    },
+  },
 };
 </script>
 
@@ -52,7 +65,7 @@ export default {
     flex-direction: row;
     font-size: 1rem;
     .value {
-      margin: 0 12px;
+      margin: 0 1rem;
     }
 
     .minus-button,
@@ -62,6 +75,13 @@ export default {
       border: 1px solid rgba(116, 115, 125, 0.24);
       box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
       border-radius: 32px;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      line-height: 30px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
