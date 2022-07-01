@@ -10,23 +10,14 @@
           <p class="endowment-points">{{ this.points }} points</p>
         </header>
         <section class="modal-card-body">
-          <b-field label="Email">
-            <b-input type="email" placeholder="Your email" required> </b-input>
-          </b-field>
-
-          <b-field label="Password">
-            <b-input
-              type="password"
-              password-reveal
-              placeholder="Your password"
-              required
-            >
-            </b-input>
-          </b-field>
+          <EnhancementItem />
+          <EnhancementItem />
+          <EnhancementItem />
+          <EnhancementItem />
         </section>
         <footer class="modal-card-foot">
-          <b-button label="Close" />
-          <b-button label="Login" type="is-primary" />
+          <b-button label="Cancel" />
+          <b-button label="Add" type="is-primary" />
         </footer>
       </div>
     </form>
@@ -40,6 +31,7 @@
  *
  * The home index page.
  */
+import EnhancementItem from '@/components/EnhancmentItem/Index.vue';
 
 export default {
   /**
@@ -49,7 +41,7 @@ export default {
   /**
    * The components that the page can use.
    */
-  components: {},
+  components: { EnhancementItem },
   props: {
     points: {
       type: Number,

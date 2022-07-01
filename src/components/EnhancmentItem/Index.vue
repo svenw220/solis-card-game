@@ -40,6 +40,13 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 4px solid #e6e5e8;
+  .item-label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
   .item-content {
     display: flex;
     flex-direction: row;
