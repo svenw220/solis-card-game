@@ -16,7 +16,7 @@
           <EnhancementItem />
         </section>
         <footer class="modal-card-foot">
-          <b-button label="Cancel" />
+          <b-button label="Cancel" @click="$emit('close')" />
           <b-button label="Add" type="is-primary" />
         </footer>
       </div>

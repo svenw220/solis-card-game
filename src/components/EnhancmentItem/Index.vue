@@ -64,6 +64,9 @@ export default {
     display: flex;
     flex-direction: row;
     font-size: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
     .value {
       margin: 0 1rem;
     }
