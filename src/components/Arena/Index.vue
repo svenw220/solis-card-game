@@ -130,6 +130,12 @@ export default {
       &:last-child {
         margin-top: 5rem;
       }
+
+      &:hover {
+        cursor: pointer;
+        transition: all 0.5s;
+        transform: translateZ(32px);
+      }
     }
   }
 }

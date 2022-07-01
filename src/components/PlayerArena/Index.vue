@@ -123,6 +123,10 @@ export default {
     &:last-child {
       margin-top: 5rem;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

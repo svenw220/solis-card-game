@@ -1,5 +1,6 @@
 <template>
   <drag
+    class="deck-parent"
     :transfer-data="deckData.attr"
     @dragstart="setMovingCard(deckData.attr)"
   >
@@ -58,6 +59,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.deck-parent {
+  &:hover {
+    transition: all 0.2s;
+    transform: scaleZ(2);
+  }
+}
+
 .deck {
   &:hover {
     cursor: pointer;
