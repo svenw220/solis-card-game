@@ -96,6 +96,7 @@ export default {
     .card-item {
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
       border-radius: 8px;
+      transition: all 0.5s;
 
       &:first-child,
       &:last-child {
@@ -106,6 +107,11 @@ export default {
       &:nth-child(2) {
         place-self: end;
       }
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1, 1.1);
+      }
     }
   }
 
@@ -115,6 +121,8 @@ export default {
     background: #f5f5fa;
     border-radius: 8px;
     margin-right: 40px;
+    transition: all 0.5s;
+
     &:last-child {
       margin-right: 0;
     }
@@ -126,6 +134,7 @@ export default {
 
     &:hover {
       cursor: pointer;
+      transform: scale(1.1, 1.1);
     }
   }
 }

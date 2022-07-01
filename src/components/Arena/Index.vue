@@ -122,6 +122,8 @@ export default {
       border: 1px dashed #bcbbc9;
       border-radius: 8px;
       margin-right: 40px;
+      transition: all 0.5s;
+
       &:last-child {
         margin-right: 0;
       }
@@ -133,8 +135,7 @@ export default {
 
       &:hover {
         cursor: pointer;
-        transition: all 0.5s;
-        transform: translateZ(32px);
+        transform: scale(1.1, 1.1);
       }
     }
   }
