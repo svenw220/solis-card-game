@@ -15,4 +15,9 @@ export default {
     oppo: ['dashed_board', 'dashed_board', 'dashed_board'],
   },
   endowmentTime: false,
+  endowment: {
+    time: false,
+    mile: 5,
+    oppo: 5,
+  },
 };
