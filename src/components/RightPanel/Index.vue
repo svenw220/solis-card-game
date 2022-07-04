@@ -6,7 +6,6 @@
         <span class="guide-text has-text-weight-semibold">game guide</span>
         below
       </p>
-
       <div class="guide-button has-text-weight-semibold mt-2">
         <img
           class="mr-2"
@@ -15,8 +14,8 @@
         />
         <p>Game Guide</p>
       </div>
+      <CardOverview />
     </div>
-    <CardOverview />
     <GameLog />
   </div>
 </template>
