@@ -6,7 +6,7 @@
  */
 
 export default {
-  turn: 'mine',
+  // turn: 'mine',
   timeRemaining: 0,
   from: '',
   movingCard: '',
@@ -19,5 +19,9 @@ export default {
     time: false,
     mile: 5,
     oppo: 5,
+  },
+  turn: {
+    current: true,
+    firstTurn: true,
   },
 };

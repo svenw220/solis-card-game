@@ -10,7 +10,7 @@ import * as types from './mutation-types';
 
 export default {
   setTurn: ({ commit }) => {
-    commit(types.SET_TURN, 'Oppo');
+    commit(types.SET_TURN);
   },
   setMovingCard: ({ commit }) => {
     commit(types.SET_MOVING_CARD);

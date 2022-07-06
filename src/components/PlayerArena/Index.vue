@@ -19,12 +19,6 @@
 </template>
 
 <script>
-/* ============
- * Home Index Page
- * ============
- *
- * The home index page.
- */
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
@@ -53,9 +47,12 @@ export default {
     cards() {
       return this.$store.getters['game/getCardsByTurn'](this.turn);
     },
+    currentTurn() {
+      return this.$store.getters['game/getTurn'];
+    },
   },
   methods: {
-    ...mapActions('game', ['setEndowmentTime']),
+    ...mapActions('game', ['setEndowmentTime, setTurn']),
     handleDrop(to) {
       const tmp = this.cards;
       this.newKey = Math.random();
@@ -66,7 +63,9 @@ export default {
 
         this.$store.commit('game/CLEAR_MOVING_CARD');
 
-        if (!tmp.includes('dashed_board') && this.turn === 'oppo') {
+        if (tmp.includes('dashed_board') && this.currentTurn) {
+          this.setTurn();
+        } else {
           this.setEndowmentTime();
         }
       } catch (error) {

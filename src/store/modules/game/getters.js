@@ -7,7 +7,7 @@
  */
 
 export default {
-  getTurn: (state) => state.turn,
+  getTurn: (state) => state.turn.current,
 
   getMovingCard: (state) => state.movingCard,
 
