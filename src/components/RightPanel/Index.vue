@@ -57,11 +57,11 @@ export default {
     flex: 1;
   }
   .game-guide {
+    height: 70%;
     p {
       color: #74737d;
       text-align: center;
     }
-
     .guide-button {
       width: 100%;
       display: flex;

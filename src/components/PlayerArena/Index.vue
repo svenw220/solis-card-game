@@ -40,7 +40,7 @@ export default {
   props: {
     turn: {
       type: String,
-      default: '',
+      default: 'mine',
     },
   },
   data() {

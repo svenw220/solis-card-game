@@ -30,13 +30,6 @@
 </template>
 
 <script>
-/* ============
- * Home Index Page
- * ============
- *
- * The home index page.
- */
-
 import PlayerArena from '@/components/PlayerArena/Index.vue';
 import DeckList from '@/components/DeckList/Index.vue';
 import { Drag, Drop } from 'vue-drag-drop';
