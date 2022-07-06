@@ -10,10 +10,10 @@ export default {
   timeRemaining: 0,
   from: '',
   movingCard: '',
-  battleCards: {
-    mine: ['dashed_board', 'dashed_board', 'dashed_board'],
-    oppo: ['dashed_board', 'dashed_board', 'dashed_board'],
-  },
+  battleCards: [
+    ['dashed_board', 'dashed_board', 'dashed_board'],
+    ['dashed_board', 'dashed_board', 'dashed_board'],
+  ],
   endowmentTime: false,
   endowment: {
     time: false,

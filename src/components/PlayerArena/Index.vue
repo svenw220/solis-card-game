@@ -59,11 +59,12 @@ export default {
       try {
         const curMovingCard = this.$store.getters['game/getMovingCard'];
         if (!curMovingCard.length) throw new Error();
+        console.log('first', to);
         this.$store.commit('game/PUT_CARD_BY_TURN', to);
 
         this.$store.commit('game/CLEAR_MOVING_CARD');
 
-        if (tmp.includes('dashed_board') && this.currentTurn) {
+        if (tmp.includes('dashed_board')) {
           this.setTurn();
         } else {
           this.setEndowmentTime();
@@ -134,30 +135,6 @@ export default {
     &:hover {
       cursor: pointer;
       transform: scale(1.1, 1.1);
-    }
-  }
-}
-
-.opponent-arena {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 40px;
-  .card-item {
-    height: 246px;
-    width: 184px;
-    background: #fffcfa;
-    border: 1px dashed #bcbbc9;
-    border-radius: 8px;
-    margin-right: 40px;
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &:first-child,
-    &:last-child {
-      position: relative;
-      bottom: 5rem;
     }
   }
 }

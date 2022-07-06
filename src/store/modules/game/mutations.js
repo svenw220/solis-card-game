@@ -39,8 +39,15 @@ export default {
     state.turn.current = !state.turn.current;
   },
   [PUT_CARD_BY_TURN](state, payload) {
-    const { turn } = state;
-    state.battleCards[turn][payload] = state.movingCard;
+    const {
+      turn: { current },
+    } = state;
+    const [myCards, oppoCards] = state.battleCards;
+    if (current) {
+      myCards[payload] = state.movingCard;
+    } else {
+      oppoCards[payload] = state.movingCard;
+    }
   },
   [SET_ENDOWMENT_TIME](state) {
     state.endowmentTime = !state.endowmentTime;

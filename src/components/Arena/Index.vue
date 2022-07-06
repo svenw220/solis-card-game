@@ -8,7 +8,8 @@
       </div>
       <p v-else class="comment">It’s your turn, please place a card 😬</p>
     </div>
-    <div class="my-arena">
+    <PlayerArena turn="mine" />
+    <!-- <div class="my-arena">
       <drop
         v-for="(item, i) in myCards"
         :key="i"
@@ -24,7 +25,7 @@
           />
         </drag>
       </drop>
-    </div>
+    </div> -->
     <DeckList />
   </div>
 </template>
@@ -32,7 +33,7 @@
 <script>
 import PlayerArena from '@/components/PlayerArena/Index.vue';
 import DeckList from '@/components/DeckList/Index.vue';
-import { Drag, Drop } from 'vue-drag-drop';
+// import { Drag, Drop } from 'vue-drag-drop';
 import { mapState } from 'vuex';
 
 export default {
@@ -46,8 +47,8 @@ export default {
 
   components: {
     PlayerArena,
-    Drag,
-    Drop,
+    // Drag,
+    // Drop,
     DeckList,
   },
   data() {
