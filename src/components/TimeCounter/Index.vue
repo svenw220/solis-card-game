@@ -1,5 +1,5 @@
 <template>
-  <div :class="['time-counter', { 'is-opponent': oppoTurn }]">
+  <div :class="['time-counter', { me: currentTurn }]">
     <p class="has-text-weight-semibold">{{ timeRemaining }}</p>
   </div>
 </template>
@@ -24,22 +24,17 @@ export default {
   props: {},
   data() {
     return {
-      turn: 'mine',
       remaning: 10,
-      timeCaption: '',
     };
   },
   computed: {
     timeRemaining() {
-      return this.turn === 'mine'
+      return this.currentTurn
         ? `You have ${this.remaning} secs left`
         : `${this.remaning} secs for opponent`;
     },
-    oppoTurn() {
-      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-      this.turn = this.$store.getters['game/getTurn'];
-
-      return this.turn === 'oppo';
+    currentTurn() {
+      return this.$store.getters['game/getTurn'];
     },
   },
   created() {},
@@ -48,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .time-counter {
-  background-image: url('../../assets/images/time_remaning.svg');
+  background-image: url('../../assets/images/red_remaning.svg');
   background-repeat: no-repeat;
   background-size: contain;
   width: 175px;
@@ -58,13 +53,13 @@ export default {
   color: #fff;
   p {
     position: relative;
-    top: -0.25rem;
+    top: 0.25rem;
   }
 
-  &.is-opponent {
-    background-image: url('../../assets/images/red_remaning.svg');
+  &.me {
+    background-image: url('../../assets/images/time_remaning.svg');
     p {
-      top: 0.25rem;
+      top: -0.25rem;
     }
   }
 }

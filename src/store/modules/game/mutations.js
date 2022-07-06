@@ -35,7 +35,6 @@ export default {
     state.movingCard = '';
   },
   [SWITCH_TURN](state) {
-    console.log('first');
     state.turn.current = !state.turn.current;
   },
   [PUT_CARD_BY_TURN](state, payload) {
