@@ -48,7 +48,6 @@ export default {
   methods: {
     ...mapActions('game', ['setEndowmentTime, setTurn']),
     handleDrop(to) {
-      // const tmp = this.cards;
       this.newKey = Math.random();
       try {
         const curMovingCard = this.$store.getters['game/getMovingCard'];

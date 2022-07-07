@@ -26,8 +26,8 @@ export default {
   },
   data() {
     return {
-      me: true,
-      oppo: false,
+      me: false,
+      oppo: true,
     };
   },
   computed: {
