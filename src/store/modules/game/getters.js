@@ -14,10 +14,11 @@ export default {
   getEndowmentState: (state) => state.endowmentTime,
 
   getCardsByTurn: (state) => (turn) => {
-    if (turn === 'oppo') {
-      return state.battleCards[1];
-    }
+    const { battleCards } = state;
+    const myCards = battleCards[0];
+    const oppoCards = battleCards[1];
+    if (turn) return myCards;
 
-    return state.battleCards[0];
+    return oppoCards;
   },
 };

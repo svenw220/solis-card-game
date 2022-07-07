@@ -1,5 +1,5 @@
 <template>
-  <div :key="newKey" :class="['arena-container', { oppo: this.turn }]">
+  <div :key="newKey" :class="['arena-container', { oppo: this.role }]">
     <drop
       v-for="(item, i) in cards"
       :key="i"
@@ -22,19 +22,12 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  /**
-   * The name of the page.
-   */
   name: 'PlayerArena',
-  /**
-   * The components that the page can use.
-   */
-
   components: {},
   props: {
-    turn: {
-      type: String,
-      default: 'mine',
+    role: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
@@ -45,7 +38,8 @@ export default {
   },
   computed: {
     cards() {
-      return this.$store.getters['game/getCardsByTurn'](this.turn);
+      console.log(this.$store.getters['game/getCardsByTurn'](this.role));
+      return this.$store.getters['game/getCardsByTurn'](this.role);
     },
     currentTurn() {
       return this.$store.getters['game/getTurn'];
@@ -54,22 +48,20 @@ export default {
   methods: {
     ...mapActions('game', ['setEndowmentTime, setTurn']),
     handleDrop(to) {
-      const tmp = this.cards;
+      // const tmp = this.cards;
       this.newKey = Math.random();
       try {
         const curMovingCard = this.$store.getters['game/getMovingCard'];
 
         if (!curMovingCard.length) throw new Error();
 
-        this.$store.commit('game/PUT_CARD_BY_TURN', to);
-
-        this.$store.commit('game/CLEAR_MOVING_CARD');
-
-        if (tmp.includes('dashed_board')) {
+        if (this.currentTurn === this.role) {
+          this.$store.commit('game/PUT_CARD_BY_TURN', to);
           this.$store.commit('game/SWITCH_TURN');
         } else {
-          this.setEndowmentTime();
+          this.$store.commit('game/SET_ENDOWMENT_TIME');
         }
+        this.$store.commit('game/CLEAR_MOVING_CARD');
       } catch (error) {
         console.log(error);
       }
@@ -82,6 +74,9 @@ export default {
     },
     setFrom(item) {
       console.log(item);
+    },
+    mounted() {
+      console.log(this.role);
     },
   },
 };
