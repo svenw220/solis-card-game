@@ -38,7 +38,6 @@ export default {
   },
   computed: {
     cards() {
-      console.log(this.$store.getters['game/getCardsByTurn'](this.role));
       return this.$store.getters['game/getCardsByTurn'](this.role);
     },
     currentTurn() {

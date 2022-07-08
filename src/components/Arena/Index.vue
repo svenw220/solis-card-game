@@ -14,6 +14,7 @@
 </template>
 
 <script>
+// TODO: fix me and oppo issue
 import { mapState } from 'vuex';
 import PlayerArena from '@/components/PlayerArena/Index.vue';
 import DeckList from '@/components/DeckList/Index.vue';
@@ -26,8 +27,8 @@ export default {
   },
   data() {
     return {
-      me: false,
-      oppo: true,
+      me: true,
+      oppo: false,
     };
   },
   computed: {
