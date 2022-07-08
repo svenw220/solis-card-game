@@ -14,13 +14,20 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getDatabase(firebaseApp);
 
-const playersRef = ref(db);
+const playersRef = ref(db, '/players');
 
-onValue(playersRef, (snapshot) => {
-  snapshot.forEach((snap) => {
-    const player = snap.val();
-    console.log(player);
+const getPlayersInfo = () => {
+  const players = onValue(playersRef, (snapshot) => {
+    const draft = Object.entries(snapshot.val());
+    const modifiedPlayers = draft.map(([player, info]) => ({
+      id: player,
+      info,
+    }));
+    return modifiedPlayers;
   });
-});
+  console.log(players);
+};
 
-// export default firebaseConfig;
+export default {
+  getPlayersInfo,
+};
