@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue } from 'firebase/database';
+import { getDatabase, ref } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDrwkgZ4fRFVLVaxtDGautx_CrAruDtXeQ',
@@ -16,18 +16,4 @@ const db = getDatabase(firebaseApp);
 
 const playersRef = ref(db, '/players');
 
-const getPlayersInfo = () => {
-  const players = onValue(playersRef, (snapshot) => {
-    const draft = Object.entries(snapshot.val());
-    const modifiedPlayers = draft.map(([player, info]) => ({
-      id: player,
-      info,
-    }));
-    return modifiedPlayers;
-  });
-  console.log(players);
-};
-
-export default {
-  getPlayersInfo,
-};
+export default { playersRef };

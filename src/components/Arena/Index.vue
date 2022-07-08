@@ -15,7 +15,7 @@
 
 <script>
 // TODO: fix me and oppo issue
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import PlayerArena from '@/components/PlayerArena/Index.vue';
 import DeckList from '@/components/DeckList/Index.vue';
 
@@ -34,7 +34,12 @@ export default {
   computed: {
     ...mapState('game', ['endowmentTime']),
   },
-  methods: {},
+  mounted() {
+    this.getPlayersCardInfo();
+  },
+  methods: {
+    ...mapActions('player', ['getPlayersCardInfo']),
+  },
 };
 </script>
 
