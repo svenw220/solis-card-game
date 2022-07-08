@@ -21,24 +21,10 @@
 </template>
 
 <script>
-/* ============
- * Home Index Page
- * ============
- *
- * The home index page.
- */
-// import { mapActions } from 'vuex';
 import { Drag } from 'vue-drag-drop';
 
 export default {
-  /**
-   * The name of the page.
-   */
   name: 'Avatar',
-  /**
-   * The components that the page can use.
-   */
-
   components: { Drag },
   props: {
     deckData: {
