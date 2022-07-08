@@ -1,5 +1,5 @@
 <template>
-  <div :key="newKey" :class="['arena-container', { oppo: this.role }]">
+  <div :key="newKey" :class="['arena-container', { me: this.role }]">
     <drop
       v-for="(item, i) in cards"
       :key="i"
@@ -86,7 +86,7 @@ export default {
   flex-direction: row;
   justify-content: center;
 
-  &.oppo {
+  &.me {
     .card-item {
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
       border-radius: 8px;
@@ -124,6 +124,10 @@ export default {
     &:first-child,
     &:last-child {
       margin-top: 5rem;
+    }
+
+    &:nth-child(2) {
+      place-self: start;
     }
 
     &:hover {

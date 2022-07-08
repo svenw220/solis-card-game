@@ -1,7 +1,7 @@
 <template>
-  <div class="property-item">
+  <div class="property-item is-flex is-flex-direction-column">
     <b-image
-      :src="require(`@/assets/images/${itemType}.svg`)"
+      :src="require('@/assets/images/' + itemType + '.svg')"
       alt="Property Item"
     />
     <p class="item-value">{{ itemValue }}</p>
@@ -31,5 +31,10 @@ export default {
 
 <style lang="scss" scoped>
 .property-item {
+  .item-value {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15;
+  }
 }
 </style>
