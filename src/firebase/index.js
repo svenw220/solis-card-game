@@ -1,3 +1,6 @@
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, onValue } from 'firebase/database';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDrwkgZ4fRFVLVaxtDGautx_CrAruDtXeQ',
   authDomain: 'solis-b559e.firebaseapp.com',
@@ -8,4 +11,16 @@ const firebaseConfig = {
   measurementId: 'G-R6GXHZRC01',
 };
 
-export default firebaseConfig;
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getDatabase(firebaseApp);
+
+const playersRef = ref(db);
+
+onValue(playersRef, (snapshot) => {
+  snapshot.forEach((snap) => {
+    const player = snap.val();
+    console.log(player);
+  });
+});
+
+// export default firebaseConfig;
