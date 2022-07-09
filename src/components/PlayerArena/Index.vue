@@ -1,5 +1,5 @@
 <template>
-  <div :key="newKey" :class="['arena-container', { me: this.role }]">
+  <div :key="newKey" :class="['arena-container', { oppo: this.role }]">
     <drop
       v-for="(item, i) in cards"
       :key="i"
@@ -27,7 +27,7 @@ export default {
   props: {
     role: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   data() {
@@ -50,15 +50,17 @@ export default {
       this.newKey = Math.random();
       try {
         const curMovingCard = this.$store.getters['game/getMovingCard'];
-
+        console.log(typeof this.role, typeof this.currentTurn);
         if (!curMovingCard.length) throw new Error();
 
-        if (this.currentTurn === this.role) {
+        if (this.role === this.currentTurn) {
           this.$store.commit('game/PUT_CARD_BY_TURN', to);
           this.$store.commit('game/SWITCH_TURN');
-        } else {
-          this.$store.commit('game/SET_ENDOWMENT_TIME');
         }
+        // if (this.currentTurn === this.role) {
+        // } else {
+        //   this.$store.commit('game/SET_ENDOWMENT_TIME');
+        // }
         this.$store.commit('game/CLEAR_MOVING_CARD');
       } catch (error) {
         console.log(error);
@@ -86,7 +88,7 @@ export default {
   flex-direction: row;
   justify-content: center;
 
-  &.me {
+  &.oppo {
     .card-item {
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
       border-radius: 8px;

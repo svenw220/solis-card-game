@@ -30,8 +30,8 @@ export default {
   computed: {
     timeRemaining() {
       return this.currentTurn
-        ? `You have ${this.remaning} secs left`
-        : `${this.remaning} secs for opponent`;
+        ? `${this.remaning} secs for opponent`
+        : `You have ${this.remaning} secs left`;
     },
     currentTurn() {
       return this.$store.getters['game/getTurn'];
@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .time-counter {
-  background-image: url('../../assets/images/red_remaning.svg');
+  background-image: url('../../assets/images/time_remaning.svg');
   background-repeat: no-repeat;
   background-size: contain;
   width: 175px;
@@ -53,13 +53,13 @@ export default {
   color: #fff;
   p {
     position: relative;
-    top: 0.25rem;
+    top: -0.25rem;
   }
 
   &.me {
-    background-image: url('../../assets/images/time_remaning.svg');
+    background-image: url('../../assets/images/red_remaning.svg');
     p {
-      top: -0.25rem;
+      top: 0.25rem;
     }
   }
 }

@@ -8,7 +8,7 @@
       </div>
       <p v-else class="comment">It’s your turn, please place a card 😬</p>
     </div>
-    <PlayerArena :role="me" />
+    <PlayerArena />
     <DeckList />
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       me: true,
-      oppo: false,
+      oppo: true,
     };
   },
   computed: {
