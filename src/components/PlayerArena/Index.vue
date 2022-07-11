@@ -43,6 +43,9 @@ export default {
     currentTurn() {
       return this.$store.getters['game/getTurn'];
     },
+    cardSetupState() {
+      return this.$store.getters['game/getCardSetUpState'];
+    },
   },
   methods: {
     ...mapActions('game', ['setEndowmentTime, setTurn']),
@@ -55,11 +58,14 @@ export default {
 
         if (this.role === this.currentTurn) {
           this.$store.commit('game/PUT_CARD_BY_TURN', to);
-          this.$store.commit('game/SWITCH_TURN');
+          if (this.cardSetupState) {
+            this.$store.commit('game/SET_ENDOWMENT_TIME');
+          } else {
+            this.$store.commit('game/SWITCH_TURN');
+          }
         }
         // if (this.currentTurn === this.role) {
         // } else {
-        //   this.$store.commit('game/SET_ENDOWMENT_TIME');
         // }
         this.$store.commit('game/CLEAR_MOVING_CARD');
       } catch (error) {

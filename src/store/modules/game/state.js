@@ -16,7 +16,7 @@ export default {
   ],
   endowmentTime: false,
   endowment: {
-    time: false,
+    state: false,
     mile: 5,
     oppo: 5,
   },
@@ -24,5 +24,5 @@ export default {
     current: true,
     firstTurn: true,
   },
-  cardStetUp: false,
+  fullCardSetUp: false,
 };

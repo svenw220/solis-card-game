@@ -11,7 +11,7 @@ export default {
 
   getMovingCard: (state) => state.movingCard,
 
-  getEndowmentState: (state) => state.endowmentTime,
+  getEndowmentState: (state) => state.endowment,
 
   getCardsByTurn: (state) => (turn) => {
     const { battleCards } = state;
@@ -21,5 +21,5 @@ export default {
 
     return oppoCards;
   },
-  getCardSetUpState: (state) => state.cardStetUp,
+  getCardSetUpState: (state) => state.fullCardSetUp,
 };
