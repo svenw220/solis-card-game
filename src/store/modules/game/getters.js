@@ -21,4 +21,5 @@ export default {
 
     return oppoCards;
   },
+  getCardSetUpState: (state) => state.cardStetUp,
 };

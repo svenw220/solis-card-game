@@ -27,4 +27,7 @@ export default {
   setEndowmentTime: ({ commit }) => {
     commit(types.SET_ENDOWMENT_TIME);
   },
+  updateCardSetupState: ({ commit }) => {
+    commit(types.FULL_CARD_SETUP);
+  },
 };
