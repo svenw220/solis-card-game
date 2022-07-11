@@ -24,4 +24,5 @@ export default {
     current: true,
     firstTurn: true,
   },
+  cardStetUp: false,
 };

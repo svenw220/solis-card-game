@@ -15,6 +15,7 @@ import {
   SWITCH_TURN,
   PUT_CARD_BY_TURN,
   SET_ENDOWMENT_TIME,
+  FULL_CARD_SETUP,
 } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
@@ -50,5 +51,11 @@ export default {
   },
   [SET_ENDOWMENT_TIME](state) {
     state.endowmentTime = !state.endowmentTime;
+  },
+  [FULL_CARD_SETUP](state) {
+    const { battleCards } = state;
+    if (!battleCards.flat().includes('dashed_board')) {
+      state.cardStetUp = true;
+    }
   },
 };
