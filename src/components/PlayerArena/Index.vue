@@ -48,25 +48,22 @@ export default {
     },
   },
   methods: {
-    ...mapActions('game', ['setEndowmentTime, setTurn']),
+    ...mapActions('game', ['setEndowmentTime, setTurn, updateCardSetupState']),
     handleDrop(to) {
       this.newKey = Math.random();
       try {
         const curMovingCard = this.$store.getters['game/getMovingCard'];
-        console.log(typeof this.role, typeof this.currentTurn);
         if (!curMovingCard.length) throw new Error();
 
         if (this.role === this.currentTurn) {
           this.$store.commit('game/PUT_CARD_BY_TURN', to);
+          this.$store.commit('game/FULL_CARD_SETUP');
           if (this.cardSetupState) {
             this.$store.commit('game/SET_ENDOWMENT_TIME');
           } else {
             this.$store.commit('game/SWITCH_TURN');
           }
         }
-        // if (this.currentTurn === this.role) {
-        // } else {
-        // }
         this.$store.commit('game/CLEAR_MOVING_CARD');
       } catch (error) {
         console.log(error);
