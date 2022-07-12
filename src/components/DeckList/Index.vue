@@ -5,7 +5,6 @@
       <p class="deck-couter">Deck ({{ deckCounter }})</p>
       <img src="@/assets/images/line_right.svg" alt="Right Line" />
     </div>
-
     <div class="deck-list">
       <Deck v-for="(deck, index) in decks" :deckData="deck" :key="index" />
     </div>
@@ -13,24 +12,10 @@
 </template>
 
 <script>
-/* ============
- * Home Index Page
- * ============
- *
- * The home index page.
- */
-// import draggable from 'vuedraggable';
 import Deck from '@/components/Deck/Index.vue';
 
 export default {
-  /**
-   * The name of the page.
-   */
   name: 'DeckList',
-  /**
-   * The components that the page can use.
-   */
-
   components: { Deck },
   props: {},
   data() {

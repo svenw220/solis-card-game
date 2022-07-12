@@ -32,14 +32,19 @@ export default {
 
 <style lang="scss" scoped>
 .property-item {
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  align-items: center;
+  justify-content: center;
   .item-image {
-    height: 50px;
-    width: 50px;
+    height: 16px;
+    width: 16px;
   }
   .item-value {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1rem;
-    line-height: 15;
+    color: #191824;
   }
 }
 </style>
