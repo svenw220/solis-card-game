@@ -11,9 +11,6 @@
 </template>
 
 <script>
-/**
- * TODO: tap rating value on the star image
- */
 export default {
   name: 'TotalRating',
   components: {},
@@ -33,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 .total-rating {
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   .rating-star {
     height: 32px;
@@ -41,6 +38,8 @@ export default {
   }
 
   p {
+    position: relative;
+    top: -24px;
     font-weight: 700;
     font-size: 12px;
   }
