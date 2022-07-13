@@ -6,7 +6,6 @@
  */
 
 export default {
-  // turn: 'mine',
   timeRemaining: 0,
   from: '',
   movingCard: '',

@@ -7,7 +7,5 @@
  */
 
 export default {
-  getCards: (state) => (id) => {
-    state.players.filter((item) => item.id === id);
-  },
+  getCards: (state) => (id) => state.players.filter((item) => item.id === id),
 };
