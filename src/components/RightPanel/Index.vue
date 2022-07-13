@@ -1,5 +1,6 @@
 <template>
   <div class="right-panel">
+    <TotalRating />
     <div class="game-guide">
       <p>
         If you are new to the game please check the
@@ -30,6 +31,7 @@
 
 import CardOverview from '@/components/Card/Index.vue';
 import GameLog from '@/components/GameLog/Index.vue';
+import TotalRating from '@/components/TotalRating/Index.vue';
 
 export default {
   /**
@@ -40,7 +42,7 @@ export default {
    * The components that the page can use.
    */
 
-  components: { CardOverview, GameLog },
+  components: { CardOverview, GameLog, TotalRating },
   props: {},
   methods: {},
 };

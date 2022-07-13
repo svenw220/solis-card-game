@@ -1,17 +1,26 @@
 <template>
   <div class="total-rating">
+    <b-image
+      class="rating-star"
+      :src="require('@/assets/images/star.svg')"
+      alt="Turn State"
+      rounded
+    />
     <p>{{ this.tRating }}</p>
   </div>
 </template>
 
 <script>
+/**
+ * TODO: tap rating value on the star image
+ */
 export default {
   name: 'TotalRating',
   components: {},
   props: {
     tRating: {
       type: Number,
-      default: 0,
+      default: 100,
     },
   },
   data() {
@@ -23,12 +32,17 @@ export default {
 
 <style lang="scss" scoped>
 .total-rating {
-  background-image: url('../../assets/images/star_rate.svg');
-  background-repeat: no-repeat;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  .rating-star {
+    height: 32px;
+    width: 32px;
+  }
+
   p {
-    text-align: center;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 12px;
   }
 }
 </style>
