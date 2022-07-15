@@ -6,5 +6,14 @@
  */
 
 export default {
-  board: [],
+  board: [
+    {
+      id: 'myInfo',
+      slots: [],
+    },
+    {
+      id: 'oppoInfo',
+      slots: [],
+    },
+  ],
 };

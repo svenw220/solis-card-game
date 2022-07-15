@@ -6,8 +6,8 @@
  * on the game module.
  */
 
-export const SET_PLAYERS_CARD_INFO = 'SET_PLAYERS_CARD_INFO';
+export const GET_SLOT_INFO = 'GET_SLOT_INFO';
 
 export default {
-  SET_PLAYERS_CARD_INFO,
+  GET_SLOT_INFO,
 };

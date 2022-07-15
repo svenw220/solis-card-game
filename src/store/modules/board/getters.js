@@ -7,5 +7,5 @@
  */
 
 export default {
-  getCards: (state) => (id) => state.players.filter((item) => item.id === id),
+  getSlotInfo: (state) => (id) => state.board.filter((item) => item.id === id),
 };
