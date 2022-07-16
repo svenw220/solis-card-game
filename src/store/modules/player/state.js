@@ -6,5 +6,8 @@
  */
 
 export default {
-  players: [],
+  players: {
+    idles: [],
+    picked: [],
+  },
 };
