@@ -43,10 +43,13 @@ export default {
       turn: { current },
     } = state;
     const [myCards, oppoCards] = state.battleCards;
+    const {
+      movingCard: { meta },
+    } = state;
     if (current) {
-      myCards[payload] = state.movingCard;
+      myCards[payload] = meta;
     } else {
-      oppoCards[payload] = state.movingCard;
+      oppoCards[payload] = meta;
     }
   },
   [SET_ENDOWMENT_TIME](state) {

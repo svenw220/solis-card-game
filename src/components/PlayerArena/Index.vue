@@ -52,8 +52,8 @@ export default {
     handleDrop(to) {
       this.newKey = Math.random();
       try {
-        const curMovingCard = this.$store.getters['game/getMovingCard'];
-        if (!curMovingCard) throw new Error();
+        // const curMovingCard = this.$store.getters['game/getMovingCard'];
+        // if (curMovingCard) throw new Error();
 
         if (this.role === this.currentTurn) {
           this.$store.commit('game/PUT_CARD_BY_TURN', to);

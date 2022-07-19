@@ -2,7 +2,7 @@
   <drag
     class="deck-parent"
     :transfer-data="deckData.id"
-    @dragstart="setMovingCard(deckData.id)"
+    @dragstart="setMovingCard(deckData)"
   >
     <div class="deck is-flex is-flex-direction-column is-align-items-center">
       <b-image
