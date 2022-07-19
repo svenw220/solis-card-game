@@ -33,7 +33,7 @@ export default {
     state.movingCard = payload;
   },
   [CLEAR_MOVING_CARD](state) {
-    state.movingCard = '';
+    state.movingCard = 0;
   },
   [SWITCH_TURN](state) {
     state.turn.current = !state.turn.current;

@@ -1,8 +1,8 @@
 <template>
   <drag
     class="deck-parent"
-    :transfer-data="deckData.attr"
-    @dragstart="setMovingCard(deckData.attr)"
+    :transfer-data="deckData.id"
+    @dragstart="setMovingCard(deckData.id)"
   >
     <div class="deck is-flex is-flex-direction-column is-align-items-center">
       <b-image
