@@ -11,11 +11,6 @@
         alt="Turn State"
         rounded
       />
-      <!-- <b-image
-        class="deck-rating"
-        :src="require('@/assets/images/star_rating.svg')"
-        alt="Deck Rating"
-      /> -->
       <TotalRating :tRating="deckData.ability.total" />
     </div>
   </drag>

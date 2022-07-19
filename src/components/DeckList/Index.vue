@@ -12,6 +12,9 @@
 </template>
 
 <script>
+/**
+ * TODO: feature when the turn has been switched
+ */
 import { mapGetters } from 'vuex';
 import Deck from '@/components/Deck/Index.vue';
 
@@ -45,11 +48,7 @@ export default {
       };
     });
   },
-  methods: {
-    onMove(e) {
-      console.log(e);
-    },
-  },
+  methods: {},
 };
 </script>
 
