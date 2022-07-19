@@ -7,5 +7,10 @@
  */
 
 export default {
-  getCards: (state) => (id) => state.players.filter((item) => item.id === id),
+  getDeckListByTurn: (state) => (id) => {
+    const {
+      decks: { myDecks, oppoDecks },
+    } = state;
+    return id ? oppoDecks : myDecks;
+  },
 };

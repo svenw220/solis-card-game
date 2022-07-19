@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Deck from '@/components/Deck/Index.vue';
 
 export default {
@@ -48,6 +49,15 @@ export default {
       ],
       deckCounter: 3,
     };
+  },
+  computed: {
+    ...mapGetters('deck', ['getDeckListByTurn']),
+    ...mapGetters('game', ['getTurn']),
+  },
+  mounted() {
+    const curTurn = this.$store.getters['game/getTurn'];
+    const myDeckList = this.$store.getters['deck/getDeckListByTurn'](curTurn);
+    console.log(myDeckList);
   },
   methods: {
     onMove(e) {

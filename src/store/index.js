@@ -13,6 +13,7 @@ import createLogger from 'vuex/dist/logger';
 // Modules
 import game from './modules/game';
 import player from './modules/player';
+import deck from './modules/deck';
 
 const debug = process.env.NODE_ENV !== 'production';
 
@@ -23,6 +24,7 @@ export default new Vuex.Store({
   modules: {
     game,
     player,
+    deck,
   },
 
   /**
