@@ -21,32 +21,7 @@ export default {
   props: {},
   data() {
     return {
-      decks: [
-        {
-          img: 'deck1',
-          attr: 'purple',
-        },
-        {
-          img: 'deck2',
-          attr: 'blue',
-        },
-        {
-          img: 'deck3',
-          attr: 'yellow',
-        },
-        {
-          img: 'deck2',
-          attr: 'blue',
-        },
-        {
-          img: 'deck3',
-          attr: 'yellow',
-        },
-        {
-          img: 'deck1',
-          attr: 'purple',
-        },
-      ],
+      decks: [],
       deckCounter: 3,
     };
   },
@@ -54,10 +29,21 @@ export default {
     ...mapGetters('deck', ['getDeckListByTurn']),
     ...mapGetters('game', ['getTurn']),
   },
-  mounted() {
+  created() {
     const curTurn = this.$store.getters['game/getTurn'];
     const myDeckList = this.$store.getters['deck/getDeckListByTurn'](curTurn);
-    console.log(myDeckList);
+    this.decks = myDeckList.map((deck) => {
+      const { ability, ...rest } = deck;
+      const total = Object.values(ability).reduce((a, b) => a + b);
+      const newAbility = {
+        ...ability,
+        total: Math.floor(total / 4),
+      };
+      return {
+        ...rest,
+        ability: newAbility,
+      };
+    });
   },
   methods: {
     onMove(e) {

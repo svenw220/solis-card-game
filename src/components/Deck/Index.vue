@@ -7,25 +7,27 @@
     <div class="deck is-flex is-flex-direction-column is-align-items-center">
       <b-image
         class="turn-state"
-        :src="require('@/assets/images/' + this.deckData.img + '.svg')"
+        :src="require('@/assets/images/' + this.deckData.meta + '_deck.svg')"
         alt="Turn State"
         rounded
       />
-      <b-image
+      <!-- <b-image
         class="deck-rating"
         :src="require('@/assets/images/star_rating.svg')"
         alt="Deck Rating"
-      />
+      /> -->
+      <TotalRating :tRating="deckData.ability.total" />
     </div>
   </drag>
 </template>
 
 <script>
 import { Drag } from 'vue-drag-drop';
+import TotalRating from '@/components/TotalRating/Index.vue';
 
 export default {
   name: 'Avatar',
-  components: { Drag },
+  components: { Drag, TotalRating },
   props: {
     deckData: {
       type: Object,
@@ -67,7 +69,7 @@ export default {
     width: 56px;
   }
 
-  .deck-rating {
+  .total-rating {
     height: 30px;
     width: 30px;
     margin-top: -1rem;
