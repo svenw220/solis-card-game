@@ -2,7 +2,7 @@
   <div class="deck-container">
     <div class="deck-header">
       <img src="@/assets/images/line_left.svg" alt="Left Line" />
-      <p class="deck-couter">Deck ({{ deckCounter }})</p>
+      <p class="deck-couter">Deck ({{ decks.length }})</p>
       <img src="@/assets/images/line_right.svg" alt="Right Line" />
     </div>
     <div class="deck-list">
@@ -25,7 +25,6 @@ export default {
   data() {
     return {
       decks: [],
-      deckCounter: 3,
     };
   },
   computed: {
