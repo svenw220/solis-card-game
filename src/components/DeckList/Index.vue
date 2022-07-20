@@ -31,23 +31,34 @@ export default {
     ...mapGetters('deck', ['getDeckListByTurn']),
     ...mapGetters('game', ['getTurn']),
   },
-  created() {
-    const curTurn = this.$store.getters['game/getTurn'];
-    const myDeckList = this.$store.getters['deck/getDeckListByTurn'](curTurn);
-    this.decks = myDeckList.map((deck) => {
-      const { ability, ...rest } = deck;
-      const total = Object.values(ability).reduce((a, b) => a + b);
-      const newAbility = {
-        ...ability,
-        total: Math.floor(total / 4),
-      };
-      return {
-        ...rest,
-        ability: newAbility,
-      };
-    });
+  watch: {
+    getTurn(newValue, oldValue) {
+      if (newValue || oldValue) {
+        this.updateDeckList(newValue);
+      }
+    },
   },
-  methods: {},
+  created() {
+    const curTurn = this.getTurn;
+    this.updateDeckList(curTurn);
+  },
+  methods: {
+    updateDeckList(turn) {
+      const deckList = this.getDeckListByTurn(turn);
+      this.decks = deckList.map((deck) => {
+        const { ability, ...rest } = deck;
+        const total = Object.values(ability).reduce((a, b) => a + b);
+        const newAbility = {
+          ...ability,
+          total: Math.floor(total / 4),
+        };
+        return {
+          ...rest,
+          ability: newAbility,
+        };
+      });
+    },
+  },
 };
 </script>
 
