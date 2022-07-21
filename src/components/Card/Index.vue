@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="game-card">
     <div class="card-header-section">
       <p>Octopus</p>
       <TotalRating />
@@ -42,20 +42,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
+.game-card {
   display: inline-block;
-  //display: inline-flex;
-  //flex-direction: column;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   padding: 0px 16px;
+
   img {
     display: inline-block;
   }
-  /*
-  .total-rating {
-    position: absolute;
-    align-self: center;
-  }
-  */
 
   .card-header-section {
     display: flex;
