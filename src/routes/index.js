@@ -23,6 +23,11 @@ export default [
     component: () => import('@/views/Game/Index.vue'),
   },
   {
+    path: '/test',
+    name: 'test.index',
+    component: () => import('@/components/Card/Index.vue'),
+  },
+  {
     path: '/',
     redirect: '/home',
   },
