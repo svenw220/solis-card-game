@@ -1,5 +1,5 @@
 <template>
-  <div class="property-item is-flex is-flex-direction-column">
+  <div class="property-item">
     <b-image
       class="item-image"
       :src="require('@/assets/images/' + this.itemType + '.svg')"
@@ -32,15 +32,19 @@ export default {
 
 <style lang="scss" scoped>
 .property-item {
-  height: 36px;
-  width: 36px;
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  flex-direction: column;
   border-radius: 18px;
   align-items: center;
   justify-content: center;
-  .item-image {
-    height: 16px;
-    width: 16px;
-  }
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  top: -22px;
+  left: -8px;
+  padding-top: 16px;
   .item-value {
     font-weight: 700;
     font-size: 1rem;
