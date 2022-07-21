@@ -42,6 +42,7 @@ export default {
     top: -24px;
     font-weight: 700;
     font-size: 12px;
+    color: #ec8742;
   }
 }
 </style>

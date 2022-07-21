@@ -12,7 +12,7 @@ export default {
         id: 1,
         type: 'Sapienoids',
         name: 'Aquasapiens',
-        meta: 'yello',
+        meta: 'yellow',
         ability: {
           attack: 90,
           defense: 88,
