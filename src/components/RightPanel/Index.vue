@@ -28,7 +28,7 @@
  * The right panel page.
  */
 
-import CardOverview from '@/components/Card/Index.vue';
+import CardOverview from '@/components/Overview/Index.vue';
 import GameLog from '@/components/GameLog/Index.vue';
 
 export default {
