@@ -64,7 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .deck-container {
-  margin-top: 40px;
+  margin-top: 60px;
   .deck-list {
     display: flex;
     flex-direction: row;

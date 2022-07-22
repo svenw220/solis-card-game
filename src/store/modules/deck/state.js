@@ -38,10 +38,10 @@ export default {
         name: 'Aquasapiens',
         meta: 'purple',
         ability: {
-          attack: 90,
-          defense: 88,
-          evasion: 50,
-          accuracy: 95,
+          attack: 50,
+          defense: 38,
+          evasion: 70,
+          accuracy: 85,
         },
       },
       {
@@ -50,10 +50,10 @@ export default {
         name: 'Aquasapiens',
         meta: 'blue',
         ability: {
-          attack: 90,
-          defense: 88,
-          evasion: 50,
-          accuracy: 95,
+          attack: 94,
+          defense: 82,
+          evasion: 40,
+          accuracy: 65,
         },
       },
       {
