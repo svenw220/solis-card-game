@@ -16,7 +16,7 @@ export default {
   endowmentTime: false,
   endowment: {
     state: false,
-    mile: 5,
+    mine: 5,
     oppo: 5,
   },
   turn: {

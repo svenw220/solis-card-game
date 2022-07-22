@@ -7,12 +7,6 @@
       @drop="handleDrop(i)"
     >
       <drag :transfer-data="i" @dragstart="setFrom">
-        <!-- <b-image
-          :id="item"
-          class="turn-state"
-          :src="require('@/assets/images/' + item + '.svg')"
-          alt="Turn State"
-        /> -->
         <GameCard :cardType="item" />
       </drag>
     </drop>
