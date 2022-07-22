@@ -7,12 +7,13 @@
       @drop="handleDrop(i)"
     >
       <drag :transfer-data="i" @dragstart="setFrom">
-        <b-image
+        <!-- <b-image
           :id="item"
           class="turn-state"
           :src="require('@/assets/images/' + item + '.svg')"
           alt="Turn State"
-        />
+        /> -->
+        <GameCard :cardType="item" />
       </drag>
     </drop>
   </div>
@@ -20,10 +21,11 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import GameCard from '@/components/Card/Index.vue';
 
 export default {
   name: 'PlayerArena',
-  components: {},
+  components: { GameCard },
   props: {
     role: {
       type: Boolean,
@@ -34,6 +36,7 @@ export default {
     return {
       ...mapGetters('game', ['getCardsByTurn']),
       newKey: '',
+      gameCards: [],
     };
   },
   computed: {
@@ -47,6 +50,7 @@ export default {
       return this.$store.getters['game/getCardSetUpState'];
     },
   },
+
   methods: {
     ...mapActions('game', ['setEndowmentTime, setTurn, updateCardSetupState']),
     handleDrop(to) {
@@ -64,7 +68,7 @@ export default {
             this.$store.commit('game/SWITCH_TURN');
           }
         }
-        this.$store.commit('game/CLEAR_MOVING_CARD');
+        // this.$store.commit('game/CLEAR_MOVING_CARD');
       } catch (error) {
         console.log(error);
       }

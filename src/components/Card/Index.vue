@@ -5,38 +5,54 @@
       <TotalRating />
       <p>#99999</p>
     </div>
-    <img class="category" src="@/assets/images/type.svg" alt="Category" />
-    <img src="@/assets/images/black_blue.svg" alt="Card" />
+    <!-- <img class="category" src="@/assets/images/type.svg" alt="Category" /> -->
+    <img
+      :src="require('@/assets/images/black_' + cardType + '.svg')"
+      alt="Card"
+    />
+
     <div class="item-list">
-      <div class="main-list">
-        <Item itemType="attack" itemValue="98" />
-        <Item itemType="defense" itemValue="98" />
-        <Item itemType="evasion" itemValue="98" />
-      </div>
+      <!-- <div class="main-list" v-for="(item, i) in cards"
+      :key="i">
+      </div> -->
+      <Item itemType="attack" :itemValue="abilities.attack" />
+      <Item itemType="defense" :itemValue="abilities.defense" />
+      <Item itemType="evasion" :itemValue="abilities.evasion" />
       <div class="total"></div>
     </div>
   </div>
 </template>
 
 <script>
-/* ============
- * Home Index Page
- * ============
- *
- * The home index page.
- */
+import { mapGetters } from 'vuex';
 import TotalRating from '@/components/TotalRating/Index.vue';
 import Item from '@/components/Item/Index.vue';
 
 export default {
   name: 'Card',
   components: { TotalRating, Item },
-  props: {},
-  data() {
-    return {};
+  props: {
+    state: {
+      type: Boolean,
+      default: false,
+    },
+    cardType: {
+      type: String,
+      default: 'blue',
+    },
   },
-  computed: {},
+  data() {
+    return {
+      abilities: [],
+    };
+  },
+  computed: {
+    ...mapGetters('game', ['getMovingCard']),
+  },
   watch: {},
+  created() {
+    this.abilities = this.getMovingCard.ability;
+  },
   methods: {},
 };
 </script>
@@ -44,9 +60,12 @@ export default {
 <style lang="scss" scoped>
 .game-card {
   display: inline-block;
+  background: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 0px 16px;
+  height: 282px;
+  width: 184px;
 
   img {
     display: inline-block;
@@ -79,13 +98,11 @@ export default {
   }
 
   .item-list {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
-    .main-list {
-      > div {
-        margin-right: 4px;
-      }
+    > .property-item {
+      margin-right: 6px;
     }
   }
 }
