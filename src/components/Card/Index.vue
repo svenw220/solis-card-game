@@ -5,16 +5,12 @@
       <TotalRating />
       <p>#99999</p>
     </div>
-    <!-- <img class="category" src="@/assets/images/type.svg" alt="Category" /> -->
     <img
       :src="require('@/assets/images/black_' + cardType + '.svg')"
       alt="Card"
     />
 
     <div class="item-list">
-      <!-- <div class="main-list" v-for="(item, i) in cards"
-      :key="i">
-      </div> -->
       <Item itemType="attack" :itemValue="abilities.attack" />
       <Item itemType="defense" :itemValue="abilities.defense" />
       <Item itemType="evasion" :itemValue="abilities.evasion" />

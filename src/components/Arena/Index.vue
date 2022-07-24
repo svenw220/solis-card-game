@@ -6,7 +6,9 @@
         <h3>Endowment Phase ✨</h3>
         <p>Please pick and distribute your 5 points wisely among your cards</p>
       </div>
-      <p v-else class="comment">It’s your turn, please place a card 😬</p>
+      <p v-if="!this.turn.current" class="comment">
+        It’s your turn, please place a card 😬
+      </p>
     </div>
     <PlayerArena />
     <DeckList />
@@ -33,6 +35,7 @@ export default {
   },
   computed: {
     ...mapState('game', ['endowmentTime']),
+    ...mapState('game', ['turn']),
   },
   mounted() {
     this.getPlayersCardInfo();

@@ -8,7 +8,7 @@ export default {
   getCardsByTurn: (state) => (turn) => {
     const { battleCards } = state;
     const [myCards, oppoCards] = battleCards;
-    return turn ? myCards : oppoCards;
+    return turn ? oppoCards : myCards;
   },
   getCardSetUpState: (state) => state.fullCardSetUp,
 };
