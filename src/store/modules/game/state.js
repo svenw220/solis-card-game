@@ -10,8 +10,8 @@ export default {
   from: '',
   movingCard: '',
   battleCards: [
-    ['dashed_board', 'dashed_board', 'dashed_board'],
-    ['dashed_board', 'dashed_board', 'dashed_board'],
+    [false, false, false],
+    [false, false, false],
   ],
   endowmentTime: false,
   endowment: {

@@ -55,7 +55,7 @@ export default {
   },
   [FULL_CARD_SETUP](state) {
     const { battleCards } = state;
-    if (!battleCards.flat().includes('dashed_board')) {
+    if (!battleCards.flat().includes(false)) {
       state.fullCardSetUp = true;
     }
   },

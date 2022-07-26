@@ -1,19 +1,19 @@
 <template>
-  <div class="game-card">
+  <div v-if="this.cardInfo" class="game-card">
     <div class="card-header-section">
       <p>Octopus</p>
       <TotalRating />
       <p>#99999</p>
     </div>
     <img
-      :src="require('@/assets/images/black_' + cardType.meta + '.svg')"
+      :src="require('@/assets/images/black_' + cardInfo.meta + '.svg')"
       alt="Card"
     />
 
     <div class="item-list">
-      <Item itemType="attack" :itemValue="cardType.ability.attack" />
-      <Item itemType="defense" :itemValue="cardType.ability.defense" />
-      <Item itemType="evasion" :itemValue="cardType.ability.evasion" />
+      <Item itemType="attack" :itemValue="cardInfo.ability.attack" />
+      <Item itemType="defense" :itemValue="cardInfo.ability.defense" />
+      <Item itemType="evasion" :itemValue="cardInfo.ability.evasion" />
       <div class="total"></div>
     </div>
   </div>
@@ -32,7 +32,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    cardType: {
+    cardInfo: {
       type: Object,
     },
   },
@@ -45,9 +45,7 @@ export default {
     ...mapGetters('game', ['getMovingCard']),
   },
   watch: {},
-  created() {
-    this.abilities = this.getMovingCard.ability;
-  },
+
   methods: {},
 };
 </script>
