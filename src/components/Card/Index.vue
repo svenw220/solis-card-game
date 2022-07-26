@@ -14,7 +14,7 @@
       <Item itemType="attack" :itemValue="cardInfo.ability.attack" />
       <Item itemType="defense" :itemValue="cardInfo.ability.defense" />
       <Item itemType="evasion" :itemValue="cardInfo.ability.evasion" />
-      <div class="total"></div>
+      <Item itemType="evasion" :itemValue="cardInfo.ability.total" />
     </div>
   </div>
 </template>
@@ -96,6 +96,10 @@ export default {
     justify-content: space-between;
     > .property-item {
       margin-right: 6px;
+    }
+
+    .total {
+      align-self: end;
     }
   }
 }

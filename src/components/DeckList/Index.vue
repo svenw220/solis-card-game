@@ -47,7 +47,9 @@ export default {
       const deckList = this.getDeckListByTurn(turn);
       this.decks = deckList.map((deck) => {
         const { ability, ...rest } = deck;
-        const total = Object.values(ability).reduce((a, b) => a + b);
+        const total = Object.values(ability)
+          .pop()
+          .reduce((a, b) => a + b);
         const newAbility = {
           ...ability,
           total: Math.floor(total / 4),
