@@ -6,14 +6,14 @@
       <p>#99999</p>
     </div>
     <img
-      :src="require('@/assets/images/black_' + cardType + '.svg')"
+      :src="require('@/assets/images/black_' + cardType.meta + '.svg')"
       alt="Card"
     />
 
     <div class="item-list">
-      <Item itemType="attack" :itemValue="abilities.attack" />
-      <Item itemType="defense" :itemValue="abilities.defense" />
-      <Item itemType="evasion" :itemValue="abilities.evasion" />
+      <Item itemType="attack" :itemValue="cardType.ability.attack" />
+      <Item itemType="defense" :itemValue="cardType.ability.defense" />
+      <Item itemType="evasion" :itemValue="cardType.ability.evasion" />
       <div class="total"></div>
     </div>
   </div>
@@ -33,8 +33,7 @@ export default {
       default: false,
     },
     cardType: {
-      type: String,
-      default: 'blue',
+      type: Object,
     },
   },
   data() {
