@@ -14,7 +14,7 @@
       <Item itemType="attack" :itemValue="cardInfo.ability.attack" />
       <Item itemType="defense" :itemValue="cardInfo.ability.defense" />
       <Item itemType="evasion" :itemValue="cardInfo.ability.evasion" />
-      <Item itemType="evasion" :itemValue="cardInfo.ability.total" />
+      <Item itemType="total" :itemValue="cardInfo.ability.total" />
     </div>
   </div>
 </template>
