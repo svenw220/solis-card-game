@@ -1,5 +1,5 @@
 <template>
-  <section :class="['game-page columns is-desktop', { endowment: true }]">
+  <section :class="['game-page columns is-desktop', { endowment: endowment }]">
     <div class="first-panel column is-2">
       <PlayerPanel />
     </div>
@@ -17,7 +17,6 @@
  *
  * The game index page.
  */
-import { mapState } from 'vuex';
 import PlayerPanel from '@/components/PlayerPanel/Index.vue';
 import Arena from '@/components/Arena/Index.vue';
 import RightPanel from '@/components/RightPanel/Index.vue';
@@ -37,12 +36,15 @@ export default {
   },
   props: {},
   data() {
-    return {
-      // endowment: false,
-    };
+    return {};
   },
   computed: {
-    ...mapState('game', ['endowment']),
+    endowment() {
+      return this.$store.getters['game/getEndowmentCondition'];
+    },
+    getTurn() {
+      return this.$store.getters['game/getTurn'];
+    },
   },
 };
 </script>
@@ -67,12 +69,13 @@ export default {
   }
 
   .main-panel {
-    background-color: #f0ebeb;
+    //background-color: #f0ebeb;
   }
 
   &.endowment {
     .first-panel,
-    .last-panel {
+    .last-panel,
+    .main-panel {
       background-color: #f0ebeb;
     }
   }

@@ -52,6 +52,7 @@ export default {
   },
   [SET_ENDOWMENT_TIME](state) {
     state.endowmentTime = !state.endowmentTime;
+    state.endowment.state = !state.endowment.state;
   },
   [FULL_CARD_SETUP](state) {
     const { battleCards } = state;
