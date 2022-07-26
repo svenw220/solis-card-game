@@ -16,7 +16,7 @@
 </template>
 
 <script>
-// TODO: fix me and oppo issue
+// TODO: add empty element
 import { mapState, mapActions } from 'vuex';
 import PlayerArena from '@/components/PlayerArena/Index.vue';
 import DeckList from '@/components/DeckList/Index.vue';
@@ -52,6 +52,7 @@ export default {
   padding: 40px 131px;
 
   .announcments {
+    height: 30px;
     text-align: center;
     margin: 72px 0;
 
