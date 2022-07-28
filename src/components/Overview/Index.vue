@@ -1,6 +1,7 @@
 <template>
   <div class="game-card">
     <div class="card-title">Card overview</div>
+    <!-- <EndowmentCard /> -->
     <img
       src="@/assets/images/card_overview.svg"
       alt="Card overview"
@@ -10,30 +11,26 @@
 </template>
 
 <script>
-/* ============
- * Home Index Page
- * ============
- *
- * The home index page.
- */
-
+import { mapGetters } from 'vuex';
+// import EndowmentCard from '@/components/Card/Index.vue';
 import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 
 export default {
   /**
    * The name of the page.
    */
-  name: 'Card',
+  name: 'Endowment Card',
   /**
    * The components that the page can use.
    */
 
-  components: {},
+  // components: { EndowmentCard },
   props: {},
   data() {
     return {};
   },
   methods: {
+    ...mapGetters('game', ['getMovingCard']),
     endowmentPopup() {
       const endowmentState = this.$store.getters['game/getEndowmentState'];
       if (endowmentState) {
