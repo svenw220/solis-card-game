@@ -1,36 +1,33 @@
 <template>
-  <div class="game-card">
-    <div class="card-title">Card overview</div>
-    <!-- <EndowmentCard /> -->
-    <img
-      src="@/assets/images/card_overview.svg"
-      alt="Card overview"
-      @click="endowmentPopup"
-    />
+  <div class="card-overview">
+    <div class="overview-title">Card overview</div>
+    <Card :cardInfo="getMovingCard" />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-// import EndowmentCard from '@/components/Card/Index.vue';
+import Card from '@/components/Card/Index.vue';
 import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 
 export default {
   /**
    * The name of the page.
    */
-  name: 'Endowment Card',
+  name: 'EndowmentCard',
   /**
    * The components that the page can use.
    */
 
-  // components: { EndowmentCard },
+  components: { Card },
   props: {},
   data() {
     return {};
   },
-  methods: {
+  computed: {
     ...mapGetters('game', ['getMovingCard']),
+  },
+  methods: {
     endowmentPopup() {
       const endowmentState = this.$store.getters['game/getEndowmentState'];
       if (endowmentState) {
@@ -48,20 +45,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.game-card {
+.card-overview {
   margin-top: 100px;
   margin-bottom: 100px;
-  .card-title {
+  .overview-title {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 4px;
   }
 
-  img {
-    width: 100%;
-    transition: all 0.3s;
-    &:hover {
-      transform: scale(1.02, 1.02);
+  .game-card {
+    img {
+      width: 100%;
+      transition: all 0.3s;
+      &:hover {
+        transform: scale(1.02, 1.02);
+      }
     }
   }
 }
