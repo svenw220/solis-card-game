@@ -73,8 +73,8 @@ export default {
     setFrom(item) {
       console.log(item);
     },
-    mounted() {
-      console.log(this.role);
+    test(e) {
+      console.log(e.target);
     },
   },
 };

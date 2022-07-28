@@ -8,6 +8,7 @@
     <img
       :src="require('@/assets/images/black_' + cardInfo.meta + '.svg')"
       alt="Card"
+      @click="handleCard(cardInfo, $event)"
     />
 
     <div class="item-list">
@@ -46,7 +47,11 @@ export default {
   },
   watch: {},
 
-  methods: {},
+  methods: {
+    handleCard(card) {
+      this.$store.commit('endowment/SET_CURRENT_CARD', card);
+    },
+  },
 };
 </script>
 
@@ -59,6 +64,7 @@ export default {
   padding: 0px 16px;
   height: 282px;
   width: 184px;
+  z-index: 99999;
 
   img {
     display: inline-block;

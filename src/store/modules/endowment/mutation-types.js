@@ -1,0 +1,11 @@
+export const GET_CURRENT_CARD = 'GET_CURRENT_CARD';
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
+export const SET_CURRENT_CARD = 'SET_CURRENT_CARD';
+
+export default {
+  GET_CURRENT_CARD,
+  SET_CURRENT_CARD,
+  INCREMENT,
+  DECREMENT,
+};
