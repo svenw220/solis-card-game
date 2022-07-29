@@ -45,14 +45,15 @@ export default {
   },
   computed: {
     ...mapGetters('game', ['getMovingCard']),
+    ...mapGetters('endowment', ['getEndowmentState']),
   },
   watch: {},
 
   methods: {
     handleCard(card) {
       this.$store.commit('endowment/SET_CURRENT_CARD', card);
-      const endowmentState = this.$store.getters['game/getEndowmentState'];
-      if (endowmentState) {
+      const endowment = this.$store.getters['endowment/getEndowmentState'];
+      if (endowment) {
         this.$buefy.modal.open({
           parent: this,
           component: EndowmentPopup,

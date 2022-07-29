@@ -1,9 +1,11 @@
-import { SET_CURRENT_CARD } from './mutation-types';
+import { SET_CURRENT_CARD, SET_ENDOWMENT_TIME } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
 export default {
   [SET_CURRENT_CARD](state, payload) {
-    console.log(payload);
     state.currentCard = payload;
+  },
+  [SET_ENDOWMENT_TIME](state, payload) {
+    state.condition = payload;
   },
 };

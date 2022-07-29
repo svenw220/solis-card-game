@@ -6,4 +6,6 @@
  * auth module.
  */
 
-export default {};
+export default {
+  getEndowmentState: (state) => state.condition,
+};
