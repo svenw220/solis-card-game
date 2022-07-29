@@ -10,10 +10,9 @@
           <p class="endowment-points">{{ this.points }} points</p>
         </header>
         <section class="modal-card-body">
-          <EnhancementItem />
-          <EnhancementItem />
-          <EnhancementItem />
-          <EnhancementItem />
+          <div v-for="item in this.getCurrentCardInfo.ability" :key="item">
+            <EnhancementItem :itemValue="item" />
+          </div>
         </section>
         <footer class="modal-card-foot">
           <b-button label="Cancel" @click="$emit('close')" />
@@ -25,12 +24,7 @@
 </template>
 
 <script>
-/* ============
- * Home Index Page
- * ============
- *
- * The home index page.
- */
+import { mapGetters } from 'vuex';
 import EnhancementItem from '@/components/EnhancmentItem/Index.vue';
 
 export default {
@@ -48,7 +42,9 @@ export default {
       default: 5,
     },
   },
-  computed: {},
+  computed: {
+    ...mapGetters('endowment', ['getCurrentCardInfo']),
+  },
 };
 </script>
 

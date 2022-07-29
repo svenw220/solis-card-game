@@ -27,10 +27,15 @@ export default {
    */
 
   components: {},
-  props: {},
+  props: {
+    itemValue: {
+      type: Number,
+      default: 0,
+    },
+  },
   data() {
     return {
-      itemValue: 0,
+      // itemValue: 0,
     };
   },
   methods: {

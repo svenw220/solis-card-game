@@ -48,6 +48,9 @@ export default {
 
 <style lang="scss" scoped>
 .arena {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   padding: 40px 131px;
 

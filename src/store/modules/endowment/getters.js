@@ -8,4 +8,5 @@
 
 export default {
   getEndowmentState: (state) => state.condition,
+  getCurrentCardInfo: (state) => state.currentCard,
 };
