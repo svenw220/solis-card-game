@@ -54,7 +54,7 @@ export default {
           this.$store.commit('game/PUT_CARD_BY_TURN', to);
           this.$store.commit('game/FULL_CARD_SETUP');
           if (this.cardSetupState) {
-            this.$store.commit('game/SET_ENDOWMENT_TIME');
+            this.$store.commit('endowment/SET_ENDOWMENT_TIME', true);
           } else {
             this.$store.commit('game/SWITCH_TURN');
           }

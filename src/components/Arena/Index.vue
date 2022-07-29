@@ -2,7 +2,7 @@
   <div class="arena">
     <PlayerArena :role="oppo" />
     <div class="announcments">
-      <div v-if="this.endowmentTime">
+      <div v-if="this.condition">
         <h3>Endowment Phase ✨</h3>
         <p>Please pick and distribute your 5 points wisely among your cards</p>
       </div>
@@ -34,7 +34,7 @@ export default {
     };
   },
   computed: {
-    ...mapState('game', ['endowmentTime']),
+    ...mapState('endowment', ['condition']),
     ...mapState('game', ['turn']),
   },
   mounted() {
