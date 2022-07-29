@@ -8,17 +8,9 @@
 <script>
 import { mapGetters } from 'vuex';
 import Card from '@/components/Card/Index.vue';
-import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 
 export default {
-  /**
-   * The name of the page.
-   */
   name: 'EndowmentCard',
-  /**
-   * The components that the page can use.
-   */
-
   components: { Card },
   props: {},
   data() {
@@ -27,20 +19,7 @@ export default {
   computed: {
     ...mapGetters('game', ['getMovingCard']),
   },
-  methods: {
-    endowmentPopup() {
-      const endowmentState = this.$store.getters['game/getEndowmentState'];
-      if (endowmentState) {
-        this.$buefy.modal.open({
-          parent: this,
-          component: EndowmentPopup,
-          hasModalCard: true,
-          customClass: 'custom-class custom-class-2',
-          trapFocus: true,
-        });
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 

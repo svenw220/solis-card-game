@@ -23,6 +23,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import TotalRating from '@/components/TotalRating/Index.vue';
+import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 import Item from '@/components/Item/Index.vue';
 
 export default {
@@ -50,6 +51,16 @@ export default {
   methods: {
     handleCard(card) {
       this.$store.commit('endowment/SET_CURRENT_CARD', card);
+      const endowmentState = this.$store.getters['game/getEndowmentState'];
+      if (endowmentState) {
+        this.$buefy.modal.open({
+          parent: this,
+          component: EndowmentPopup,
+          hasModalCard: true,
+          customClass: 'custom-class custom-class-2',
+          trapFocus: true,
+        });
+      }
     },
   },
 };
