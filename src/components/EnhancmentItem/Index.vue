@@ -3,7 +3,7 @@
     <div class="item-label">HP</div>
     <div class="item-content">
       <div class="minus-button" @click="decreaseItem">-</div>
-      <div class="value">{{ this.itemValue }}</div>
+      <div class="value">{{ itemValue }}</div>
       <div class="plus-button" @click="increaseItem">+</div>
     </div>
   </div>
@@ -34,9 +34,10 @@ export default {
     },
   },
   data() {
-    return {
-      // itemValue: 0,
-    };
+    return {};
+  },
+  mounted() {
+    console.log(this.itemValue);
   },
   methods: {
     increaseItem() {

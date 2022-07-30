@@ -1,6 +1,6 @@
 export default {
   getTurn: (state) => state.turn.current,
-
+  getFirstTurn: (state) => state.turn.firstTurn,
   getMovingCard: (state) => state.movingCard,
 
   getEndowmentState: (state) => state.endowment,

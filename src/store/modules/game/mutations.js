@@ -16,6 +16,7 @@ import {
   PUT_CARD_BY_TURN,
   SET_ENDOWMENT_TIME,
   FULL_CARD_SETUP,
+  INCREASE_CARD_ABILITY,
 } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
@@ -42,12 +43,12 @@ export default {
     const {
       turn: { current },
     } = state;
-    const [myCards, oppoCards] = state.battleCards;
+    const [oppoCards, myCards] = state.battleCards;
     const { movingCard } = state;
     if (current) {
-      myCards[payload] = movingCard;
-    } else {
       oppoCards[payload] = movingCard;
+    } else {
+      myCards[payload] = movingCard;
     }
   },
   [SET_ENDOWMENT_TIME](state) {
@@ -59,5 +60,12 @@ export default {
     if (!battleCards.flat().includes(false)) {
       state.fullCardSetUp = true;
     }
+  },
+  [INCREASE_CARD_ABILITY](state, payload) {
+    const { battleCards } = state;
+    console.log(battleCards, payload);
+    // battleCards.flat().map((card) => {
+    // if(card.id === payload) card.
+    // });
   },
 };

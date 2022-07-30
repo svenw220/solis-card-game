@@ -18,6 +18,7 @@ export const PUT_CARD_BY_TURN = 'PUT_CARD_BY_TURN';
 export const SET_TURN = 'SET_TURN';
 export const FULL_CARD_SETUP = 'FULL_CARD_SETUP';
 export const UPDATE_CARD_SETUP_STATE = 'UPDATE_CARD_SETUP_STATE';
+export const INCREASE_CARD_ABILITY = 'INCREASE_CARD_ABILITY';
 
 export default {
   SWAP_CARD,
@@ -32,4 +33,5 @@ export default {
   SET_TURN,
   FULL_CARD_SETUP,
   UPDATE_CARD_SETUP_STATE,
+  INCREASE_CARD_ABILITY,
 };

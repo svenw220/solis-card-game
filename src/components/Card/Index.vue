@@ -44,7 +44,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters('game', ['getMovingCard']),
+    ...mapGetters('game', ['getMovingCard', 'getFirstTurn']),
     ...mapGetters('endowment', ['getEndowmentState']),
   },
   watch: {},
@@ -53,6 +53,7 @@ export default {
     handleCard(card) {
       this.$store.commit('endowment/SET_CURRENT_CARD', card);
       const endowment = this.$store.getters['endowment/getEndowmentState'];
+      // const firstTurn = this.getFirstTurn();
       if (endowment) {
         this.$buefy.modal.open({
           parent: this,

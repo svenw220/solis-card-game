@@ -1,22 +1,26 @@
 <template>
   <section class="endowment-popup">
     <form action="">
-      <div class="modal-card" style="width: auto">
+      <div class="modal-card">
         <header class="modal-card-head">
           <div class="modal-card-title">
             <p>Endowment</p>
             <p>#octopus99999</p>
           </div>
-          <p class="endowment-points">{{ this.points }} points</p>
+          <p class="endowment-points">{{ points }} points</p>
         </header>
         <section class="modal-card-body">
-          <div v-for="item in this.getCurrentCardInfo.ability" :key="item">
-            <EnhancementItem :itemValue="item" />
+          <div v-for="item in getCurrentCardInfo.ability" :key="item">
+            <EnhancementItem :item-value="item" />
           </div>
         </section>
         <footer class="modal-card-foot">
           <b-button label="Cancel" @click="$emit('close')" />
-          <b-button label="Add" type="is-primary" />
+          <b-button
+            label="Add"
+            type="is-primary"
+            @click="increaseAbility(getCurrentCardInfo, $event)"
+          />
         </footer>
       </div>
     </form>
@@ -44,6 +48,15 @@ export default {
   },
   computed: {
     ...mapGetters('endowment', ['getCurrentCardInfo']),
+    convertedCardInfo(getCurrentCardInfo) {
+      console.log(Object.entries(getCurrentCardInfo.ability));
+      return Object.entries(getCurrentCardInfo.ability);
+    },
+  },
+  methods: {
+    increaseAbility(cardInfo) {
+      console.log(cardInfo);
+    },
   },
 };
 </script>
@@ -55,6 +68,7 @@ export default {
 }
 .modal-card {
   $root: &;
+  width: auto;
   &-head {
     #{$root}-title {
       p:first-child {
