@@ -12,10 +12,10 @@
     />
 
     <div class="item-list">
-      <Item itemType="attack" :itemValue="cardInfo.ability.attack" />
-      <Item itemType="defense" :itemValue="cardInfo.ability.defense" />
-      <Item itemType="evasion" :itemValue="cardInfo.ability.evasion" />
-      <Item itemType="total" :itemValue="cardInfo.ability.total" />
+      <Item item-type="attack" :item-value="cardInfo.ability.attack" />
+      <Item item-type="defense" :item-value="cardInfo.ability.defense" />
+      <Item item-type="evasion" :item-value="cardInfo.ability.evasion" />
+      <Item item-type="total" :item-value="cardInfo.ability.total" />
     </div>
   </div>
 </template>

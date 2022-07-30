@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     endowment() {
-      return this.$store.getters['game/getEndowmentCondition'];
+      return this.$store.getters['endowment/getEndowmentState'];
     },
     getTurn() {
       return this.$store.getters['game/getTurn'];
@@ -76,7 +76,7 @@ export default {
     .first-panel,
     .last-panel,
     .main-panel {
-      background-color: #f0ebeb;
+      background-color: #e0dedea6;
     }
   }
 }

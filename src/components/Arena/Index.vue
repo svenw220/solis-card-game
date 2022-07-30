@@ -6,7 +6,7 @@
         <h3>Endowment Phase ✨</h3>
         <p>Please pick and distribute your 5 points wisely among your cards</p>
       </div>
-      <p v-if="!this.turn.current" class="comment">
+      <p v-if="!this.turn.current && !this.condition" class="comment">
         It’s your turn, please place a card 😬
       </p>
     </div>
