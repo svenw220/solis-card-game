@@ -77,8 +77,8 @@ export default {
     },
     applyEndowment(result) {
       const { id } = this.getCurrentCardInfo;
+      this.$store.commit('game/APPLY_ENDOWMENT', { id, result });
       this.$emit('close');
-      console.log(result, id);
     },
   },
 };

@@ -17,6 +17,7 @@ import {
   SET_ENDOWMENT_TIME,
   FULL_CARD_SETUP,
   INCREASE_CARD_ABILITY,
+  APPLY_ENDOWMENT,
 } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
@@ -52,6 +53,11 @@ export default {
     }
   },
   [SET_ENDOWMENT_TIME](state) {
+    const {
+      turn: { firstTurn },
+    } = state;
+
+    state.turn.current = !firstTurn;
     state.endowmentTime = !state.endowmentTime;
     state.endowment.state = !state.endowment.state;
   },
@@ -67,5 +73,18 @@ export default {
     // battleCards.flat().map((card) => {
     // if(card.id === payload) card.
     // });
+  },
+  [APPLY_ENDOWMENT](state, payload) {
+    const { id, result } = payload;
+    const {
+      turn: { current },
+    } = state;
+    const tmp = state.battleCards[Number(!current)].map((item) => {
+      if (item.id === id) {
+        item.ability = result;
+      }
+      return item;
+    });
+    state.battleCards[Number(current)] = tmp;
   },
 };

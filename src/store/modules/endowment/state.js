@@ -9,4 +9,5 @@ export default {
   count: 5,
   condition: false,
   currentCard: {},
+  turn: null,
 };
