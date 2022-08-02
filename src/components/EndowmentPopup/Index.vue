@@ -11,9 +11,10 @@
         </header>
         <section class="modal-card-body">
           <EnhancementItem
-            v-for="item in convertedCardInfo"
-            :key="item"
+            v-for="(item, index) in convertedCardInfo"
+            :key="index"
             :item-value="item"
+            :give-power="increaseAbility"
           />
         </section>
         <footer class="modal-card-foot">
@@ -21,7 +22,7 @@
           <b-button
             label="Add"
             type="is-primary"
-            @click="increaseAbility(getCurrentCardInfo, $event)"
+            @click="applyEndowment(endowmentResult, $event)"
           />
         </footer>
       </div>
@@ -61,12 +62,23 @@ export default {
   computed: {
     ...mapGetters('endowment', ['getCurrentCardInfo']),
     convertedCardInfo() {
-      return Object.entries(this.getCurrentCardInfo.ability);
+      return Object.entries(this.endowmentResult);
     },
   },
+  mounted() {
+    this.endowmentResult = this.getCurrentCardInfo.ability;
+  },
   methods: {
-    increaseAbility(cardInfo) {
-      console.log(cardInfo);
+    increaseAbility(name, cardInfo) {
+      this.endowmentResult = {
+        ...this.endowmentResult,
+        [name]: cardInfo,
+      };
+    },
+    applyEndowment(result) {
+      const { id } = this.getCurrentCardInfo;
+      this.$emit('close');
+      console.log(result, id);
     },
   },
 };

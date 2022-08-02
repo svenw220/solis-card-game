@@ -34,22 +34,28 @@ export default {
         return [];
       },
     },
+    givePower: {
+      type: Function,
+      default() {
+        return {};
+      },
+    },
   },
   data() {
     return {};
   },
-  mounted() {
-    console.log(this.itemValue);
-  },
+  mounted() {},
   methods: {
     increaseItem() {
-      if (this.itemValue <= 99) {
-        this.itemValue += 1;
+      if (this.itemValue[1] <= 99) {
+        this.itemValue[1] += 1;
+        this.givePower(this.itemValue[0], this.itemValue[1]);
       }
     },
     decreaseItem() {
-      if (this.itemValue > 0) {
-        this.itemValue -= 1;
+      if (this.itemValue[1] > 0) {
+        this.itemValue[1] -= 1;
+        this.givePower(this.itemValue[0], this.itemValue[1]);
       }
     },
   },
