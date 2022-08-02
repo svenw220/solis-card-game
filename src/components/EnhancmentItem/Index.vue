@@ -1,9 +1,9 @@
 <template>
-  <div class="enhancment-item">
-    <div class="item-label">HP</div>
+  <div class="enhancment-item" :name="itemValue[0]">
+    <div class="item-label">{{ itemValue[0] }}</div>
     <div class="item-content">
       <div class="minus-button" @click="decreaseItem">-</div>
-      <div class="value">{{ itemValue }}</div>
+      <div class="value">{{ itemValue[1] }}</div>
       <div class="plus-button" @click="increaseItem">+</div>
     </div>
   </div>
@@ -29,8 +29,10 @@ export default {
   components: {},
   props: {
     itemValue: {
-      type: Number,
-      default: 0,
+      type: Array,
+      default() {
+        return [];
+      },
     },
   },
   data() {
@@ -65,6 +67,7 @@ export default {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    text-transform: uppercase;
   }
   .item-content {
     display: flex;

@@ -10,9 +10,11 @@
           <p class="endowment-points">{{ points }} points</p>
         </header>
         <section class="modal-card-body">
-          <div v-for="item in getCurrentCardInfo.ability" :key="item">
-            <EnhancementItem :item-value="item" />
-          </div>
+          <EnhancementItem
+            v-for="item in convertedCardInfo"
+            :key="item"
+            :item-value="item"
+          />
         </section>
         <footer class="modal-card-foot">
           <b-button label="Cancel" @click="$emit('close')" />
@@ -46,11 +48,20 @@ export default {
       default: 5,
     },
   },
+  data() {
+    return {
+      endowmentResult: {
+        attack: 0,
+        defense: 0,
+        evasion: 0,
+        hp: 0,
+      },
+    };
+  },
   computed: {
     ...mapGetters('endowment', ['getCurrentCardInfo']),
-    convertedCardInfo(getCurrentCardInfo) {
-      console.log(Object.entries(getCurrentCardInfo.ability));
-      return Object.entries(getCurrentCardInfo.ability);
+    convertedCardInfo() {
+      return Object.entries(this.getCurrentCardInfo.ability);
     },
   },
   methods: {

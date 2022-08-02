@@ -36,6 +36,9 @@ export default {
     },
     cardInfo: {
       type: Object,
+      default() {
+        return {};
+      },
     },
   },
   data() {
