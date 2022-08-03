@@ -1,5 +1,5 @@
 <template>
-  <div class="property-item">
+  <div :class="['property-item', { [itemType]: itemValue }]">
     <b-image
       class="item-image"
       :src="require('@/assets/images/' + this.itemType + '.svg')"
@@ -45,6 +45,14 @@ export default {
   top: -22px;
   left: -8px;
   padding-top: 16px;
+  &.hp {
+    align-self: flex-end;
+    background-color: transparent;
+    .item-value {
+      position: absolute;
+      color: #fff;
+    }
+  }
   .item-value {
     font-weight: 700;
     font-size: 1rem;
