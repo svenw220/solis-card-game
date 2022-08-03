@@ -28,6 +28,11 @@ export default [
     component: () => import('@/components/Card/Index.vue'),
   },
   {
+    path: '/result',
+    name: 'result.index',
+    component: () => import('@/components/BattleResult/Index.vue'),
+  },
+  {
     path: '/',
     redirect: '/home',
   },
