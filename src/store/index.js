@@ -15,6 +15,7 @@ import game from './modules/game';
 import player from './modules/player';
 import deck from './modules/deck';
 import endowment from './modules/endowment';
+import strategy from './modules/strategy';
 
 const debug = process.env.NODE_ENV !== 'production';
 
@@ -27,6 +28,7 @@ export default new Vuex.Store({
     player,
     deck,
     endowment,
+    strategy,
   },
 
   /**
