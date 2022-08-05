@@ -2,7 +2,7 @@
   <div v-if="this.cardInfo" class="game-card">
     <div class="card-header-section">
       <p>Octopus</p>
-      <TotalRating />
+      <TotalRating :t-rating="cardInfo.ability.total"/>
       <p>#99999</p>
     </div>
     <img
@@ -13,7 +13,7 @@
 
     <div class="item-list">
       <Item item-type="attack" :item-value="cardInfo.ability.attack" />
-      <Item item-type="defense" :item-value="cardInfo.ability.defense" />
+      <Item item-type="accuracy" :item-value="cardInfo.ability.accuracy" />
       <Item item-type="evasion" :item-value="cardInfo.ability.evasion" />
       <Item item-type="hp" :item-value="cardInfo.ability.hp" />
     </div>
@@ -42,9 +42,7 @@ export default {
     },
   },
   data() {
-    return {
-      abilities: [],
-    };
+    return {};
   },
   computed: {
     ...mapGetters('game', ['getMovingCard', 'getFirstTurn']),
@@ -56,7 +54,6 @@ export default {
     handleCard(card) {
       this.$store.commit('endowment/SET_CURRENT_CARD', card);
       const endowment = this.$store.getters['endowment/getEndowmentState'];
-      // const firstTurn = this.getFirstTurn();
       if (endowment) {
         this.$buefy.modal.open({
           parent: this,

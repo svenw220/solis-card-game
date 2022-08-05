@@ -62,7 +62,10 @@ export default {
   computed: {
     ...mapGetters('endowment', ['getCurrentCardInfo']),
     convertedCardInfo() {
-      return Object.entries(this.endowmentResult);
+      const rawData = Object.entries(this.endowmentResult).filter(
+        ([title]) => title !== 'total',
+      );
+      return rawData;
     },
   },
   mounted() {

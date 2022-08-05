@@ -15,7 +15,6 @@ export default {
         meta: 'yellow',
         ability: {
           attack: 90,
-          defense: 88,
           evasion: 50,
           accuracy: 95,
           hp: 100,
@@ -28,7 +27,6 @@ export default {
         meta: 'blue',
         ability: {
           attack: 80,
-          defense: 76,
           evasion: 96,
           accuracy: 80,
           hp: 100,
@@ -41,7 +39,6 @@ export default {
         meta: 'purple',
         ability: {
           attack: 50,
-          defense: 38,
           evasion: 70,
           accuracy: 85,
           hp: 100,
@@ -54,7 +51,6 @@ export default {
         meta: 'blue',
         ability: {
           attack: 94,
-          defense: 82,
           evasion: 40,
           accuracy: 65,
           hp: 100,
@@ -67,7 +63,6 @@ export default {
         meta: 'purple',
         ability: {
           attack: 92,
-          defense: 71,
           evasion: 67,
           accuracy: 87,
           hp: 100,
@@ -82,7 +77,6 @@ export default {
         name: 'Aurasapiens',
         ability: {
           attack: 84,
-          defense: 56,
           evasion: 76,
           accuracy: 80,
           hp: 100,
@@ -95,7 +89,6 @@ export default {
         meta: 'yellow',
         ability: {
           attack: 54,
-          defense: 78,
           evasion: 86,
           accuracy: 81,
           hp: 100,
@@ -108,7 +101,6 @@ export default {
         meta: 'purple',
         ability: {
           attack: 77,
-          defense: 67,
           evasion: 91,
           accuracy: 84,
           hp: 100,
@@ -121,7 +113,6 @@ export default {
         meta: 'purple',
         ability: {
           attack: 65,
-          defense: 73,
           evasion: 91,
           accuracy: 89,
           hp: 100,
@@ -134,7 +125,6 @@ export default {
         meta: 'yellow',
         ability: {
           attack: 60,
-          defense: 76,
           evasion: 86,
           accuracy: 70,
           hp: 100,
