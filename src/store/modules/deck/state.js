@@ -23,7 +23,7 @@ export default {
       {
         id: 2,
         type: 'Sapienoids',
-        name: 'Aquasapiens',
+        name: 'Aura',
         meta: 'blue',
         ability: {
           attack: 80,
@@ -35,7 +35,7 @@ export default {
       {
         id: 3,
         type: 'Sapienoids',
-        name: 'Aquasapiens',
+        name: 'Aura',
         meta: 'purple',
         ability: {
           attack: 50,
@@ -59,7 +59,7 @@ export default {
       {
         id: 5,
         type: 'Sapienoids',
-        name: 'Aquasapiens',
+        name: 'Terra',
         meta: 'purple',
         ability: {
           attack: 92,
@@ -74,7 +74,7 @@ export default {
         id: 6,
         type: 'Sapienoids',
         meta: 'blue',
-        name: 'Aurasapiens',
+        name: 'Aura',
         ability: {
           attack: 84,
           evasion: 76,
@@ -85,7 +85,7 @@ export default {
       {
         id: 7,
         type: 'Sapienoids',
-        name: 'Aurasapiens',
+        name: 'Aura',
         meta: 'yellow',
         ability: {
           attack: 54,
@@ -97,7 +97,7 @@ export default {
       {
         id: 8,
         type: 'Sapienoids',
-        name: 'Aurasapiens',
+        name: 'Aura',
         meta: 'purple',
         ability: {
           attack: 77,
@@ -109,7 +109,7 @@ export default {
       {
         id: 9,
         type: 'Sapienoids',
-        name: 'Aurasapiens',
+        name: 'Aqua',
         meta: 'purple',
         ability: {
           attack: 65,
@@ -121,7 +121,7 @@ export default {
       {
         id: 10,
         type: 'Sapienoids',
-        name: 'Aurasapiens',
+        name: 'Terra',
         meta: 'yellow',
         ability: {
           attack: 60,

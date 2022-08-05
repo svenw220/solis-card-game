@@ -9,7 +9,7 @@
       :src="require('@/assets/images/black_' + cardInfo.meta + '.svg')"
       alt="Card"
       @click="handleCard(cardInfo, $event)"
-    />
+    >
 
     <div class="item-list">
       <Item item-type="attack" :item-value="cardInfo.ability.attack" />
@@ -53,8 +53,10 @@ export default {
   methods: {
     handleCard(card) {
       this.$store.commit('endowment/SET_CURRENT_CARD', card);
+      const cardPos = this.$store.getters['game/getCardPosById'](card.id);
+      const currentTurn = this.$store.getters['game/getTurn'];
       const endowment = this.$store.getters['endowment/getEndowmentState'];
-      if (endowment) {
+      if (endowment && (cardPos === currentTurn)) {
         this.$buefy.modal.open({
           parent: this,
           component: EndowmentPopup,
@@ -62,6 +64,8 @@ export default {
           customClass: 'custom-class custom-class-2',
           trapFocus: true,
         });
+      } else {
+        console.log('This is not your turn!');
       }
     },
   },

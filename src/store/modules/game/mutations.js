@@ -53,11 +53,6 @@ export default {
     }
   },
   [SET_ENDOWMENT_TIME](state) {
-    const {
-      turn: { firstTurn },
-    } = state;
-
-    state.turn.current = !firstTurn;
     state.endowmentTime = !state.endowmentTime;
     state.endowment.state = !state.endowment.state;
   },

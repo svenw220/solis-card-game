@@ -11,4 +11,14 @@ export default {
     return turn ? oppoCards : myCards;
   },
   getCardSetUpState: (state) => state.fullCardSetUp,
+  getCardPosById: (state) => (id) => {
+    let pos = false;
+    const { battleCards } = state;
+    battleCards.map((cards, index) => {
+      const target = cards.filter((item) => item.id === id);
+      if (target.length) pos = Boolean(index);
+      return true;
+    });
+    return !pos;
+  },
 };
