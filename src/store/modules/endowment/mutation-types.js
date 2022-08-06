@@ -3,6 +3,7 @@ export const INCREASE = 'INCREASE';
 export const DECREASE = 'DECREASE';
 export const SET_CURRENT_CARD = 'SET_CURRENT_CARD';
 export const SET_ENDOWMENT_TIME = 'SET_ENDOWMENT_TIME';
+export const CLEAR_COUNT = 'CLEAR_COUNT';
 
 export default {
   GET_CURRENT_CARD,
@@ -10,4 +11,5 @@ export default {
   SET_ENDOWMENT_TIME,
   INCREASE,
   DECREASE,
+  CLEAR_COUNT,
 };

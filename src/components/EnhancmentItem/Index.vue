@@ -51,7 +51,6 @@ export default {
   mounted() {},
   methods: {
     increaseItem() {
-      console.log(this.getCurrentCount);
       if (this.getCurrentCount && this.itemValue[1] <= 99) {
         this.itemValue[1] += 1;
         this.givePower(this.itemValue[0], this.itemValue[1]);
@@ -64,7 +63,7 @@ export default {
       const rawValue = this.getCurrentCardInfo.ability[title];
       if (rawValue !== value && value > 0) {
         value -= 1;
-        this.$store.commit('endowment/increase');
+        this.$store.commit('endowment/INCREASE');
         this.givePower(title, value);
       }
     },

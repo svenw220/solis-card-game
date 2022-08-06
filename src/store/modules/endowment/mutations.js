@@ -1,5 +1,5 @@
 // eslint-disable-next-line object-curly-newline
-import { SET_CURRENT_CARD, SET_ENDOWMENT_TIME, DECREASE, INCREASE } from './mutation-types';
+import { SET_CURRENT_CARD, SET_ENDOWMENT_TIME, DECREASE, INCREASE, CLEAR_COUNT } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
 export default {
@@ -15,5 +15,8 @@ export default {
   },
   [INCREASE](state) {
     state.count += 1;
+  },
+  [CLEAR_COUNT](state) {
+    state.count = 5;
   },
 };

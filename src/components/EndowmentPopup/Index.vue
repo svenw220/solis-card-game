@@ -82,6 +82,10 @@ export default {
       const { id } = this.getCurrentCardInfo;
       this.$store.commit('game/APPLY_ENDOWMENT', { id, result });
       this.$emit('close');
+      if (!this.getCurrentCount) {
+        this.$store.commit('game/SWITCH_TURN');
+        this.$store.commit('endowment/CLEAR_COUNT');
+      }
     },
   },
 };
