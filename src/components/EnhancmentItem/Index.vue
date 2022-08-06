@@ -59,9 +59,13 @@ export default {
       }
     },
     decreaseItem() {
-      if (this.itemValue[1] > 0) {
-        this.itemValue[1] -= 1;
-        this.givePower(this.itemValue[0], this.itemValue[1]);
+      const title = this.itemValue[0];
+      let value = this.itemValue[1];
+      const rawValue = this.getCurrentCardInfo.ability[title];
+      if (rawValue !== value && value > 0) {
+        value -= 1;
+        this.$store.commit('endowment/increase');
+        this.givePower(title, value);
       }
     },
   },
