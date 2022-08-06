@@ -16,6 +16,7 @@
  *
  * The home index page.
  */
+import { mapGetters } from 'vuex';
 
 export default {
   /**
@@ -44,12 +45,17 @@ export default {
   data() {
     return {};
   },
+  computed: {
+    ...mapGetters('endowment', ['getCurrentCardInfo', 'getCurrentCount']),
+  },
   mounted() {},
   methods: {
     increaseItem() {
-      if (this.itemValue[1] <= 99) {
+      console.log(this.getCurrentCount);
+      if (this.getCurrentCount && this.itemValue[1] <= 99) {
         this.itemValue[1] += 1;
         this.givePower(this.itemValue[0], this.itemValue[1]);
+        this.$store.commit('endowment/DECREASE');
       }
     },
     decreaseItem() {

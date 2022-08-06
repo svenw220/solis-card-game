@@ -1,4 +1,4 @@
-import { SET_CURRENT_CARD, SET_ENDOWMENT_TIME } from './mutation-types';
+import { SET_CURRENT_CARD, SET_ENDOWMENT_TIME, DECREASE } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
 export default {
@@ -8,5 +8,8 @@ export default {
   [SET_ENDOWMENT_TIME](state, payload) {
     console.log(payload);
     state.condition = payload;
+  },
+  [DECREASE](state) {
+    state.count -= 1;
   },
 };

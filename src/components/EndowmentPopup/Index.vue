@@ -7,7 +7,7 @@
             <p>Endowment</p>
             <p>#octopus99999</p>
           </div>
-          <p class="endowment-points">{{ points }} points</p>
+          <p class="endowment-points">{{ getCurrentCount }} points</p>
         </header>
         <section class="modal-card-body">
           <EnhancementItem
@@ -60,7 +60,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters('endowment', ['getCurrentCardInfo']),
+    ...mapGetters('endowment', ['getCurrentCardInfo', 'getCurrentCount']),
     convertedCardInfo() {
       const rawData = Object.entries(this.endowmentResult).filter(
         ([title]) => title !== 'total',
