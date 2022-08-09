@@ -88,6 +88,7 @@ export default {
         this.$store.commit('endowment/FLOW_TURN');
         if (this.turn.length === 2) {
           this.$store.commit('endowment/END_ENDOWMENT');
+          this.$store.commit('strategy/SET_STRATEGY_TIME');
         } else {
           this.$store.commit('endowment/CLEAR_COUNT');
         }

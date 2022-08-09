@@ -2,11 +2,11 @@
   <div class="arena">
     <PlayerArena :role="oppo" />
     <div class="announcments">
-      <div v-if="this.condition">
+      <div v-if="condition">
         <h3>Endowment Phase ✨</h3>
         <p>Please pick and distribute your 5 points wisely among your cards</p>
       </div>
-      <p v-if="!this.turn.current && !this.condition" class="comment">
+      <p v-if="!turn.current && !condition" class="comment">
         It’s your turn, please place a card 😬
       </p>
     </div>

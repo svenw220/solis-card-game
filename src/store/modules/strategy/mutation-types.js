@@ -7,9 +7,11 @@
  */
 
 export const GET_SLOT_INFO = 'GET_SLOT_INFO';
+export const SET_STRATEGY_TIME = 'SET_STRATEGY_TIME';
 export const SET_PLAYERS_CARD_INFO = 'SET_PLAYERS_CARD_INFO';
 
 export default {
   GET_SLOT_INFO,
   SET_PLAYERS_CARD_INFO,
+  SET_STRATEGY_TIME,
 };
