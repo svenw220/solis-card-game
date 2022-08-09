@@ -3,36 +3,31 @@ const strategyData = [
   [[0, 1], [1, 0], [2, 2]],
 ];
 
-const engine = (myCard, oppoCard, firstTurn = false) => {
-  const attackedMyCard = {};
-  const attackedOppoCard = {};
-  const [myStrategy, oppoStrategy] = strategyData.flat(0);
+const calcPoints = (attacker, defenser) => defenser.hp - (attacker.attack * (attacker.accuracy - defenser.evasion)) / 100;
+
+const engine = (battleCards, firstTurn = false) => {
+  const attackedMyCards = {};
+  const attackedOppoCards = {};
+  // const [myStrategy, oppoStrategy] = strategyData.flat(0);
+  const strategies = strategyData.flat(0);
+  const [oppoCards, myCards] = battleCards;
 
   const {
     ability: { attack: myAttack, evasion: myEvasion, accuracy: myAccuracy, hp: myHp },
     type: myCardType,
-  } = myCard;
-
+  } = myCards;
+  
   const {
     ability: { attack: oppoAttack, evasion: oppoEvasion, accuracy: oppoAccuracy, hp: oppoHp },
     type: oppoCardType,
-  } = oppoCard;
+  } = oppoCards;
 
+  for (const turn of strategies[Number(firstTurn)]) {
+    
+  }
   console.log(myCardType, oppoCardType);
 
-  for(const i of myStrategy) {
-    for (const j of oppoStrategy) {
-      
-    }
-  }
-  
-  if (firstTurn) {
-    attackedOppoCard.hp = oppoHp - (myAttack * (myAccuracy - oppoEvasion)) / 100;
-  } else {
-    attackedMyCard.hp = (oppoAttack * (oppoAccuracy - myEvasion)) / 100;
-  }  
-
-  return { attackedMyCard, attackedOppoCard };
+  return { attackedMyCards, attackedOppoCards };
 };
 
 export default {
