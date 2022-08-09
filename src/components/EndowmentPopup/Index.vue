@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 import EnhancementItem from '@/components/EnhancmentItem/Index.vue';
 
 export default {
@@ -60,6 +60,7 @@ export default {
     };
   },
   computed: {
+    ...mapState('endowment', ['turn']),
     ...mapGetters('endowment', ['getCurrentCardInfo', 'getCurrentCount']),
     convertedCardInfo() {
       const rawData = Object.entries(this.endowmentResult).filter(
@@ -84,7 +85,12 @@ export default {
       this.$emit('close');
       if (!this.getCurrentCount) {
         this.$store.commit('game/SWITCH_TURN');
-        this.$store.commit('endowment/CLEAR_COUNT');
+        this.$store.commit('endowment/FLOW_TURN');
+        if (this.turn.length === 2) {
+          this.$store.commit('endowment/END_ENDOWMENT');
+        } else {
+          this.$store.commit('endowment/CLEAR_COUNT');
+        }
       }
     },
   },

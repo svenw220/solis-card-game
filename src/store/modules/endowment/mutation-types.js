@@ -5,6 +5,8 @@ export const SET_CURRENT_CARD = 'SET_CURRENT_CARD';
 export const SET_ENDOWMENT_TIME = 'SET_ENDOWMENT_TIME';
 export const CLEAR_COUNT = 'CLEAR_COUNT';
 export const CHECK = 'CHECK';
+export const FLOW_TURN = 'FLOW_TURN';
+export const END_ENDOWMENT = 'END_ENDOWMENT';
 
 export default {
   GET_CURRENT_CARD,
@@ -14,4 +16,6 @@ export default {
   DECREASE,
   CLEAR_COUNT,
   CHECK,
+  FLOW_TURN,
+  END_ENDOWMENT,
 };

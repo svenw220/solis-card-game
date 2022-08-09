@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.cardInfo" class="game-card">
+  <div v-if="cardInfo" class="game-card">
     <div class="card-header-section">
       <p>Octopus</p>
       <TotalRating :t-rating="cardInfo.ability.total"/>
@@ -30,10 +30,6 @@ export default {
   name: 'Card',
   components: { TotalRating, Item },
   props: {
-    state: {
-      type: Boolean,
-      default: false,
-    },
     cardInfo: {
       type: Object,
       default() {
