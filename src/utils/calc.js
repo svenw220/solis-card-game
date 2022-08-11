@@ -28,9 +28,17 @@ export const engine = (battleCards) => {
     // eslint-disable-next-line max-len
     myAbility.hp -= oppoAbility.attack * Math.abs((oppoAbility.accuracy - myAbility.evasion) / 100);
   }
+  const remainingMyCards = myCards.filter((item) => item.ability.hp >= 0);
+  const remainingOppoCards = oppoCards.filter((item) => item.ability.hp >= 0);
 
-  console.log(myCards, oppoCards);
-  return [oppoCards, myCards];
+  if (!remainingMyCards.length || !remainingOppoCards.length) {
+    const winner = remainingMyCards.length ? remainingMyCards : remainingOppoCards;
+    console.log('End this game', winner);
+  } else {
+    console.log('1');
+    engine([remainingOppoCards, remainingMyCards]);
+  }
+  // return [remainingOppoCards, remainingMyCards];
 };
 
 export default {
