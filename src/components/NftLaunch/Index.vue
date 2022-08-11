@@ -32,22 +32,9 @@
 
 <script>
 import NftCard from '@/components/NftCard/Index.vue';
-/* ============
- * Home Index Page
- * ============
- *
- * The home index page.
- */
 
 export default {
-  /**
-   * The name of the page.
-   */
   name: 'NftLaunch',
-
-  /**
-   * The components that the page can use.
-   */
   components: {
     NftCard,
   },

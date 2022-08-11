@@ -5,21 +5,9 @@
 </template>
 
 <script>
-/* ============
- * Game Index Page
- * ============
- *
- * The game index page.
- */
 
 export default {
-  /**
-   * The name of the page.
-   */
   name: 'TimeCounter',
-  /**
-   * The components that the page can use.
-   */
   components: {},
   props: {},
   data() {

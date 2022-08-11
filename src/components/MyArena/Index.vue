@@ -3,21 +3,8 @@
 </template>
 
 <script>
-/* ============
- * Home Index Page
- * ============
- *
- * The home index page.
- */
-
 export default {
-  /**
-   * The name of the page.
-   */
   name: 'Block',
-  /**
-   * The components that the page can use.
-   */
   components: {},
   props: {},
   computed: {},
