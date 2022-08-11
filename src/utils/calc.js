@@ -3,29 +3,35 @@ const strategyData = [
   [[0, 1], [1, 0], [2, 2]],
 ];
 
-const calcPoints = (attacker, defenser) => defenser.hp - (attacker.attack * (attacker.accuracy - defenser.evasion)) / 100;
+// eslint-disable-next-line max-len
+// const calcPoints = (attacker, defenser) => defenser.hp - (attacker.attack * (attacker.accuracy - defenser.evasion)) / 100;
 
-const engine = (battleCards, firstTurn = false) => {
+export const engine = (battleCards) => {
   const attackedMyCards = {};
   const attackedOppoCards = {};
-  // const [myStrategy, oppoStrategy] = strategyData.flat(0);
-  const strategies = strategyData.flat(0);
+  const [myStrategy, oppoStrategy] = strategyData.flat(0);
   const [oppoCards, myCards] = battleCards;
 
-  const {
-    ability: { attack: myAttack, evasion: myEvasion, accuracy: myAccuracy, hp: myHp },
-    type: myCardType,
-  } = myCards;
-  
-  const {
-    ability: { attack: oppoAttack, evasion: oppoEvasion, accuracy: oppoAccuracy, hp: oppoHp },
-    type: oppoCardType,
-  } = oppoCards;
+  console.log(myCards, oppoCards);
 
-  for (const turn of strategies[Number(firstTurn)]) {
-    
+  // eslint-disable-next-line no-restricted-syntax
+  for (const strategy of myStrategy) {
+    const [myPos, oppoPos] = strategy;
+    const { ability: oppoAbility } = oppoCards[oppoPos];
+    const { ability: myAbility } = myCards[myPos];
+    // eslint-disable-next-line max-len
+    oppoAbility.hp -= myAbility.attack * ((myAbility.accuracy - oppoAbility.evasion) / 100);
   }
-  console.log(myCardType, oppoCardType);
+  // eslint-disable-next-line no-restricted-syntax
+  for (const strategy of oppoStrategy) {
+    const [oppoPos, myPos] = strategy;
+    const { ability: oppoAbility } = oppoCards[oppoPos];
+    const { ability: myAbility } = myCards[myPos];
+    // eslint-disable-next-line max-len
+    myAbility.hp -= oppoAbility.attack * ((oppoAbility.accuracy - myAbility.evasion) / 100);
+  }
+
+  console.log(myCards, oppoCards);
 
   return { attackedMyCards, attackedOppoCards };
 };

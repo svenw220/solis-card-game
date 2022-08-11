@@ -33,6 +33,7 @@
 <script>
 import { mapGetters, mapState } from 'vuex';
 import EnhancementItem from '@/components/EnhancmentItem/Index.vue';
+import { engine } from '@/utils/calc';
 
 export default {
   /**
@@ -61,6 +62,7 @@ export default {
   },
   computed: {
     ...mapState('endowment', ['turn']),
+    ...mapState('game', ['battleCards']),
     ...mapGetters('endowment', ['getCurrentCardInfo', 'getCurrentCount']),
     convertedCardInfo() {
       const rawData = Object.entries(this.endowmentResult).filter(
@@ -89,6 +91,7 @@ export default {
         if (this.turn.length === 2) {
           this.$store.commit('endowment/END_ENDOWMENT');
           this.$store.commit('strategy/SET_STRATEGY_TIME');
+          engine(this.battleCards);
         } else {
           this.$store.commit('endowment/CLEAR_COUNT');
         }
