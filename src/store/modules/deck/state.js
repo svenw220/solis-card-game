@@ -39,7 +39,7 @@ export default {
         meta: 'purple',
         ability: {
           attack: 50,
-          evasion: 70,
+          evasion: 79,
           accuracy: 85,
           hp: 100,
         },
@@ -113,7 +113,7 @@ export default {
         meta: 'purple',
         ability: {
           attack: 65,
-          evasion: 91,
+          evasion: 89,
           accuracy: 89,
           hp: 100,
         },

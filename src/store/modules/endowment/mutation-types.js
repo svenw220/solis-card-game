@@ -7,6 +7,7 @@ export const CLEAR_COUNT = 'CLEAR_COUNT';
 export const CHECK = 'CHECK';
 export const FLOW_TURN = 'FLOW_TURN';
 export const END_ENDOWMENT = 'END_ENDOWMENT';
+export const ROUND = 'ROUND';
 
 export default {
   GET_CURRENT_CARD,
@@ -18,4 +19,5 @@ export default {
   CHECK,
   FLOW_TURN,
   END_ENDOWMENT,
+  ROUND,
 };

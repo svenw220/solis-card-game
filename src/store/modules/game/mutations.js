@@ -65,9 +65,6 @@ export default {
   [INCREASE_CARD_ABILITY](state, payload) {
     const { battleCards } = state;
     console.log(battleCards, payload);
-    // battleCards.flat().map((card) => {
-    // if(card.id === payload) card.
-    // });
   },
   [APPLY_ENDOWMENT](state, payload) {
     const { id, result } = payload;
