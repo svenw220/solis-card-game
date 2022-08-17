@@ -15,5 +15,5 @@ export default {
   },
   setStrategyInfo: ({ commit }, payload) => {
     commit(types.SET_PLAYERS_CARD_INFO, payload);
-  }
+  },
 };

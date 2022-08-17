@@ -10,8 +10,6 @@ export const engine = (battleCards) => {
   const [myStrategy, oppoStrategy] = strategyData.flat(0);
   const [oppoCards, myCards] = battleCards;
 
-  console.log(myCards, oppoCards);
-
   // eslint-disable-next-line no-restricted-syntax
   for (const strategy of myStrategy) {
     const [myPos, oppoPos] = strategy;
@@ -35,7 +33,6 @@ export const engine = (battleCards) => {
     const winner = remainingMyCards.length ? remainingMyCards : remainingOppoCards;
     console.log('End this game', winner);
   } else {
-    console.log('1');
     engine([remainingOppoCards, remainingMyCards]);
   }
   // return [remainingOppoCards, remainingMyCards];

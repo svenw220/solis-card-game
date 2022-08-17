@@ -8,5 +8,4 @@
 
 export default {
   getSlotInfo: (state) => (id) => state.board.filter((item) => item.id === id),
-  getStrategyInfoByTurn: state => turn => state.board.filter((item) => turn ? item),
 };
