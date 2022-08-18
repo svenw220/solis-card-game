@@ -13,7 +13,7 @@ export default {
   [SET_PLAYERS_CARD_INFO](state, payload) {
     state.players = payload;
   },
-  [SET_STRATEGY_TIME](state) {
-    state.condition = true;
+  [SET_STRATEGY_TIME](state, payload) {
+    state.condition = payload;
   },
 };
