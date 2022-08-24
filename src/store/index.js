@@ -10,6 +10,9 @@
 import Vuex from 'vuex';
 import createLogger from 'vuex/dist/logger';
 
+// Middlewares
+import { timer } from '@/plugins/timer';
+
 // Modules
 import game from './modules/game';
 import player from './modules/player';
@@ -39,5 +42,5 @@ export default new Vuex.Store({
   /**
    * Plugins used in the store.
    */
-  plugins: debug ? [createLogger()] : [],
+  plugins: debug ? [createLogger()] : [timer],
 });

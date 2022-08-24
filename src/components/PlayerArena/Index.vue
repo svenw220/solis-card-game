@@ -63,12 +63,6 @@ export default {
       } catch (error) {
         console.log(error);
       }
-
-      // TODO: SWAP CARDS
-      // this.myCards = tmp;
-      // console.log(this.myCards);
-      // [tmp[to], tmp[this.from]] = [tmp[this.from], tmp[to]];
-      // this.myCards = tmp.splice(0, 3);
     },
     setFrom(item) {
       console.log(item);

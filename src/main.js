@@ -27,7 +27,7 @@ import { router } from '@/plugins/vue-router';
 // import "./plugins/font-awesome";
 import './plugins/register-service-worker';
 
-import './firebase';
+// import './firebase';
 /* ============
  * Styling
  * ============

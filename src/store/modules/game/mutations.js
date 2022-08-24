@@ -46,7 +46,7 @@ export default {
     } = state;
     const [oppoCards, myCards] = state.battleCards;
     const { movingCard } = state;
-    if (current) {
+    if (current && !oppoCards[payload]) {
       oppoCards[payload] = movingCard;
     } else {
       myCards[payload] = movingCard;

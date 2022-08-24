@@ -3,6 +3,8 @@
  * ============
  */
 
+import { timer } from '@/plugins/timer';
+
 import actions from './actions';
 import getters from './getters';
 import mutations from './mutations';
@@ -14,4 +16,5 @@ export default {
   getters,
   mutations,
   state,
+  plugins: [timer],
 };
