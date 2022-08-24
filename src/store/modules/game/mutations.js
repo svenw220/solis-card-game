@@ -68,7 +68,6 @@ export default {
   },
   [APPLY_ENDOWMENT](state, payload) {
     const { id, result } = payload;
-    console.log(id, result);
     const {
       turn: { current },
     } = state;

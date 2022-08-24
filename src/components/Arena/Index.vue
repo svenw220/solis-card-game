@@ -17,7 +17,7 @@
 
 <script>
 // TODO: add empty element
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 import PlayerArena from '@/components/PlayerArena/Index.vue';
 import DeckList from '@/components/DeckList/Index.vue';
 
@@ -38,10 +38,8 @@ export default {
     ...mapState('game', ['turn']),
   },
   mounted() {
-    this.getPlayersCardInfo();
   },
   methods: {
-    ...mapActions('player', ['getPlayersCardInfo']),
   },
 };
 </script>

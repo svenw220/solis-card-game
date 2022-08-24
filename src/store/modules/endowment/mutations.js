@@ -7,7 +7,6 @@ export default {
     state.currentCard = payload;
   },
   [SET_ENDOWMENT_TIME](state, payload) {
-    console.log(payload);
     state.condition = payload;
   },
   [DECREASE](state) {
