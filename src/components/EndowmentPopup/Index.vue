@@ -33,7 +33,6 @@
 <script>
 import { mapGetters, mapState } from 'vuex';
 import EnhancementItem from '@/components/EnhancmentItem/Index.vue';
-import { engine } from '@/utils/calc';
 
 export default {
   /**
@@ -91,7 +90,6 @@ export default {
         if (this.turn.length === 2) {
           this.$store.commit('endowment/END_ENDOWMENT');
           this.$store.commit('strategy/SET_STRATEGY_TIME');
-          engine(this.battleCards);
         } else {
           this.$store.commit('endowment/CLEAR_COUNT');
         }
