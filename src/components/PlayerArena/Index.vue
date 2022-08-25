@@ -7,7 +7,7 @@
       @drop="handleDrop(i)"
     >
       <drag :transfer-data="i" @dragstart="setFrom">
-        <GameCard :cardInfo="item" />
+        <GameCard :card-info="item" />
       </drag>
     </drop>
   </div>
@@ -44,7 +44,11 @@ export default {
       return this.$store.getters['game/getCardSetUpState'];
     },
   },
-
+  watch: {
+    cards(newValue, oldValue) {
+      console.log(newValue, oldValue);
+    },
+  },
   methods: {
     ...mapActions('game', ['putCardByTurn', 'switchTurn']),
     handleDrop(to) {
