@@ -1,10 +1,10 @@
-export const timer = (store) => {
+import { PUT_CARD_BY_TURN } from '@/store/modules/game/mutation-types';
+
+export const timer = () => (store) => {
   store.subscribe((mutation) => {
-    console.log('@@@', mutation);
-    if (mutation.type === 'PUT_CARD_BY_TURN') {
-      setTimeout(() => {
-        store.commit('SWITCH_TURN');
-      }, 5000);
+    const { type } = mutation;
+    if (type === `game/${PUT_CARD_BY_TURN}`) {
+      console.log('first');
     }
   });
 };

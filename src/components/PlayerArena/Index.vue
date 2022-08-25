@@ -46,17 +46,17 @@ export default {
   },
 
   methods: {
-    ...mapActions('game', ['setEndowmentTime, setTurn, updateCardSetupState']),
+    ...mapActions('game', ['putCardByTurn', 'switchTurn', 'fullCardSetup']),
     handleDrop(to) {
       this.newKey = Math.random();
       try {
         if (this.role === this.currentTurn) {
-          this.$store.commit('game/PUT_CARD_BY_TURN', to);
-          this.$store.commit('game/FULL_CARD_SETUP');
+          this.putCardByTurn(to);
+          this.fullCardSetup();
           if (this.cardSetupState) {
             this.$store.commit('endowment/SET_ENDOWMENT_TIME', true);
           } else {
-            this.$store.commit('game/SWITCH_TURN');
+            this.switchTurn();
           }
         }
         // this.$store.commit('game/CLEAR_MOVING_CARD');
