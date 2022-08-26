@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapState, mapActions } from 'vuex';
 import EnhancementItem from '@/components/EnhancmentItem/Index.vue';
 
 export default {
@@ -74,6 +74,7 @@ export default {
     this.endowmentResult = this.getCurrentCardInfo.ability;
   },
   methods: {
+    ...mapActions('strategy', ['setStrategyPhase']),
     increaseAbility(name, cardInfo) {
       this.endowmentResult = {
         ...this.endowmentResult,
@@ -89,7 +90,7 @@ export default {
         this.$store.commit('endowment/FLOW_TURN');
         if (this.turn.length === 2) {
           this.$store.commit('endowment/END_ENDOWMENT');
-          this.$store.commit('strategy/SET_STRATEGY_TIME');
+          this.setStrategyPhase(true);
         } else {
           this.$store.commit('endowment/CLEAR_COUNT');
         }

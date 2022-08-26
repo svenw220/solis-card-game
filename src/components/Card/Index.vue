@@ -110,15 +110,14 @@ export default {
   }
 
   .item-list {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    > .property-item {
+    .property-item {
       margin-right: 6px;
-    }
-
-    .total {
-      align-self: end;
+      &:last-child {
+        align-self: flex-end;
+      }
     }
   }
 }
