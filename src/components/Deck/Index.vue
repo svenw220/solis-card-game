@@ -7,17 +7,18 @@
     <div class="deck is-flex is-flex-direction-column is-align-items-center">
       <b-image
         class="turn-state"
-        :src="require('@/assets/images/' + this.deckData.meta + '_deck.svg')"
+        :src="require('@/assets/images/' + deckData.meta + '_deck.svg')"
         alt="Turn State"
         rounded
       />
-      <TotalRating :tRating="deckData.ability.total" />
+      <TotalRating :t-rating="deckData.ability.total" />
     </div>
   </drag>
 </template>
 
 <script>
 import { Drag } from 'vue-drag-drop';
+import { mapActions } from 'vuex';
 import TotalRating from '@/components/TotalRating/Index.vue';
 
 export default {
@@ -32,11 +33,10 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() {
+  },
   methods: {
-    setMovingCard(data) {
-      return this.$store.commit('game/SET_MOVING_CARD', data);
-    },
+    ...mapActions('game', ['setMovingCard']),
   },
 };
 </script>

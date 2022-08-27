@@ -6,15 +6,12 @@
       <img src="@/assets/images/line_right.svg" alt="Right Line" />
     </div>
     <div class="deck-list">
-      <Deck v-for="(deck, index) in decks" :deckData="deck" :key="index" />
+      <Deck v-for="(deck, index) in decks" :deck-data="deck" :key="index" />
     </div>
   </div>
 </template>
 
 <script>
-/**
- * TODO: feature when the turn has been switched
- */
 import { mapGetters } from 'vuex';
 import Deck from '@/components/Deck/Index.vue';
 
