@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapState, mapGetters, mapActions } from 'vuex';
 import GameCard from '@/components/Card/Index.vue';
 
 export default {
@@ -34,6 +34,7 @@ export default {
     };
   },
   computed: {
+    ...mapState('game', ['movingCard']),
     cards() {
       return this.$store.getters['game/getCardsByTurn'](this.role);
     },
@@ -51,11 +52,13 @@ export default {
   },
   methods: {
     ...mapActions('game', ['putCardByTurn', 'switchTurn']),
+    ...mapActions('deck', ['updateDeckList']),
     handleDrop(to) {
       this.newKey = Math.random();
       try {
         if (this.role === this.currentTurn) {
           this.putCardByTurn(to);
+          this.updateDeckList(this.movingCard.id);
           if (this.cardSetupState) {
             this.$store.commit('endowment/SET_ENDOWMENT_TIME', true);
           } else {

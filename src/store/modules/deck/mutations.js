@@ -14,7 +14,8 @@ export default {
     state.players = payload;
   },
   [UPDATE_DECK_LIST](state, payload) {
-    const { myDecks, oppoDecks } = state;
-    console.log(payload, myDecks, oppoDecks);
+    const { decks: { myDecks, oppoDecks } } = state;
+    state.decks.myDecks = myDecks.filter((deck) => deck.id !== payload);
+    state.decks.oppoDecks = oppoDecks.filter((deck) => deck.id !== payload);
   },
 };
