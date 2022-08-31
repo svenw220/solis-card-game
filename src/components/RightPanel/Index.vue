@@ -14,9 +14,11 @@
         />
         <p>Game Guide</p>
       </div>
-      <CardOverview />
     </div>
-    <GameLog />
+    <div class="right-panel-content">
+      <CardOverview />
+      <GameLog />
+    </div>
   </div>
 </template>
 
@@ -48,16 +50,10 @@ export default {
 
 <style lang="scss" scoped>
 .right-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   height: 100%;
   padding: 1.5rem;
-  > div {
-    flex: 1;
-  }
   .game-guide {
-    height: 70%;
+    height: 20%;
     p {
       color: #74737d;
       text-align: center;
@@ -74,6 +70,14 @@ export default {
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    > div {
+      flex: 1;
     }
   }
 }

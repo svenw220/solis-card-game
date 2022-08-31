@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .card-overview {
-  margin-top: 100px;
+  margin-top: 30px;
   margin-bottom: 100px;
   .overview-title {
     font-size: 20px;
