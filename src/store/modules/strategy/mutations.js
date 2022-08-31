@@ -11,6 +11,7 @@ import {
   SET_STRATEGY_TIME,
   SET_ACTIVE_CARD,
   TAP_OPPO_CARD,
+  CLEAR_STRATEGY_COUNT,
 } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
@@ -25,9 +26,13 @@ export default {
     state.activeCardId = payload;
   },
   [TAP_OPPO_CARD](state, payload) {
-    const strategy = [state.activeCardId, payload];
-    state.info[0].push(strategy);
+    const { id, turn } = payload;
+    const strategy = [state.activeCardId, id];
+    state.info[Number(turn)].push(strategy);
     state.count -= 1;
     state.activeCardId = 0;
+  },
+  [CLEAR_STRATEGY_COUNT](state) {
+    state.count = 3;
   },
 };

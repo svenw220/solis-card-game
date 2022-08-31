@@ -55,7 +55,12 @@ export default {
   watch: {},
 
   methods: {
-    ...mapActions('strategy', ['setActiveCard', 'tapOppoCards']),
+    ...mapActions('strategy', [
+      'setActiveCard',
+      'tapOppoCards',
+      'clearStrategyCount',
+    ]),
+    ...mapActions('game', ['switchTurn']),
     handleCard(card) {
       this.$store.commit('endowment/SET_CURRENT_CARD', card);
       const cardPos = this.$store.getters['game/getCardPosById'](card.id);
@@ -64,8 +69,15 @@ export default {
 
       if (this.condition && cardPos === currentTurn && !this.activeCardId) {
         if (this.count) this.setActiveCard(card.id);
-      } else if (this.condition && cardPos !== currentTurn) {
-        if (this.count) this.tapOppoCards(card.id);
+      }
+
+      if (this.condition && cardPos !== currentTurn) {
+        const payload = { id: card.id, turn: currentTurn };
+        if (this.count > 0) this.tapOppoCards(payload);
+        if (this.count === 0) {
+          this.switchTurn();
+          this.clearStrategyCount();
+        }
       } else if (endowment && cardPos === currentTurn) {
         this.$buefy.modal.open({
           parent: this,

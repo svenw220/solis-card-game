@@ -12,8 +12,13 @@ export const tapOppoCards = ({ commit }, payload) => {
   commit(types.TAP_OPPO_CARD, payload);
 };
 
+export const clearStrategyCount = ({ commit }) => {
+  commit(types.CLEAR_STRATEGY_COUNT);
+};
+
 export default {
   setStrategyPhase,
   setActiveCard,
   tapOppoCards,
+  clearStrategyCount,
 };
