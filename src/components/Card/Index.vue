@@ -2,14 +2,14 @@
   <div v-if="cardInfo" class="game-card">
     <div class="card-header-section">
       <p>Octopus</p>
-      <TotalRating :t-rating="cardInfo.ability.total"/>
+      <TotalRating :t-rating="cardInfo.ability.total" />
       <p>#99999</p>
     </div>
     <img
       :src="require('@/assets/images/black_' + cardInfo.meta + '.svg')"
       alt="Card"
       @click="handleCard(cardInfo, $event)"
-    >
+    />
 
     <div class="item-list">
       <Item item-type="attack" :item-value="cardInfo.ability.attack" />
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState, mapActions } from 'vuex';
 import TotalRating from '@/components/TotalRating/Index.vue';
 import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 import Item from '@/components/Item/Index.vue';
@@ -43,16 +43,30 @@ export default {
   computed: {
     ...mapGetters('game', ['getMovingCard', 'getFirstTurn']),
     ...mapGetters('endowment', ['getEndowmentState']),
+    ...mapState('strategy', [
+      'turn',
+      'round',
+      'info',
+      'condition',
+      'count',
+      'activeCardId',
+    ]),
   },
   watch: {},
 
   methods: {
+    ...mapActions('strategy', ['setActiveCard', 'tapOppoCards']),
     handleCard(card) {
       this.$store.commit('endowment/SET_CURRENT_CARD', card);
       const cardPos = this.$store.getters['game/getCardPosById'](card.id);
       const currentTurn = this.$store.getters['game/getTurn'];
       const endowment = this.$store.getters['endowment/getEndowmentState'];
-      if (endowment && (cardPos === currentTurn)) {
+
+      if (this.condition && cardPos === currentTurn && !this.activeCardId) {
+        if (this.count) this.setActiveCard(card.id);
+      } else if (this.condition && cardPos !== currentTurn) {
+        if (this.count) this.tapOppoCards(card.id);
+      } else if (endowment && cardPos === currentTurn) {
         this.$buefy.modal.open({
           parent: this,
           component: EndowmentPopup,
