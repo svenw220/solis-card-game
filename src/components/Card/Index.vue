@@ -69,16 +69,22 @@ export default {
 
       if (this.condition && cardPos === currentTurn && !this.activeCardId) {
         if (this.count) this.setActiveCard(card.id);
-      }
-
-      if (this.condition && cardPos !== currentTurn) {
+      } else if (
+        // eslint-disable-next-line operator-linebreak
+        this.condition &&
+        // eslint-disable-next-line operator-linebreak
+        cardPos !== currentTurn &&
+        this.activeCardId
+      ) {
         const payload = { id: card.id, turn: currentTurn };
         if (this.count > 0) this.tapOppoCards(payload);
         if (this.count === 0) {
           this.switchTurn();
           this.clearStrategyCount();
         }
-      } else if (endowment && cardPos === currentTurn) {
+      }
+
+      if (endowment && cardPos === currentTurn) {
         this.$buefy.modal.open({
           parent: this,
           component: EndowmentPopup,
