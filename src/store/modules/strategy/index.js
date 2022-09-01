@@ -1,7 +1,4 @@
-/* ============
- * Game Module
- * ============
- */
+import { fullStrategyState } from '@/plugins/strategy-info';
 
 import actions from './actions';
 import getters from './getters';
@@ -14,4 +11,5 @@ export default {
   getters,
   mutations,
   state,
+  plugins: [fullStrategyState],
 };

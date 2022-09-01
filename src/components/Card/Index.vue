@@ -25,6 +25,7 @@ import { mapGetters, mapState, mapActions } from 'vuex';
 import TotalRating from '@/components/TotalRating/Index.vue';
 import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 import Item from '@/components/Item/Index.vue';
+import { engine } from '@/utils/calc';
 
 export default {
   name: 'Card',
@@ -41,8 +42,9 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters('game', ['getMovingCard', 'getFirstTurn']),
+    ...mapGetters('game', ['getMovingCard', 'getFirstTurn', 'getBattleCards']),
     ...mapGetters('endowment', ['getEndowmentState']),
+    ...mapGetters('strategy', ['getFullStrategyState']),
     ...mapState('strategy', [
       'turn',
       'round',
@@ -52,7 +54,16 @@ export default {
       'activeCardId',
     ]),
   },
-  watch: {},
+  watch: {
+    getFullStrategyState(oldData, newData) {
+      // eslint-disable-next-line no-bitwise
+      if (oldData ^ newData) {
+        console.log(this.getBattleCards, this.info);
+        const result = engine(this.getBattleCards, this.info);
+        console.log(result);
+      }
+    },
+  },
 
   methods: {
     ...mapActions('strategy', [

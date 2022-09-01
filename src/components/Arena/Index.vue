@@ -37,10 +37,8 @@ export default {
     ...mapState('endowment', ['condition']),
     ...mapState('game', ['turn']),
   },
-  mounted() {
-  },
-  methods: {
-  },
+  mounted() {},
+  methods: {},
 };
 </script>
 

@@ -21,4 +21,5 @@ export default {
     });
     return !pos;
   },
+  getBattleCards: (state) => state.battleCards,
 };
