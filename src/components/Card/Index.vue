@@ -5,6 +5,7 @@
       <TotalRating :t-rating="cardInfo.ability.total" />
       <p>#99999</p>
     </div>
+
     <img
       :src="require('@/assets/images/black_' + cardInfo.meta + '.svg')"
       alt="Card"
@@ -25,7 +26,6 @@ import { mapGetters, mapState, mapActions } from 'vuex';
 import TotalRating from '@/components/TotalRating/Index.vue';
 import EndowmentPopup from '@/components/EndowmentPopup/Index.vue';
 import Item from '@/components/Item/Index.vue';
-import { engine } from '@/utils/calc';
 
 export default {
   name: 'Card',
@@ -53,16 +53,6 @@ export default {
       'count',
       'activeCardId',
     ]),
-  },
-  watch: {
-    getFullStrategyState(oldData, newData) {
-      // eslint-disable-next-line no-bitwise
-      if (oldData ^ newData) {
-        console.log(this.getBattleCards, this.info);
-        const result = engine(this.getBattleCards, this.info);
-        console.log(result);
-      }
-    },
   },
 
   methods: {
