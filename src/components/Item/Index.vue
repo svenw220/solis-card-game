@@ -48,6 +48,7 @@ export default {
   &.hp {
     align-self: flex-end;
     background-color: transparent;
+
     .item-value {
       position: absolute;
       color: #fff;

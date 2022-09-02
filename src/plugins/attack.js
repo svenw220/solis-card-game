@@ -13,6 +13,8 @@ export const attack = () => (store) => {
       const { info } = state.strategy;
       const result = engine(battleCards, info);
 
+      state.game.battleCards = result;
+
       console.log(result);
     }
   });
