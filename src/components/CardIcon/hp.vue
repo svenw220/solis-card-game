@@ -1,0 +1,72 @@
+<!-- eslint-disable max-len -->
+<template>
+  <svg
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    :width="width"
+    :height="height"
+    viewBox="0 0 60 35"
+    enable-background="new 0 0 60 35"
+    xml:space="preserve"
+  >
+    <image
+      id="image0"
+      width="60"
+      height="35"
+      x="0"
+      y="0"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAjCAMAAAD/opkOAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+AAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAACNFBMVEUAAAD/////////////
+//////////////////////////////////////////////////////+aRC7ElIf////////NopaZ
+OyLJUzXZXDz////////ZurPexL7Dk4acPCLPp52+h3n////////48vHy5uPdwLmtaVeZRC2SNx+m
+XEm7gnOfUDu0dmXWtKvr2tXkzcegUDuXOSG2Si3FUTTBTzKySCyUOCCTOCCTNx/Im4/ATzKcPCPB
+j4HkYkDbXTy2SiyWOiKUOB+UOSCaOyPHUjTPVzjx5uPVWjrEUTObPCKZOiKaOiGlQSbcXTzfXz6r
+RCnPqJ3Qp53FUjTJUzWnRCizSCveXz6mQifkY0HlZELUWjvgYT/lZkTlZUSmXUnkZELkZEPlZ0Xk
+ZUOhPyWZQyysaFalXEjlZUO2SS318O/8/PzUsqnaXTzkY0K8TC/v5OGlXEnp19Piy8W8TTDATzGt
+RSrJm4+0dWXUsqq6gXK+TTCTOB/HmY3QqJ3HmY718O6fTzqXOiHXWzqVOSCzdWTZXTvlZkXYWzuc
+OyOtaFaWOR+nQijdXz7kZkTlZ0baXTuhQCaVOCCbPSOvRyveYD/laEjlaEfkZUTlZEOYOSHr2dXA
+joDv4+DOpZuWNx+cPSSuRirbXz7aXDylQCeZOyKaRCzUsaiWOB+aPSKmQijYXDugPiWbRCzo1tG6
+gXGXOCCfPiTVWzvWWjqcOiKUNx/UWjqYOiKYOiHQVzjFUjO7TS8a7K9BAAAAI3RSTlMAQGCAUCAw
+f+/Pj59v3xC/P3Dv78Cg7+/v75Cw79/v79/vrzEovaUAAAABYktHRAH/Ai3eAAAACXBIWXMAAAsT
+AAALEwEAmpwYAAAAB3RJTUUH5ggDAh0M21JCSQAAAzBJREFUSMedlfdf00AYxktLoaAUi+Ao4rpC
+81KglKFFICoOcCDiJFUwFUGkgCIqFsGBA0RFxT1w41bcA/8537ukSWjL+PT5IZ+8l+ebu8u97xud
+LlRReoPBEG0MhEa9Xh8do5uOjLEmIilOT8N4OTTNME7JzmReWzoDEqJjiUZT4OZE9GTYOQDIdEgv
+IBmOLAAuO4e+bFI6jhAnWmVRPFcJXYibJtl6PCE5aMvLLygoXLbcXeRKX8HC4sL8ErwpDZnbbFQ0
+C9eI3mKeaeWq1WVc2Zq166RwPeIOQhJVO77HoP0k5VmQV8EHtGHjps2VWwJR1VaAaq2ZRI2HtwFs
+51Xt2LlrtxpVlQBnC4HtijiokZ2Cx4PXPXvxUlsnCNLKAfYp1lIZBo2kiYVajyB699M70eut99ZL
+9AGN0U5hC4UbGpkOAlRIrCigxCZekFXH4EMAkrGxQYKjcdmQ1OyjagFoZbAoIW0BVhAZfBiA+XxH
+AGYTYtaZTfRs24/SsQ55Zo8QLLGN7vuYBDd3YOakk2Q86BRCHOpWjrOZQ8XgE6pvDiG0bswJhHQq
+gzXhYdFD4bkBF5dB2MQ6XQwWUvlJAL/f3wUwLzxMN32qG3r8/h6A05oiMeLc1QBnfL6z56B3vgK3
+NSkwPavzF6ARd3yR7pdYzUqCpxIbfoOuBWkLARZdUuHAndgn8P2X3bA4zT8AsIQQi6Y6YlhaS7py
+9ZpQL9LDGhRk2HOd52/cHOqWDJk2kjCutjDPyh2c9PDW7Tv83Xt99wdpWgkPPKK3j+dbKx+62dOk
+TpbVwTR5BPB4ePjJ02fPX/BBevlq5PWb4eFGcNF2pg9uBPoEmmrQgnn29t37D+PZ/o95nz77fPih
+cd7kMM0IU82JCx8YHc1yf/n6Tct+/zH0s310FJ+6bCQubBOyqA2s2z3yS2UrfhcFSgkPaYImiIla
+nmPPooKiPwr9Nw84NpiNeUUMEzVAq9IksFZ6ZXoMs9EZGDdZdBMqJjWE1rIm6xRtP4pqqULLbAod
+nd7/im0/l4PesX8yO01MpZ0s4yJgJRoPzhUJy2jipD+7CFjl4KyRsNgkDCkpFvMkhv+/UETu5uj6
+ewAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0wOC0wM1QwMjoyOToxMiswMDowMJ21MPIAAAAldEVY
+dGRhdGU6bW9kaWZ5ADIwMjItMDgtMDNUMDI6Mjk6MTIrMDA6MDDs6IhOAAAAAElFTkSuQmCC"
+    />
+  </svg>
+</template>
+<script>
+export default {
+  name: 'HpIcon',
+  components: {},
+  props: {
+    height: {
+      type: Number,
+      default: 40,
+    },
+    width: {
+      type: Number,
+      default: 40,
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped></style>

@@ -20,7 +20,7 @@ export default [
   {
     path: '/test',
     name: 'test.index',
-    component: () => import('@/components/Card/Index.vue'),
+    component: () => import('@/components/Test/Index.vue'),
   },
   {
     path: '/result',
