@@ -30,7 +30,7 @@ export default {
     const strategy = [state.activeCardId, id];
     state.info[Number(turn)].push(strategy);
     state.count -= 1;
-    state.activeCardId = 0;
+    state.activeCardId = null;
   },
   [CLEAR_STRATEGY_COUNT](state) {
     state.count = 3;

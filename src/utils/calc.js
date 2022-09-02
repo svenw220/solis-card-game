@@ -1,7 +1,6 @@
 export const engine = (battleCards, strategyData) => {
   const [oppoStrategy, myStrategy] = strategyData;
   const [oppoCards, myCards] = battleCards;
-  console.log(oppoStrategy, myStrategy);
   // eslint-disable-next-line no-restricted-syntax
   for (const strategy of myStrategy) {
     const [myPos, oppoPos] = strategy;

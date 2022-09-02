@@ -7,7 +7,7 @@
       @drop="handleDrop(i)"
     >
       <drag :transfer-data="i" @dragstart="setFrom">
-        <GameCard :card-info="item" />
+        <GameCard :card-info="item" :index="i" />
       </drag>
     </drop>
   </div>

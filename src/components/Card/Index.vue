@@ -9,7 +9,7 @@
     <img
       :src="require('@/assets/images/black_' + cardInfo.meta + '.svg')"
       alt="Card"
-      @click="handleCard(cardInfo, $event)"
+      @click="handleCard(cardInfo, index, $event)"
     />
 
     <div class="item-list">
@@ -37,6 +37,10 @@ export default {
         return {};
       },
     },
+    index: {
+      type: Number,
+      default: 0,
+    },
   },
   data() {
     return {};
@@ -62,22 +66,28 @@ export default {
       'clearStrategyCount',
     ]),
     ...mapActions('game', ['switchTurn']),
-    handleCard(card) {
+    handleCard(card, index) {
       this.$store.commit('endowment/SET_CURRENT_CARD', card);
       const cardPos = this.$store.getters['game/getCardPosById'](card.id);
       const currentTurn = this.$store.getters['game/getTurn'];
       const endowment = this.$store.getters['endowment/getEndowmentState'];
 
-      if (this.condition && cardPos === currentTurn && !this.activeCardId) {
-        if (this.count) this.setActiveCard(card.id);
+      if (
+        // eslint-disable-next-line operator-linebreak
+        this.condition &&
+        // eslint-disable-next-line operator-linebreak
+        cardPos === currentTurn &&
+        this.activeCardId === null
+      ) {
+        if (this.count) this.setActiveCard(index);
       } else if (
         // eslint-disable-next-line operator-linebreak
         this.condition &&
         // eslint-disable-next-line operator-linebreak
         cardPos !== currentTurn &&
-        this.activeCardId
+        this.activeCardId !== null
       ) {
-        const payload = { id: card.id, turn: currentTurn };
+        const payload = { id: index, turn: currentTurn };
         if (this.count > 0) this.tapOppoCards(payload);
         if (this.count === 0) {
           this.switchTurn();
