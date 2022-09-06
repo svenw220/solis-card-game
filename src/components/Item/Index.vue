@@ -2,10 +2,10 @@
   <div :class="['property-item', { [itemType]: itemValue }]">
     <b-image
       class="item-image"
-      :src="require('@/assets/images/' + this.itemType + '.svg')"
+      :src="require('@/assets/images/' + itemType + '.svg')"
       alt="Property Item"
     />
-    <p class="item-value">{{ this.itemValue }}</p>
+    <p class="item-value">{{ itemValue }}</p>
   </div>
 </template>
 
@@ -48,6 +48,12 @@ export default {
   &.hp {
     align-self: flex-end;
     background-color: transparent;
+    top: -30px;
+    left: 8px;
+
+    .item-image {
+      transform: scale(1.8);
+    }
 
     .item-value {
       position: absolute;
