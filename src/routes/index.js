@@ -18,11 +18,6 @@ export default [
     component: () => import('@/views/Game/Index.vue'),
   },
   {
-    path: '/test',
-    name: 'test.index',
-    component: () => import('@/components/Test/Index.vue'),
-  },
-  {
     path: '/result',
     name: 'result.index',
     component: () => import('@/components/BattleResult/Index.vue'),

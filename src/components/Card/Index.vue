@@ -1,5 +1,5 @@
 <template>
-  <div v-if="cardInfo" class="game-card">
+  <div v-if="cardInfo.meta" class="game-card">
     <div class="card-header-section">
       <p>Octopus</p>
       <TotalRating :t-rating="cardInfo.ability.total" />
@@ -13,10 +13,12 @@
     />
 
     <div class="item-list">
-      <Item item-type="attack" :item-value="cardInfo.ability.attack" />
-      <Item item-type="accuracy" :item-value="cardInfo.ability.accuracy" />
-      <Item item-type="evasion" :item-value="cardInfo.ability.evasion" />
-      <Item item-type="hp" :item-value="cardInfo.ability.hp" />
+      <Item
+        v-for="(value, name) in cardInfo.ability"
+        :key="name"
+        :item-type="name"
+        :item-value="value"
+      />
     </div>
   </div>
 </template>
@@ -32,7 +34,7 @@ export default {
   components: { TotalRating, Item },
   props: {
     cardInfo: {
-      type: Object,
+      type: [Object, Boolean, String],
       default() {
         return {};
       },
