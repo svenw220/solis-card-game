@@ -14,7 +14,7 @@
 
     <div class="item-list">
       <Item
-        v-for="(value, name) in cardInfo.ability"
+        v-for="(value, name) in abilities"
         :key="name"
         :item-type="name"
         :item-value="value"
@@ -59,6 +59,11 @@ export default {
       'count',
       'activeCardId',
     ]),
+    abilities() {
+      const asArray = Object.entries(this.cardInfo.ability);
+      const filtered = asArray.filter(([key]) => key !== 'total');
+      return Object.fromEntries(filtered);
+    },
   },
 
   methods: {
