@@ -72,7 +72,7 @@ export default {
       'tapOppoCards',
       'clearStrategyCount',
     ]),
-    ...mapActions('game', ['switchTurn']),
+    ...mapActions('game', ['switchTurn', 'cardSetupPhase']),
     handleCard(card, index) {
       this.$store.commit('endowment/SET_CURRENT_CARD', card);
       const cardPos = this.$store.getters['game/getCardPosById'](card.id);

@@ -10,9 +10,12 @@ export const putCardByTurn = async ({ commit }, payload) => {
 };
 
 export const switchTurn = ({ commit }) => commit(types.SWITCH_TURN);
+export const cardSetupPhase = ({ commit }, payload) =>
+  commit(types.CARD_SETUP_PHASE, payload);
 
 export default {
   putCardByTurn,
   switchTurn,
   setMovingCard,
+  cardSetupPhase,
 };

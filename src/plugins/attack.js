@@ -12,8 +12,13 @@ export const attack = () => (store) => {
       const { battleCards } = state.game;
       const { info } = state.strategy;
       const result = engine(battleCards, info);
-
-      state.game.battleCards = result;
+      console.log(result);
+      // const destroyedCard = result.flat().filter((item) => item.ability.hp < 0);
+      // if (destroyedCard.length) {
+      //   store.
+      // } else {
+      //   state.game.battleCards = result;
+      // }
     }
   });
 };

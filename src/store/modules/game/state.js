@@ -24,4 +24,5 @@ export default {
     firstTurn: true,
   },
   fullCardSetUp: false,
+  cardSetupPhase: true,
 };

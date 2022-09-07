@@ -34,7 +34,7 @@ export default {
     };
   },
   computed: {
-    ...mapState('game', ['movingCard']),
+    ...mapState('game', ['movingCard', 'cardSetupPhase']),
     cards() {
       return this.$store.getters['game/getCardsByTurn'](this.role);
     },
@@ -51,7 +51,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions('game', ['putCardByTurn', 'switchTurn']),
+    ...mapActions('game', ['putCardByTurn', 'switchTurn', 'cardSetupPhase']),
     ...mapActions('deck', ['updateDeckList']),
     handleDrop(to) {
       this.newKey = Math.random();
@@ -61,6 +61,7 @@ export default {
           this.updateDeckList(this.movingCard.id);
           if (this.cardSetupState) {
             this.$store.commit('endowment/SET_ENDOWMENT_TIME', true);
+            this.cardSetupPhase(false);
           } else {
             this.switchTurn();
           }

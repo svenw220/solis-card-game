@@ -12,6 +12,7 @@ export const FROM_ARENA = 'FROM_ARENA';
 export const SWITCH_TURN = 'SWITCH_TURN';
 export const SET_ENDOWMENT_TIME = 'SET_ENDOWMENT_TIME';
 export const SET_MOVING_CARD = 'SET_MOVING_CARD';
+export const CARD_SETUP_PHASE = 'CARD_SETUP_PHASE';
 export const CLEAR_MOVING_CARD = 'CLEAR_MOVING_CARD';
 export const GET_CARDS_BY_TURN = 'GET_CARDS_BY_TURN';
 export const PUT_CARD_BY_TURN = 'PUT_CARD_BY_TURN';
@@ -23,6 +24,7 @@ export const APPLY_ENDOWMENT = 'APPLY_ENDOWMENT';
 export const BATTLE_GO = 'BATTLE_GO';
 
 export default {
+  CARD_SETUP_PHASE,
   SWAP_CARD,
   FROM_DECKLIST,
   FROM_ARENA,

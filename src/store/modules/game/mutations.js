@@ -18,6 +18,7 @@ import {
   FULL_CARD_SETUP,
   INCREASE_CARD_ABILITY,
   APPLY_ENDOWMENT,
+  CARD_SETUP_PHASE,
 } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
@@ -78,5 +79,8 @@ export default {
       return item;
     });
     state.battleCards[Number(!current)] = tmp;
+  },
+  [CARD_SETUP_PHASE](state, payload) {
+    state.cardSetupPhase = payload;
   },
 };
