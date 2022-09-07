@@ -14,8 +14,6 @@ export const attack = () => (store) => {
       const result = engine(battleCards, info);
 
       state.game.battleCards = result;
-
-      console.log(result);
     }
   });
 };

@@ -11,8 +11,9 @@ export const engine = (battleCards, strategyData) => {
       ? myAbility.accuracy - 10
       : myAbility.accuracy;
     // eslint-disable-next-line max-len, operator-linebreak
-    oppoAbility.hp -=
-      myAbility.attack * (Math.abs(accuracyPoint - oppoAbility.evasion) / 100);
+    oppoAbility.hp -= Math.floor(
+      myAbility.attack * (Math.abs(accuracyPoint - oppoAbility.evasion) / 100),
+    );
   }
   // eslint-disable-next-line no-restricted-syntax
   for (const strategy of oppoStrategy) {
@@ -24,8 +25,9 @@ export const engine = (battleCards, strategyData) => {
       ? oppoAbility.accuracy - 10
       : oppoAbility.accuracy;
     // eslint-disable-next-line max-len, operator-linebreak
-    myAbility.hp -=
-      oppoAbility.attack * (Math.abs(accuracyPoint - myAbility.evasion) / 100);
+    myAbility.hp -= Math.floor(
+      oppoAbility.attack * (Math.abs(accuracyPoint - myAbility.evasion) / 100),
+    );
   }
 
   const remainingMyCards = myCards.filter((item) => item.ability.hp >= 0);
